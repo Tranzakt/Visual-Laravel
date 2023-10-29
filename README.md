@@ -28,6 +28,8 @@ The development UI will be Livewire based, making it:
 * flexible i.e. you can achieve the same results in various different ways such as using forms, clicking on a graphical element etc.; 
 * responsive i.e. fast response times, dynamic UI elements update in real-time.
 
+![image](https://github.com/Tranzakt/Visual-Laravel/assets/3001893/3f1aa559-9237-4a2e-967d-d68cecc2da2f)
+
 When you have defined your application, you can save a snapshot as a development, test, beta or final version,
 and the definitions you have made will be compiled into PHP/Laravel code for you to test. 
 Database definitions will be compiled into Laravel migrations and models,
