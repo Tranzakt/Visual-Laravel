@@ -129,7 +129,9 @@ as allowed under Section 7 of the standard Affero GPL below:
 ### THIS FILE
 
 This file is a MarkDown reformatted version of the primary license file, 
-provided purely to make it more readable.
+provided purely to make it more readable. 
+In the event of any discrepancies between this MarkDown version and the original version,
+the original version shall take precedence.
 
 Aside from this, the GNU AFFERO GPL V3 license stated below is provided entirely unchanged. 
 Only the text above and the application structions at the end of this file 
