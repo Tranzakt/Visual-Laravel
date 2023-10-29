@@ -125,6 +125,15 @@ as allowed under Section 7 of the standard Affero GPL below:
     b. To encourage licensees to direct people to the original source and avoid fragmentation
        of the community.
 
+Please note that these are **Additional Terms** under the Affero GPL and **not** Additional Permissions.
+As such, (unlike Additional Permissions) these Additional Terms cannot and must not be removed 
+in the event that this software is redistributed.
+
+It is an explicit requirement of redistribution that these Additional Terms and the
+original Affero GPL are retained and included in the redistribution, 
+and that they cannot be replaced by any alternative license or terms which are either 
+more or less restrictive or which give greater or fewer rights.
+
 
 ### THIS FILE
 
