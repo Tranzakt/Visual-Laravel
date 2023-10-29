@@ -1,3 +1,136 @@
+                       TRANZAKT'S VISUAL-LARAVEL
+                         LICENSE INTRODUCTION
+
+Tranzakt's Visual-Laravel programme is licensed under the GNU Affero General
+Public License as specified below. The copyright owner's intent by choosing 
+this license is to allow individuals and organisations of all types and sizes 
+to run this programme for their own use and the use of their staff, but we 
+request that this software is NOT used to provide either a paid or free service 
+to others over the internet as we would like to reserve this ability for our own 
+use in the event that we need to generate income in order to defray essential 
+operating costs and / or to pay for our own staff to help develop and maintain 
+code and documentation, or provide support for users.
+
+To deter organisations from running this programme as a service to 3rd parties,
+the code as it is supplied does not include multi-tenancy/SaaS functionality, 
+and has some functionality which restricts its use as a service over the
+internet. Under the Affero GPL License, we cannot prevent a licencee from 
+providing a service over the internet using a modified version of this software 
+which adds multi-tenancy/SaaS functionality and removes the network restriction, 
+however we hope that licensees will recognise the copyright owners wishes and 
+refrain from doing so. However, in the event that they do so, then under this
+license they will need to publish the source code changes they have made.
+
+Please also see the Additional Terms section of this license which add specific 
+allowed terms to the standard Affero GPL.
+
+
+                              COPYRIGHT
+
+The copyright for these materials is currently held by the Tranzakt Project, 
+a trading name of developer Paul Freeman a.k.a. Github user Sophist-UK.
+
+If this project is successful, it is intended that ownership will be transfered to
+a formal non-profit organisation, either a new organisation specifically set-up 
+for such a role, or under the auspices and governance of an existing open-source
+umbrella organisations such as SPI Inc.
+
+As and when this happens, it is expected that suitable open governance processes
+will be put in place in order to allow for the project to have longevity beyond
+the involvement of the original developer, and to avoid the project being diverted
+away from the genuine open-source model as intended by the original developer.
+
+
+                              CONTRIBUTIONS
+
+Although it is not a requirement of this license to do so, we hope that licensees
+will recognise the benefits they get from using this software without having to
+pay any license fees, and request that they recognise this by making contributions
+to the project in one of the following ways:
+
+* Donating their time to providing community support to other users of the software
+* Donating their time to improving documentation or language translations
+* Donating their time to bug fixing and functional improvements to the base code
+* Making a financial donation if they so wish
+
+We believe that these contributions will result in improved learning, code, 
+documentation, translations, support and project longevity and safeguard your own 
+investment in this project.
+
+As a suggestion only, without any pressure to do so, we would suggest the following
+guidelines to help quantify the level of contributions outlined above:
+
+* Non-commercial projects - 5% of the developer time
+* Salaried development staff - 5% of the developmer time or 5% of their base salaries
+* Commercial projects by non-commercial developers - 5% of developer time or 0.5% of live revenue
+
+We encourage contributors to donate their contributions back to the primary project
+in order that they can be included in the primary source rather than to create their
+own competing fork in order that all contributions can work together to improve the
+overall project. However, please note that contributions of code, documentation or 
+translations back to the primary source are strictly subject to the Contribution Terms 
+detailed in the relevant source file alongside this license.
+
+
+                              ADDITIONAL TERMS
+
+The following additional terms are formally added to the AFFERO GENERAL PUBLIC LICENSE
+as allowed under Section 7 of the standard Affero GPL below:
+
+1.  When redistributing the licensed materials, licensees are required to preserve
+    and redistribute all legal notices legal notices and author attributions such as
+    this license, contribution terms etc.
+
+2.  When redistributing the licensed materials, licensees are prohibited from misrepresenting
+    the origin of the material. This means that the original name and original source 
+    and original copyright information must be prominantly displayed in the code,
+    in the runtime user interface, and in any separate documentation, publicity, marketing
+    materials etc. and these must be given the same prominance (position, font size and type etc.)
+    as any new name, additional source and additional copyright information. 
+
+    The copyright owners explicitly decline to allow the use of trade names, trademarks or service
+    marks for modified versions of the software, documentation, publicity, marketing materials etc.
+    except as just defined.
+
+    The purpose of this term is to ensure that modified versions of the software are
+    clearly distinguishable to licensees from the original versions, but also to
+    ensure that the original provinance and copyright ownership is also clear.
+
+3.  When redistributing the licensed materials, licensees are required to redistribute the.
+    materials as a copy of the original version provided by the Tranzakt project, 
+    separately from any modifications made by 3rd parties and redistributed to this licensee,
+    and separately from any modifications made by this licensee.
+
+    The purpose of this term is two-fold:
+
+    a. To make it clear to any downstream licensees what code is provided by the original
+       source, and what code has been additionally provided by each 3rd party; and
+    b. To encourage people to contribute their changes back to the original project
+       to be included into the base code, and avoid fragmentation of the community.
+
+4.  Any redistribution of the source, whether modified or not, requires the redistributor
+    to explicitly indemnify the licensors and authors of this material for any liability
+    that these redistributions might directly impose on those licensors and authors.
+
+    To avoid doubt, this applies only in the case that the licensee directly redistributes
+    the materials, and not to situations where the licensee directs others to obtain a copy
+    directly from the primary source.
+
+    The purpose of this term is two-fold:
+    
+    a. To ensure that redistribution does not result in additional liabilities for the 
+       licensors and copyright owners; and
+    b. To encourage licensees to direct people to the original source and avoid fragmentation
+       of the community.
+
+The GNU AFFERO GPL V3 license stated below is provided entirely unchanged. 
+Only the text above and the application structions at the end of this file 
+are different to the standard license.
+
+The copyright owner / author / developer welcomes any feedback you may have 
+regarding this license: please email laravel.tranzakt@gmail.com.
+
+
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
@@ -618,44 +751,28 @@ copy of the Program in return for a fee.
 
                      END OF TERMS AND CONDITIONS
 
-            How to Apply These Terms to Your New Programs
+            Applying These Terms to The Programs
 
-  If you develop a new program, and you want it to be of the greatest
-possible use to the public, the best way to achieve this is to make it
-free software which everyone can redistribute and change under these terms.
+It is intended to attach the following notices to the program by including
+them at the start of each source file, or at the end of each documentation file,
+in order to most effectively claim copyright ownership and state the exclusion 
+of warranty.
 
-  To do so, attach the following notices to the program.  It is safest
-to attach them to the start of each source file to most effectively
-state the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
-
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    Tranzakt Visual Laravel - low-code/no-code development of Laravel applications
+    Copyright (C) 2023, Tranzakt Project (laravel.tranzakt@gmail.com)
 
     This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published
-    by the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    it under the terms of the GNU Affero General Public License Version 3
+    as published by the Free Software Foundation, subject to the Additional
+    Terms as stated in the License.MD file in the root directory of the
+    source distribution.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Affero General Public License for more details.
 
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    You should have received a copy of this GNU Affero General Public License
+    along with this program.  
+    If not, see https://github.com/Tranzakt/Visual-Laravel/blob/main/LICENSE.md
 
-Also add information on how to contact you by electronic and paper mail.
-
-  If your software can interact with users remotely through a computer
-network, you should also make sure that it provides a way for users to
-get its source.  For example, if your program is a web application, its
-interface could display a "Source" link that leads users to an archive
-of the code.  There are many ways you could offer source, and different
-solutions will be better for different programs; see section 13 for the
-specific requirements.
-
-  You should also get your employer (if you work as a programmer) or school,
-if any, to sign a "copyright disclaimer" for the program, if necessary.
-For more information on this, and how to apply and follow the GNU AGPL, see
-<https://www.gnu.org/licenses/>.
