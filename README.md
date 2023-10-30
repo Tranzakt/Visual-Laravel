@@ -15,7 +15,7 @@ Visual Laravel is currently in very early development, with an initial target to
 database/list/form functionality in order to demonstrate the viability and 
 try to encourage the open source community to help build out the remaining functionality.
 
-There are both [short-term](./roadmap-short-term.md), [medium-term](./roadmap-medium-term.md) and [long-term](./roadmap-long-term.md) road maps - 
+There are both [short-term](./roadmap.md#the-short-term-roadmap), [medium-term](./roadmap.md#the-medium-term-roadmap) and [long-term](./roadmap.md#the-long-term-roadmap) road maps - 
 and obviously the short-term road-map is the current focus.
 
 ### So how will it work from the user perspective?
