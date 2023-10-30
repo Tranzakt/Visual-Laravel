@@ -1,22 +1,46 @@
-# Visual-Laravel
+# Visual-Laravel (VL)
 Visual Laravel is a web-based, no-code/low-code Laravel development environment.
 
-Using a web browser you will be able to define database tables/fields, UI lists/forms/etc. and if needed Laravel code snippets.
+Using a web browser you will be able to define database tables/fields, UI lists/forms/etc., menus and other graphical elements
+and if needed Laravel code snippets.
 
-It was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
+Once you have defined the model using the Web UI, VL will then generate the Laravel PHP code needed using this model.
+
+VL was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
 but which due to its age was not able to take advantage of modern PHP functionality or existing open source functionalities 
 like ORMs or template-engines or SPA technologies,
-and which subsequently ended up with a lot of bespoke code to create these middleware layers and a UI that was somewhat clunky.
+and which subsequently ended up with a lot of bespoke code to create these middleware layers,
+spaghetti code, with a few huge objects, that is difficult or impossible to maintain,
+and a UI that was somewhat clunky.
 
-Visual Laravel creates a similar but more functional / performant / flexible environment, 
-leveraging Laravel and the Laravel eco-system to the maximum extent possible.
+By using Laravel (and its ecosystem) VL can take advantage of a massive amount of functionality that is already available and mature,
+and focus on providing only the additional functionality needed on top of that.
 
-Visual Laravel is currently in very early development, with an initial target to define the development kernel and some basic 
-database/list/form functionality in order to demonstrate the viability and 
-try to encourage the open source community to help build out the remaining functionality.
+(We also hope to be able to spin off any useful functionality as new packages to add to the Laravel ecosystem,
+allowing this functionality to be reused in other tools in the future.)
 
-There are both [short-term](./roadmap.md#the-short-term-roadmap), [medium-term](./roadmap.md#the-medium-term-roadmap) and [long-term](./roadmap.md#the-long-term-roadmap) road maps - 
-and obviously the short-term road-map is the current focus.
+It is expected that VL will provide three key benefits:
+
+1. Access by less experienced developers, with far less programming skill and Laravel/PHP expertise needed -
+   opening the Laravel ecosystem to a whole new base of developers.
+   (Fabrik was a reasonable tool for inexperienced programmers wanting to deliver simple table-driven functionality.
+   One web developer used it for larger professional projects,
+   but my own attempts failed due to frequent bugs and a very-low-productivity UX.)
+
+2. Greater productivity for experienced developers - even with the level of utility functionality provided by Laravel, Eloquent etc.,
+   coding a Laravel project still requires using the same definitions to code multiple coordinated sets of code
+   (e.g. migrations/factories/seeds/models/tests or routes/views/controllers/tests).
+   Using a single application model to generate all these files should deliver significant efficiencies.
+   This will depend on having an excellent, performant UX, which makes creating the model easy.
+
+3. Improved code quality - auto-generated code can be made to conform to coding best practices,
+   can generate code that you might not take the time to create
+   (like factories, seeders, functional and unit tests),
+   knows what database queries will be run and so can (in due course)
+   determine what indexes are needed and test the queries (EXPLAIN) to confirm that indexes are used,
+   only load relations and columns that are going to actually be used and avoid n+1 situations,
+   automatically cache (and invalidate) read-only database queries
+   etc. etc. etc.
 
 ### So how will it work from the user perspective?
 
@@ -33,8 +57,17 @@ The development UI will be Livewire based, making it:
 When you have defined your application, you can save a snapshot as a development, test, beta or final version,
 and the definitions you have made will be compiled into PHP/Laravel code for you to test. 
 Database definitions will be compiled into Laravel migrations and models,
-visual definitions will be compiled into e.g. Blade templates.
+visual definitions will be compiled into e.g. Blade templates, etc. etc. etc.
 Factories/seeds and functional/unit tests will also be compiled from the same definitions.
+
+### Current Status
+
+Visual Laravel is currently in very early development, with an initial target to define the development kernel and some basic 
+database/list/form functionality in order to demonstrate the viability and 
+try to encourage the open source community to help build out the remaining functionality.
+
+There are both [short-term](./roadmap.md#the-short-term-roadmap), [medium-term](./roadmap.md#the-medium-term-roadmap) and [long-term](./roadmap.md#the-long-term-roadmap) road maps - 
+and obviously the short-term road-map is the current focus.
 
 We envisage having a single development technology stack (current thinking that it will be a Filament-based solution) 
 but supporting multiple runtime front-end stacks (initially just Livewire, but later Blade, Filament, Intertia/Vue, Inertia/Splade),
@@ -54,6 +87,7 @@ or (worse still) obsoleting existing application definitions (requiring a recrea
 or (not quite so bad) requiring a migration of app definitions from one version to another.
 
 ### So how will it work from a technical perspective?
+
 The core of Visual Laravel is the kernel which provides the following functionality:
 1. Ability for various types of plugins to register themselves.
 Externalising as much functionality to plugins allows for the greatest flexibility
