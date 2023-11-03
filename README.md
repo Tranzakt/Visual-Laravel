@@ -1,10 +1,10 @@
 # Visual-Laravel (VL)
 Visual Laravel is a web-based, no-code/low-code Laravel development environment.
 
-Using a web browser you will be able to define database tables/fields, UI lists/forms/etc., menus and other graphical elements
-and if needed Laravel code snippets.
+Using a web browser you will be able to define database tables/fields, UI lists/forms/etc., menus and other graphical elements,
+all forms of Laravel and Laravel extension objects and if needed write your own Laravel code snippets.
 
-Once you have defined the model using the Web UI, VL will then generate the Laravel PHP code needed using this model.
+Once you have defined the model using the Web UI, VL will then generate (compile) all the Laravel PHP code needed from this model.
 
 VL was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
 but which due to its age was not able to take advantage of modern PHP functionality or existing open source functionalities 
@@ -13,34 +13,34 @@ and which subsequently ended up with a lot of bespoke code to create these middl
 spaghetti code, with a few huge objects, that is difficult or impossible to maintain,
 and a UI that was somewhat clunky.
 
-By using Laravel (and its ecosystem) VL can take advantage of a massive amount of functionality that is already available and mature,
-and focus on providing only the additional functionality needed on top of that.
-
-(We also hope to be able to spin off any useful functionality as new packages to add to the Laravel ecosystem,
-allowing this functionality to be reused in other tools in the future.)
-
 It is expected that VL will provide three key benefits:
 
 1. Access by less experienced developers, with far less programming skill and Laravel/PHP expertise needed -
    opening the Laravel ecosystem to a whole new base of developers.
    (Fabrik was a reasonable tool for inexperienced programmers wanting to deliver simple table-driven functionality.
-   One web developer used it for larger professional projects,
-   but my own attempts failed due to frequent bugs and a very-low-productivity UX.)
+   One web development company used it for larger professional projects,
+   but my own attempts failed due to frequent bugs and a very-low productivity UX.)
 
 2. Greater productivity for experienced developers - even with the level of utility functionality provided by Laravel, Eloquent etc.,
    coding a Laravel project still requires using the same definitions to code multiple coordinated sets of code
-   (e.g. migrations/factories/seeds/models/tests or routes/views/controllers/tests).
+   (e.g. migrations/factories/seeds/models/tests or routes/views/controllers/tests etc.).
    Using a single application model to generate all these files should deliver significant efficiencies.
    This will depend on having an excellent, performant UX, which makes creating the model easy.
 
-3. Improved code quality - auto-generated code can be made to conform to coding best practices,
-   can generate code that you might not take the time to create
+3. Improved code quality - auto-generated code can be made to conform to a range of coding best practices,
+   can generate code that you might not take the time to create if you were coding manually
    (like factories, seeders, functional and unit tests),
-   knows what database queries will be run and so can (in due course)
+   knows what database queries will be run and so can 
    determine what indexes are needed and test the queries (EXPLAIN) to confirm that indexes are used,
    only load relations and columns that are going to actually be used and avoid n+1 situations,
    automatically cache (and invalidate) read-only database queries
    etc. etc. etc.
+
+By using Laravel (and its ecosystem) VL can take advantage of a massive amount of functionality that is already available and mature,
+and focus on providing only the additional functionality needed on top of that.
+
+(Equally, if we create any functionality that could be useful to others, 
+like Laravel itself we can spin-off new packages to add to the Laravel ecosystem.)
 
 ### So how will it work from the user perspective?
 
@@ -54,11 +54,21 @@ The development UI will be Livewire based, making it:
 
 ![image](https://github.com/Tranzakt/Visual-Laravel/assets/3001893/3f1aa559-9237-4a2e-967d-d68cecc2da2f)
 
-When you have defined your application, you can save a snapshot as a development, test, beta or final version,
-and the definitions you have made will be compiled into PHP/Laravel code for you to test. 
+We anticipate providing as much live feedback as possible. For example:
+
+* Database definitions using tables and forms will update a Schema diagram in real-time,
+  and hopefully the schema diagram will be updateable directly as an alternative.
+* Form definitions will create an example form in real time which can be tried, and hopefully you will be able
+  to make some changes (e.g. of position or tab sequence) interactively in the example.
+
+When you have defined your application, you can save a snapshot as a development, beta or final version,
+and the definitions you have made will be compiled into PHP/Laravel code and autonated tests will be run, 
+and the application will then be available for you to test manually.
 Database definitions will be compiled into Laravel migrations and models,
 visual definitions will be compiled into e.g. Blade templates, etc. etc. etc.
 Factories/seeds and functional/unit tests will also be compiled from the same definitions.
+We anticipate providing additional facilities to aid with human testing such as user impersonation,
+performance diagnosis, logging etc.
 
 ### Current Status
 
@@ -70,11 +80,21 @@ There are both [short-term](./roadmap.md#the-short-term-roadmap), [medium-term](
 and obviously the short-term road-map is the current focus.
 
 We envisage having a single development technology stack (current thinking that it will be a Filament-based solution) 
-but supporting multiple runtime front-end stacks (initially just Livewire, but later Blade, Filament, Intertia/Vue, Inertia/Splade),
+but supporting multiple runtime front-end stacks (initially just Filament, but later Livewire (native), Blade, Filament, Intertia/Vue, Inertia/Splade),
 multiple UI libraries (initially Tailwind, but later bootstrap etc.)
 and multiple front-end environments (initially only Laravel, but later through API calls from e.g. Joomla/Wordpress etc.).
 
-We envisage having Git integration, so that saved versions can be committed to Git.
+(Note: The purpose of supporting multiple environments is to facilitate co-existence with existing sites
+by supporting the technology base already used by these sites.
+The difficulty with supporting multiple environments is needing to either: 
+
+1. limit functionality to the lowest common denominator; or
+2. make the full power of each environment available where components exist and have gaps where they don't.
+
+At this early stage it remains to be determined which approach we will follow.
+
+We envisage having Git integration, so that saved versions can be committed to Git, 
+and then automation can be used to deploy releases into test, staging or production environments.
 
 Once the Laravel basics are in place, we can also start to take advantage of all the existing PHP/Laravel/Javascript package ecosystem, 
 building additional Visual Laravel plugins around these existing packages.
@@ -97,10 +117,10 @@ with development UI plugins providing domain-specific UI functionality within th
 3. Providing generic helper functions for plugins to use,  
 and coordinating functionality between various types of plugins and between plugins themselves.
 
-At this stage of design we enviasge the following types of plugins:
+At this stage of design we envisage the following types of plugins:
 1. Development UI - providing major development UI building blocks for
 e.g. Application options, Database tables, Visualisations (initially Lists & Forms, but could be charts or maps or whatever),
 data visual Elements (for lists, read-only forms, update forms),
 and Laravel-specific functionality (ideally full coverage of the entire Laravel capabilities).
 2. Detailed plugins for each individual type of database column, visual element, etc.
-3. Compile plugins for each of the detailed UI and detailed plugins and for each of the supported runtime technology stacks.
+3. Compile plugins for each supported run-time environment for each of the above plugins.
