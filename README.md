@@ -74,10 +74,10 @@ To give some idea of the likely scope,
 looking only at supporting the full range of Laravel functionality
 will require UI/Model/Compile functionality for the following "domains":
 
-* Database (Tables/Columns/Elements (Columns or JSON sub-columns)/Test Data/Validations compiled to Migrations/Models/Seeds/Factories/Data objects)
-* Lists
-* Views
-* 
+* Database (Tables/Columns/Elements (Columns or JSON sub-columns)/Test Data compiled to Migrations/Models/Seeds/Factories/Data objects)
+* Views (Lists/Forms/Menus/Routes/Middleware/Validations/CSS compiled to Routes/Controllers/Views/Blade Templates)
+* Other (Services/Broadcasting/Events/Queues/Files/RPC/I18N/Mail/Notifications/Queues/Schedules)
+* Settings/Defaults (for e.g. Validations, formatting etc.)
 
 ### Current Status
 
