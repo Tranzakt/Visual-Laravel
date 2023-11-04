@@ -70,6 +70,15 @@ Factories/seeds and functional/unit tests will also be compiled from the same de
 We anticipate providing additional facilities to aid with human testing such as user impersonation,
 performance diagnosis, logging etc.
 
+To give some idea of the likely scope,
+looking only at supporting the full range of Laravel functionality
+will require UI/Model/Compile functionality for the following "domains":
+
+* Database (Tables/Columns/Elements (Columns or JSON sub-columns)/Test Data/Validations compiled to Migrations/Models/Seeds/Factories/Data objects)
+* Lists
+* Views
+* 
+
 ### Current Status
 
 Visual Laravel is currently in very early development, with an initial target to define the development kernel and some basic 
@@ -124,3 +133,8 @@ data visual Elements (for lists, read-only forms, update forms),
 and Laravel-specific functionality (ideally full coverage of the entire Laravel capabilities).
 2. Detailed plugins for each individual type of database column, visual element, etc.
 3. Compile plugins for each supported run-time environment for each of the above plugins.
+
+To avoid developing Livewire components from scratch for the developer back-end, 
+we may choose to borrow some components (e.g. the schema diagram)
+from one of the frameworks listed in the long-term roadmap 
+for use in the front-end in the short-term. 
