@@ -69,7 +69,47 @@ At the time of writing v2 is announced and documented but not available.
 * [Dropdown](https://v1.wireui.dev/docs/dropdown) 
 * [Modal](https://v1.wireui.dev/docs/modal)
 
-## [Wire UI v2](https://v1.wireui.dev/docs/get-started)
+## [Wire UI v2](https://wireui.dev/getting-started)
 
+#### UI Components
+
+* [Alert](https://wireui.dev/components/alert) 
+* [Avatar](https://wireui.dev/components/avatar) 
+* [Badge](https://wireui.dev/components/badge) 
+* [Button](https://wireui.dev/components/button) 
+* [Card](https://wireui.dev/components/card) 
+* [Dropdown](https://wireui.dev/components/dropdown) 
+* [Icon](https://wireui.dev/components/icon) 
+* [Link](https://wireui.dev/components/link) 
+* [Modal](https://wireui.dev/components/modal) 
+* [Table - Livewire-Powergrid](https://wireui.devhttps://livewire-powergrid.com) 
+
+#### Form Components
+
+* [Checkbox](https://wireui.dev/components/checkbox) 
+* [Color Picker](https://wireui.dev/components/color-picker) 
+* [Currency](https://wireui.dev/components/currency) 
+* [Datetime Picker](https://wireui.dev/components/datetime-picker) 
+* [Errors](https://wireui.dev/components/errors) 
+* [Input](https://wireui.dev/components/input) 
+* [Maskable](https://wireui.dev/components/maskable) 
+* [Native Select](https://wireui.dev/components/native-select) 
+* [Number](https://wireui.dev/components/number) 
+* [Password](https://wireui.dev/components/password) 
+* [Phone](https://wireui.dev/components/phone) 
+* [Radio](https://wireui.dev/components/radio) 
+* [Select](https://wireui.dev/components/select) 
+* [Textarea](https://wireui.dev/components/textarea) 
+* [Time Picker](https://wireui.dev/components/time-picker) 
+* [Toggle](https://wireui.dev/components/toggle) 
+
+#### Actions
+
+* [Dialogs](https://wireui.dev/actions/dialogs) 
+* [Notifications](https://wireui.dev/actions/notifications) 
+
+#### Advanced
+
+* [Hooks](https://wireui.dev/advanced/hooks) 
 
 ## [Mary UI](https://mary-ui.com/)
