@@ -9,65 +9,68 @@ a package to use.
 
 ## [Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/getting-started)
 
-* [Text input](https://filamentphp.com/docs/3.x/forms/fields/text-input)
-* [Select](https://filamentphp.com/docs/3.x/forms/fields/select) 
+* [Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)  
 * [Checkbox](https://filamentphp.com/docs/3.x/forms/fields/checkbox)  
-* [Toggle](https://filamentphp.com/docs/3.x/forms/fields/toggle)  
 * [Checkbox list](https://filamentphp.com/docs/3.x/forms/fields/checkbox-list)  
-* [Radio](https://filamentphp.com/docs/3.x/forms/fields/radio)  
+* [Color picker](https://filamentphp.com/docs/3.x/forms/fields/color-picker)  
+* [Custom fields](https://filamentphp.com/docs/3.x/forms/fields/custom)  
 * [Date-time picker](https://filamentphp.com/docs/3.x/forms/fields/date-time-picker)  
 * [File upload](https://filamentphp.com/docs/3.x/forms/fields/file-upload)  
-* [Rich editor](https://filamentphp.com/docs/3.x/forms/fields/rich-editor)  
-* [Markdown editor](https://filamentphp.com/docs/3.x/forms/fields/markdown-editor)  
-* [Repeater](https://filamentphp.com/docs/3.x/forms/fields/repeater)  
-* [Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)  
-* [Tags input](https://filamentphp.com/docs/3.x/forms/fields/tags-input)  
-* [Textarea](https://filamentphp.com/docs/3.x/forms/fields/textarea)  
-* [Key-value](https://filamentphp.com/docs/3.x/forms/fields/key-value)  
-* [Color picker](https://filamentphp.com/docs/3.x/forms/fields/color-picker)  
 * [Hidden](https://filamentphp.com/docs/3.x/forms/fields/hidden)  
-* [Custom fields](https://filamentphp.com/docs/3.x/forms/fields/custom)  
+* [Key-value](https://filamentphp.com/docs/3.x/forms/fields/key-value)  
+* [Markdown editor](https://filamentphp.com/docs/3.x/forms/fields/markdown-editor)  
+* [Radio](https://filamentphp.com/docs/3.x/forms/fields/radio)  
+* [Repeater](https://filamentphp.com/docs/3.x/forms/fields/repeater)  
+* [Rich editor](https://filamentphp.com/docs/3.x/forms/fields/rich-editor)  
+* [Select](https://filamentphp.com/docs/3.x/forms/fields/select) 
+* [Tags input](https://filamentphp.com/docs/3.x/forms/fields/tags-input)  
+* [Text input](https://filamentphp.com/docs/3.x/forms/fields/text-input)
+* [Textarea](https://filamentphp.com/docs/3.x/forms/fields/textarea)  
+* [Toggle](https://filamentphp.com/docs/3.x/forms/fields/toggle)  
 
 ## [Wire UI v1](https://v1.wireui.dev/docs/get-started)
+
 At the time of writing v2 is announced and documented but not available.
 
 #### Form Components
-* [Inputs](https://v1.wireui.dev/docs/inputs)
-* [Password Input](https://v1.wireui.dev/docs/inputs-password)
-* [Number Input](https://v1.wireui.dev/docs/inputs-number)
-* [Textarea](https://v1.wireui.dev/docs/textarea)
-* [Native Select](https://v1.wireui.dev/docs/native-select)
-* [Select](https://v1.wireui.dev/docs/select)
-* [Color Picker](https://v1.wireui.dev/docs/color-picker)
-* [Errors(https://v1.wireui.dev/docs/errors)
-* [Cards(https://v1.wireui.dev/docs/cards)
+
 * [Buttons](https://v1.wireui.dev/docs/buttons)
-* [Toggle](https://v1.wireui.dev/docs/toggle)
+* [Cards](https://v1.wireui.dev/docs/cards)
 * [Checkbox](https://v1.wireui.dev/docs/checkbox)
+* [Color Picker](https://v1.wireui.dev/docs/color-picker)
+* [Errors](https://v1.wireui.dev/docs/errors)
+* [Inputs](https://v1.wireui.dev/docs/inputs)
+* [Native Select](https://v1.wireui.dev/docs/native-select)
+* [Number Input](https://v1.wireui.dev/docs/inputs-number)
+* [Password Input](https://v1.wireui.dev/docs/inputs-password)
 * [Radio](https://v1.wireui.dev/docs/radio)
-
-#### Table
-* [PowerGrid - Livewire-PowerGrid](https://github.com/Power-Components/livewire-powergrid) 
-
-#### Livewire components
-* [Usage](https://v1.wireui.dev/docs/livewire-usage)
-* [Maskable Inputs](https://v1.wireui.dev/docs/maskable-inputs)
-* [Currency Input](https://v1.wireui.dev/docs/currency-input)
-* [Datetime Picker](https://v1.wireui.dev/docs/datetime-picker)
-* [Time Picker](https://v1.wireui.dev/docs/time-picker)
-* [Phone Input](https://v1.wireui.dev/docs/phone-input)
-
-#### Actions
-* [Notifications](https://v1.wireui.dev/docs/notifications) 
-* [Dialogs](https://v1.wireui.dev/docs/dialogs)
-* [Hooks](https://v1.wireui.dev/docs/hooks)
+* [Select](https://v1.wireui.dev/docs/select)
+* [Textarea](https://v1.wireui.dev/docs/textarea)
+* [Toggle](https://v1.wireui.dev/docs/toggle)
 
 #### UI Components
-* [Icons - Hero Icons](https://v1.wireui.dev/docs/heroicons) 
-* [Badges](https://v1.wireui.dev/docs/badges) 
 * [Avatar](https://v1.wireui.dev/docs/avatar)
+* [Badges](https://v1.wireui.dev/docs/badges) 
 * [Dropdown](https://v1.wireui.dev/docs/dropdown) 
+* [Icon - Hero Icons](https://v1.wireui.dev/docs/heroicons) 
 * [Modal](https://v1.wireui.dev/docs/modal)
+* [Table - Livewire-PowerGrid](https://github.com/Power-Components/livewire-powergrid) 
+
+#### Livewire components
+* [Currency Input](https://v1.wireui.dev/docs/currency-input)
+* [Datetime Picker](https://v1.wireui.dev/docs/datetime-picker)
+* [Maskable Inputs](https://v1.wireui.dev/docs/maskable-inputs)
+* [Phone Input](https://v1.wireui.dev/docs/phone-input)
+* [Time Picker](https://v1.wireui.dev/docs/time-picker)
+* [Usage](https://v1.wireui.dev/docs/livewire-usage)
+
+#### Actions
+* [Dialogs](https://v1.wireui.dev/docs/dialogs)
+* [Notifications](https://v1.wireui.dev/docs/notifications) 
+
+#### Advanced
+
+* [Hooks](https://v1.wireui.dev/docs/hooks)
 
 ## [Wire UI v2](https://wireui.dev/getting-started)
 
@@ -82,7 +85,7 @@ At the time of writing v2 is announced and documented but not available.
 * [Icon](https://wireui.dev/components/icon) 
 * [Link](https://wireui.dev/components/link) 
 * [Modal](https://wireui.dev/components/modal) 
-* [Table - Livewire-Powergrid](https://wireui.devhttps://livewire-powergrid.com) 
+* [Table - Livewire-Powergrid](https://livewire-powergrid.com) 
 
 #### Form Components
 
