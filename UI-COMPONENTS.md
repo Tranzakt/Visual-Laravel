@@ -194,5 +194,8 @@ components written for Vue, Angular, React or Svelte
 (or ideally from a library designed to be cross-technology),
 and then create a Livewire version to run alongside.
 
-Or perhaps pick such a library and specifically create a Livewire
-clone of the entire library (which would be non-trivial).
+Or perhaps pick such a library and specifically create 
+a Livewire clone of the entire library. 
+Whilst this would be non-trivial, 
+it would set the project to be in a better position to deliver
+Livewire, Inertia/Vue, Inertia/React etc. compilation.
