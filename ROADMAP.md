@@ -134,3 +134,8 @@ But even here, there is still a lot of evaluation to do,
 however this is definitely best left to this phase because
 by this point a large proportion of the required components will be known from the 
 Livewire versions already implemented.
+
+Of the technologies in the above list, 
+Ant Design stands out because it has a cross technology graphics framework AntV
+which would likely be useful in the development back-end to create 
+e.g. an interactive Schema Diagram.
