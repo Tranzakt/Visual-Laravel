@@ -54,7 +54,7 @@ e.g.
 * [Vuesax](https://vuesax.com/) 
 * [VueTailwind](https://vuetailwind.com/) (note no-hyphen in URL), 
 * [VueTailwind](https://www.vue-tailwind.com/) (note URL is hyphenated), 
-* [Vuetify[(https://vuetifyjs.com/), 
+* [Vuetify](https://vuetifyjs.com/), 
 * etc.
 
 and it seems likely that React and some other technologies may have a similar breadth of compponents.
