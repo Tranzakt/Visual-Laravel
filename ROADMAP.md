@@ -1,3 +1,5 @@
+<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
+
 # The Visual-Laravel Roadmap
 
 ### The Short-term Roadmap
