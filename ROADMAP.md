@@ -41,12 +41,14 @@ The challenges for this phase of the project are perceived as follows:
 2. Keeping a tight limit on scope and not allowing it to creep or for development to digress into non-essential areas.
 3. Selecting the best core technologies to use,
    those which provide the greatest functionality whilst also enabling the greatest flexibility.
-4. The learning curve for the underlying technologies, and building the kernel / first plugin in each area.
+   In particular it is envisaged that a broad set of web / Livewire components will be needed,
+   growing significantly short- to middle- to long-term.
+5. The learning curve for the underlying technologies, and building the kernel / first plugin in each area.
    It is anticipated that once the first plugin of a type has been created,
    creating additional plugins of the same type should be a lot easier.
-5. Determining and documenting the internal design principles and concepts.
-6. Building the interactive Database Schema diagram.
-7. Building in flexibility that is not yet going to be used - or at least build it in a way that this can be added without requiring rewrite.
+6. Determining and documenting the internal design principles and concepts.
+7. Building the interactive Database Schema diagram.
+8. Building in flexibility that is not yet going to be used - or at least build it in a way that this can be added without requiring rewrite.
 
 
 ### The Medium-term Roadmap
@@ -85,59 +87,12 @@ The following list is only a guess at this stage as it is expected by this point
 scope and priorities will be driven by the community and by real-life needs rather than
 the current theoretical possibilities:
 
-1. Support for more front-end and CSS technologies (e.g. Svelte, Filament)
-2. Support for a broad range of Laravel, Livewire, Filament, Vue, Svelte etc. add-in packages
+1. If needed, support for more front-end and CSS technologies (e.g. React, Vue, Angular, Svelte)
+2. Support for a broad range of existing Laravel add-in packages
 3. Support for calls from other web technologies (e.g. Joomla, Wordpress) using API and with integrated security models
 4. Developer support for design methodologies
-   i.e. guided definition of Domain Driven Design to create domains populated at a high level,
-   and which can then be filled using the existing lower-level functionality.
+   i.e. guided definition of Domain Driven Design and Test Driven Design.
 5. App documentation functionality - use the definitions to create developer documentation in PDF form.
 6. A comprehensive documentation website, including AI translations for the most common languages
    and context-sensitive links from the development environment to the documentation website 
 7. A full range of translations for the development environment
-
-As an example of making the best - or at least a good - technical decision, let's look at a choice of UI design for the runtime front-end, 
-with the intention also to use it for the development environment.
-
-At this stage it is not clear whether supporting Livewire 
-(using lightweight AlpineJs under the covers)
-will be sufficient to work with all other front-end technologies 
-without needing directly and separately to support those technologies
-or whether these other technologies need VL to support them directly
-e.g. other parts of an existing web site are in InertiaJs/Vue or IntertiaJs/React
-or the VL is being called using an API from e.g. Joomla which is using something else. 
-
-But if we assume that we do need to support alternative front-end technologies, 
-then we know we are going to already have a reasonably large number of Livewire UI components, 
-and we will want similar/identical components supporting these other multiple front-end techologies 
-such as Angular, React, Svelte etc.,
-and multiple CSS frameworks like Tailwind, Bootstrap etc.,
-and so it would make sense to choose a UI framework which has 
-both the breadth of components
-and the breadth of technologies,
-but the number of potential choices is huge.
-VueJs for example has hundreds of individual components, 
-and several major component libraries 
-(Vuetify, PrimeVue, Nuxt/NuxtlabsUI, Quasar, BootstrapVue, VueTailwind, Vuesax etc.)
-but because these are built around Vue they cannot be used with e.g. React or Angular.
-
-But there are some frameworks that have been designed from the outset to be technology neutral:
-
-* [StencilJs](https://stenciljs.com/)
-* [Google's Material Design](https://mdbootstrap.com)
-* [IBM's Carbon Design](https://carbondesignsystem.com/)
-* [Material Components for Web](https://material-components.github.io/material-components-web-catalog/#/)
-* [Ant Design](https://ant.design/)
-* [AgnosticUI](https://www.agnosticui.com/)
-* [Graphite](https://graphitedesignsystem.com/)
-* [Svelte in Angular/Vue/React](https://phptuts.github.io/svelte-docs/webcomponents/)
-
-But even here, there is still a lot of evaluation to do, 
-however this is definitely best left to this phase because
-by this point a large proportion of the required components will be known from the 
-Livewire versions already implemented.
-
-Of the technologies in the above list, 
-Ant Design stands out because it has a cross technology graphics framework AntV
-which would likely be useful in the development back-end to create 
-e.g. an interactive Schema Diagram.
