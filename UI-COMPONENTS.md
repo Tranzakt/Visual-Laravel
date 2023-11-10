@@ -85,8 +85,8 @@ Fortunately a number of cross-technology component libraries are already availab
 
 * [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
 * [Material Design for Bootstrap](https://mdbootstrap.com): 49
-* [IBM's Carbon Design](https://carbondesignsystem.com/)
-* [Material Components for Web](https://material-components.github.io/material-components-web-catalog/#/)
+* [IBM's Carbon Design](https://carbondesignsystem.com/): 41 (web site broken, not a good sign)
+* [Material Components for Web](https://github.com/material-components/material-components-web): 51
 * [Ant Design](https://ant.design/)
 * [AgnosticUI](https://www.agnosticui.com/)
 * [Graphite](https://graphitedesignsystem.com/)
