@@ -24,6 +24,25 @@ then will Livewire work seamlessly with these other technologies,
 or will we need to support these other technologies and compile the Visual Laravel model
 to code that uses these other technologies natively.
 
+(In the research below we have not had the time to compare and contrast
+all the various component libraries, 
+however for a very high level comparison
+we have summarised the number of components in each library).
+
+## Using existing Livewire libraries
+
+At the time of writing we had identified the following 
+existing Livewire component libraries:
+
+* [Livewire](): 0?
+* [Jetstream](): ?
+* [Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/getting-started): 24
+(inc. 6 from a 3rd party -
+but there is a vibrant plugins library which provides many more though there may be technical and visual incompatibilities when using components from
+many different sources with varying degrees of support)
+* [Wire UI v2](https://wireui.dev/): c. 28
+* [Mary UI](https://mary-ui.com/): 30
+
 ## Porting non-Livewire libraries to Livewire
 
 The current research into Livewire components suggests that compared to other frameworks
@@ -44,17 +63,17 @@ research suggests that porting Vue components to Livewire is technically possibl
 and Vue (for example) has a large base of component libraries
 e.g. 
 
-* [BootstrapVue](https://bootstrap-vue.org/)
-* [Flowbite Vue 3](https://flowbite-vue.com/)
-* [Nuxt](https://nuxt.com/) 
+* [BootstrapVue](https://bootstrap-vue.org/): c. 50
+* [Flowbite Vue 3](https://flowbite-vue.com/): 34
+* [Nuxt](https://nuxt.com/); 0
 (which seems to be more about enhancing the overall Vue JS capabilities than components, and so may be less relevant to us)
-* [NuxtUI](https://ui.nuxt.com/) (requires Nuxt and so may to over complex for our needs)
-* [PrimeVue](https://primevue.org/)
-* [Quasar](https://quasar.dev/)
-* [Vuesax](https://vuesax.com/) 
-* [VueTailwind](https://vuetailwind.com/) (note no-hyphen in URL)
-* [VueTailwind](https://www.vue-tailwind.com/) (note URL is hyphenated)
-* [Vuetify](https://vuetifyjs.com/)
+* [NuxtUI](https://ui.nuxt.com/): 36 (requires Nuxt and so may to over complex for our needs)
+* [PrimeVue](https://primevue.org/): 123!
+* [Quasar](https://quasar.dev/): 102
+* [Vuesax](https://vuesax.com/): 17 
+* [VueTailwind](https://vuetailwind.com/): 45 (note no-hyphen in URL)
+* [VueTailwind](https://www.vue-tailwind.com/): 20 (note URL is hyphenated)
+* [Vuetify](https://vuetifyjs.com/): 71
 * etc.
 
 and it seems likely that React and some other technologies may have a similar breadth of compponents.
@@ -64,8 +83,8 @@ we would not want to have to port all the e.g. Vue->Livewire components over to 
 if we can avoid this by thinking ahead now.
 Fortunately a number of cross-technology component libraries are already available e.g.
 
-* [StencilJs](https://stenciljs.com/)
-* [Google's Material Design](https://mdbootstrap.com)
+* [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
+* [Material Design for Bootstrap](https://mdbootstrap.com): 49
 * [IBM's Carbon Design](https://carbondesignsystem.com/)
 * [Material Components for Web](https://material-components.github.io/material-components-web-catalog/#/)
 * [Ant Design](https://ant.design/)
@@ -106,6 +125,7 @@ Since components with the same name are likely to have some differences anyway
 and are likely not to be plug-and-play interchangeable with each other without some code changes,
 at the time of writing I am unclear why library authors do not namespace their components.
 
+# Appendix - Existing Livewire Components
 ## Existing Livewire libraries
 ### [Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/getting-started)
 
