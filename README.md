@@ -97,12 +97,16 @@ try to encourage the open source community to help build out the remaining funct
 There are both [short-term](./ROADMAP.md#the-short-term-roadmap), [medium-term](./ROADMAP.md#the-medium-term-roadmap) and [long-term](./ROADMAP.md#the-long-term-roadmap) road maps - 
 and obviously the short-term road-map is the current focus.
 
-We envisage having a single development technology stack (current thinking that it will be a Filament-based solution) 
-but supporting multiple runtime front-end stacks (initially just Filament, but later Livewire (native), Blade, Filament, Intertia/Vue, Inertia/Splade),
-multiple UI libraries (initially Tailwind, but later bootstrap etc.)
+We envisage having Git integration, so that saved versions can be committed to Git, 
+and then automation can be used to deploy releases into test, staging or production environments.
+
+We envisage having a single development technology stack (current thinking that it will be a Livewire-based solution) 
+but if needed supporting multiple runtime front-end stacks 
+(initially just Livewire, but later vanilla Blade, Intertia/Vue, Intertia/React, Inertia/Splade),
+multiple UI/CSS libraries (initially Tailwind, but later bootstrap etc.)
 and multiple front-end environments (initially only Laravel, but later through API calls from e.g. Joomla/Wordpress etc.).
 
-(Note: The purpose of supporting multiple environments is to facilitate co-existence with existing sites
+Note: The purpose of supporting multiple environments is to facilitate co-existence with existing sites
 by supporting the technology base already used by these sites.
 The difficulty with supporting multiple environments is needing to either: 
 
@@ -110,9 +114,6 @@ The difficulty with supporting multiple environments is needing to either:
 2. make the full power of each environment available where components exist and have gaps where they don't.
 
 At this early stage it remains to be determined which approach we will follow.
-
-We envisage having Git integration, so that saved versions can be committed to Git, 
-and then automation can be used to deploy releases into test, staging or production environments.
 
 Once the Laravel basics are in place, we can also start to take advantage of all the existing PHP/Laravel/Javascript package ecosystem, 
 building additional Visual Laravel plugins around these existing packages.
@@ -143,7 +144,5 @@ and Laravel-specific functionality (ideally full coverage of the entire Laravel 
 2. Detailed plugins for each individual type of database column, visual element, etc.
 3. Compile plugins for each supported run-time environment for each of the above plugins.
 
-To avoid developing Livewire components from scratch for the developer back-end, 
-we may choose to borrow some components (e.g. the schema diagram)
-from one of the frameworks listed in the long-term roadmap 
-for use in the front-end in the short-term. 
+The choice of web component libraries is a significant one, 
+and to assist the current research into choices has been [documented separately](./UI-COMPONENTS.md).
