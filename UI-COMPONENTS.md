@@ -64,7 +64,7 @@ and Vue (for example) has a large base of component libraries
 e.g. 
 
 * [BootstrapVue](https://bootstrap-vue.org/): c. 50
-* [Flowbite Vue 3](https://flowbite-vue.com/): 34
+* [Flowbite Vue 3](https://flowbite-vue.com/): 58
 * [Nuxt](https://nuxt.com/); 0
 (which seems to be more about enhancing the overall Vue JS capabilities than components, and so may be less relevant to us)
 * [NuxtUI](https://ui.nuxt.com/): 36 (requires Nuxt and so may to over complex for our needs)
@@ -83,15 +83,16 @@ we would not want to have to port all the e.g. Vue->Livewire components over to 
 if we can avoid this by thinking ahead now.
 Fortunately a number of cross-technology component libraries are already available e.g.
 
-* [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
-* [Material Design for Bootstrap](https://mdbootstrap.com): 49
-* [IBM's Carbon Design](https://carbondesignsystem.com/): 41 (web site broken, not a good sign)
-* [Material Components for Web](https://github.com/material-components/material-components-web): 51
+* [AgnosticUI](https://www.agnosticui.com/): 50
 * [Ant Design](https://ant.design/): 74,
   plus [AntV](https://antv.antgroup.com/en/) extensions for various forms of advanced graphical display
   (documentation often only in Simplified Chinese and sometime patchy - use Google Translate)
-* [AgnosticUI](https://www.agnosticui.com/): 50
 * [Graphite](https://graphitedesignsystem.com/): 11
+* [Headless UI](https://headlessui.com/): 10 (unstyled ready for TailwindCSS - so easy to theme)
+* [IBM's Carbon Design](https://carbondesignsystem.com/): 41 (web site broken, not a good sign)
+* [Material Components for Web](https://github.com/material-components/material-components-web): 51
+* [Material Design for Bootstrap](https://mdbootstrap.com): 49
+* [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
 * [Svelte in Angular/Vue/React](https://phptuts.github.io/svelte-docs/webcomponents/)
 
 Given the number and breadth of these libraries,
@@ -101,7 +102,8 @@ in order to confirm that such a conversion is technically feasible
 and reasonably easy.
 
 Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
-it is easy to use the same Svelte components in various frameworks,
+it is easy to use the same Svelte components in various frameworks.
+Svelte has a reputation for being the most performance JS framework,
 so perhaps some research into Svelte components libraries would be worthwhile.
 
 So the short-term plan is to review these cross-technology libraries for breadth of components,
