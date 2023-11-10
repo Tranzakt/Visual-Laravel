@@ -93,18 +93,16 @@ Fortunately a number of cross-technology component libraries are already availab
 * [Material Components for Web](https://github.com/material-components/material-components-web): 51
 * [Material Design for Bootstrap](https://mdbootstrap.com): 49
 * [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
-* [Svelte in Angular/Vue/React](https://phptuts.github.io/svelte-docs/webcomponents/)
+* Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
+it is easy to use the same Svelte components in various frameworks.
+Svelte has a reputation for being the most performance JS framework,
+so perhaps some research into Svelte components libraries would be worthwhile.
 
 Given the number and breadth of these libraries,
 a reasonably comprehensive evaluation will be quite time consuming,
 especially if we need to prototype the conversion to Livewire
 in order to confirm that such a conversion is technically feasible
 and reasonably easy.
-
-Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
-it is easy to use the same Svelte components in various frameworks.
-Svelte has a reputation for being the most performance JS framework,
-so perhaps some research into Svelte components libraries would be worthwhile.
 
 So the short-term plan is to review these cross-technology libraries for breadth of components,
 and compare it to the few existing Livewire component libraries,
