@@ -1,3 +1,12 @@
+<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
+
+<p align="center">
+<a href="https://github.com/Tranzakt/Visual-Laravel/actions"><img src="https://github.com/Tranzakt/Visual-Laravel/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/Tranzakt/Visual-Laravel"><img src="https://img.shields.io/packagist/dt/Tranzakt/Visual-Laravel" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/Tranzakt/Visual-Laravel"><img src="https://img.shields.io/packagist/v/Tranzakt/Visual-Laravel" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/Tranzakt/Visual-Laravel"><img src="https://img.shields.io/packagist/l/Tranzakt/Visual-Laravel" alt="License"></a>
+</p>
+
 # Visual-Laravel (VL)
 Visual Laravel is a web-based, no-code/low-code Laravel development environment.
 
