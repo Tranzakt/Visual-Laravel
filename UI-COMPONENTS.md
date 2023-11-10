@@ -43,6 +43,21 @@ many different sources with varying degrees of support)
 * [Wire UI v2](https://wireui.dev/): c. 28
 * [Mary UI](https://mary-ui.com/): 30
 
+We should note that at the time of writing this design note,
+the existing Livewire component libraries do not use
+a library-specific namespace,
+and so it is likely that there will be namespace clashes between
+e.g. Livewire or Filament etc.
+and whatever package we choose,
+more so if we find we need to use existing Livewire components
+from more than one library.
+
+**Note to library writers:** 
+Your component library needs to coexist nicely with other libraries.
+Since components with the same name are likely to have some differences anyway
+and are likely not to be plug-and-play interchangeable with each other without some code changes,
+at the time of writing I am unclear why library authors do not namespace their components.
+
 ## Porting non-Livewire libraries to Livewire
 
 The current research into Livewire components suggests that compared to other frameworks
@@ -55,7 +70,8 @@ and we will want these components to be visually consistent
 We also will want our components to support:
 * I18n (definitely)
 * Accessibility (almost certainly)
-* TailwindCSS (maybe)
+* Theming (so a user can theme their VL app to fit the rest of their site),
+  and this probably means headless / TailwindCSS ready.
 
 On obvious potential source for components is Vue;
 research suggests that porting Vue components to Livewire is technically possible
@@ -110,20 +126,11 @@ to see whether the existing libraries will meet our needs or
 whether we need to select a more general library and convert it to Livewire
 (contributing the Livewire library back to the community as we go).
 
-We should not that at the time of writing this design note,
-the existing Livewire component libraries do not use
-a library-specific namespace,
-and so it is likely that there will be namespace clashes between
-e.g. Livewire or Filament etc.
-and whatever package we choose,
-more so if we find we need to use existing Livewire components
-from more than one library.
-
-**Note to library writers:** 
-Your component library needs to coexist nicely with other libraries.
-Since components with the same name are likely to have some differences anyway
-and are likely not to be plug-and-play interchangeable with each other without some code changes,
-at the time of writing I am unclear why library authors do not namespace their components.
+However a first, gut, reaction is that it is likely that none of the above is goingt to meet our needs long-term,
+and so perhaps we should start with using WireUI v2 (which is TailwindCSS ready) 
+and (over the course of time) (shamelessly) plagiarise any suitable component library for components we need,
+reworking them to be themeable, translateable, accessible, and (if necessary multi-technology).
+This might mean starting them as pure Livewire, and then using Svelte to make them more easily ported.
 
 # Appendix - Existing Livewire Components
 ## Existing Livewire libraries
