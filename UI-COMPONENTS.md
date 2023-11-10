@@ -44,17 +44,17 @@ research suggests that porting Vue components to Livewire is technically possibl
 and Vue (for example) has a large base of component libraries
 e.g. 
 
-* [BootstrapVue](https://bootstrap-vue.org/), 
-* [Flowbite Vue 3](https://flowbite-vue.com/),
+* [BootstrapVue](https://bootstrap-vue.org/)
+* [Flowbite Vue 3](https://flowbite-vue.com/)
 * [Nuxt](https://nuxt.com/) 
-(which seems to be more about enhancing the overall Vue JS capabilities than components, and so may be less relevant to us),
-* [NuxtUI](https://ui.nuxt.com/) (requires Nuxt and so may to over complex for our needs), 
-* [PrimeVue](https://primevue.org/), 
-* [Quasar](https://quasar.dev/), 
+(which seems to be more about enhancing the overall Vue JS capabilities than components, and so may be less relevant to us)
+* [NuxtUI](https://ui.nuxt.com/) (requires Nuxt and so may to over complex for our needs)
+* [PrimeVue](https://primevue.org/)
+* [Quasar](https://quasar.dev/)
 * [Vuesax](https://vuesax.com/) 
-* [VueTailwind](https://vuetailwind.com/) (note no-hyphen in URL), 
-* [VueTailwind](https://www.vue-tailwind.com/) (note URL is hyphenated), 
-* [Vuetify](https://vuetifyjs.com/), 
+* [VueTailwind](https://vuetailwind.com/) (note no-hyphen in URL)
+* [VueTailwind](https://www.vue-tailwind.com/) (note URL is hyphenated)
+* [Vuetify](https://vuetifyjs.com/)
 * etc.
 
 and it seems likely that React and some other technologies may have a similar breadth of compponents.
