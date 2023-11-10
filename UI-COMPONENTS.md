@@ -50,7 +50,7 @@ there are relatively few components available (see below),
 and it seems pretty likely that we will need to look to other frameworks (like Vue or React)
 to provide components that can be ported over to Livewire,
 and we will want these components to be visually consistent
-(which is most likely when they are part of a substantial existing framework).
+(which is most likely when they are part************ of a substantial existing framework).
 
 We also will want our components to support:
 * I18n (definitely)
@@ -87,9 +87,11 @@ Fortunately a number of cross-technology component libraries are already availab
 * [Material Design for Bootstrap](https://mdbootstrap.com): 49
 * [IBM's Carbon Design](https://carbondesignsystem.com/): 41 (web site broken, not a good sign)
 * [Material Components for Web](https://github.com/material-components/material-components-web): 51
-* [Ant Design](https://ant.design/)
-* [AgnosticUI](https://www.agnosticui.com/)
-* [Graphite](https://graphitedesignsystem.com/)
+* [Ant Design](https://ant.design/): 74,
+  plus [AntV](https://antv.antgroup.com/en/) extensions for various forms of advanced graphical display
+  (documentation often only in Simplified Chinese and sometime patchy - use Google Translate)
+* [AgnosticUI](https://www.agnosticui.com/): 50
+* [Graphite](https://graphitedesignsystem.com/): 11
 * [Svelte in Angular/Vue/React](https://phptuts.github.io/svelte-docs/webcomponents/)
 
 Given the number and breadth of these libraries,
@@ -98,11 +100,9 @@ especially if we need to prototype the conversion to Livewire
 in order to confirm that such a conversion is technically feasible
 and reasonably easy.
 
-However from a brief look, 
-of the technologies listed above 
-Ant Design stands out because it has a cross technology graphics framework AntV
-which would likely be useful in the development back-end to create 
-e.g. an interactive Schema Diagram.
+Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
+it is easy to use the same Svelte components in various frameworks,
+so perhaps some research into Svelte components libraries would be worthwhile.
 
 So the short-term plan is to review these cross-technology libraries for breadth of components,
 and compare it to the few existing Livewire component libraries,
