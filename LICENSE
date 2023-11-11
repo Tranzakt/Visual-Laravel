@@ -78,7 +78,7 @@ The following additional terms are formally added to the AFFERO GENERAL PUBLIC L
 as allowed under Section 7 of the standard Affero GPL below:
 
 1.  When redistributing the licensed materials, licensees are required to preserve
-    and redistribute all legal notices legal notices and author attributions such as
+    and redistribute all legal notices and author attributions such as
     this license, contribution terms etc.
 
 2.  When redistributing the licensed materials, licensees are prohibited from misrepresenting
