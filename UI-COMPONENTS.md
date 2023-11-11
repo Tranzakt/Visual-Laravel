@@ -139,9 +139,9 @@ and so perhaps we should start with using WireUI v2 (which is TailwindCSS ready)
 and (over the course of time) (shamelessly) plagiarise any suitable component library for components we need,
 reworking them to be Livewire, themeable, translateable and accessible.
 
-# Appendix - Existing Livewire Components
-## Existing Livewire libraries
-### [Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/getting-started)
+# Appendix - Existing Livewire libraries
+
+## [Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/getting-started)
 
 * [Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)  
 * [Checkbox](https://filamentphp.com/docs/3.x/forms/fields/checkbox)  
@@ -165,7 +165,7 @@ reworking them to be Livewire, themeable, translateable and accessible.
 In addition to the above provided with Filament itself, 
 there are one or more Filament plugins that provide similar functionality:
 
-#### [Filament Components plugin](https://filamentphp.com/plugins/ralphjsmit-components)
+### [Filament Components plugin](https://filamentphp.com/plugins/ralphjsmit-components)
 
 * Sidebar
 * Timestamps
@@ -174,7 +174,7 @@ there are one or more Filament plugins that provide similar functionality:
 * DeletedAt
 * Timestamp
 
-### [Wire UI v1](https://v1.wireui.dev/docs/get-started)
+## [Wire UI v1](https://v1.wireui.dev/docs/get-started)
 
 At the time of writing v2 is announced and documented but not available.
 
@@ -218,7 +218,7 @@ At the time of writing v2 is announced and documented but not available.
 
 * [Hooks](https://v1.wireui.dev/docs/hooks)
 
-### [Wire UI v2](https://wireui.dev/getting-started)
+## [Wire UI v2](https://wireui.dev/getting-started)
 
 This v2 list appears to be backwardly compatible with v1, 
 with the addition of `alert` and `link` components.
@@ -264,7 +264,7 @@ with the addition of `alert` and `link` components.
 
 * [Hooks](https://wireui.dev/advanced/hooks) 
 
-### [Mary UI](https://mary-ui.com/)
+## [Mary UI](https://mary-ui.com/)
 
 At the time of writing Mary was still a very new library 
 (literally only a week or so since full release).
