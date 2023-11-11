@@ -29,6 +29,27 @@ all the various component libraries,
 however for a very high level comparison
 we have summarised the number of components in each library).
 
+## High-level Requirements
+
+Leaving aside the wide-variety of different components themselves,
+here are a few additional requirements:
+
+* Theming - they should be "headless" in the sense that they have no styling applied,
+  and styling should be possible using themes (that apply consistently to all components)
+  rather than requiring individual detailed styling.
+
+  VL should probably provide a few standard "themes" such as Material Design,
+  light / dark / high contrast, and these should be immutable.
+  VL should also allow users to define new themes or extend existing ones
+  (as deltas so that changes in new VL versions will be applied to extended themes).  
+
+* I18n - all text strings in components should be translateable,
+  all dates, numbers and currencies should be expressable in locally correct ways.
+
+* Accessible - all components should be suitable for screen readers etc. for the blind,
+  and (if not automatically supported by the underlying browser/operating system)
+  should support keyboard enhancements etc. 
+
 ## Using existing Livewire libraries
 
 At the time of writing we had identified the following 
@@ -66,13 +87,7 @@ there are relatively few components available (see below),
 and it seems pretty likely that we will need to look to other frameworks (like Vue or React)
 to provide components that can be ported over to Livewire,
 and we will want these components to be visually consistent
-(which is most likely when they are part************ of a substantial existing framework).
-
-We also will want our components to support:
-* I18n (definitely)
-* Accessibility (almost certainly)
-* Theming (so a user can theme their VL app to fit the rest of their site),
-  and this probably means headless / TailwindCSS ready.
+(which is most likely when they are part of a substantial existing framework).
 
 On obvious potential source for components is Vue;
 research suggests that porting Vue components to Livewire is technically possible
@@ -139,7 +154,7 @@ to see whether the existing libraries will meet our needs or
 whether we need to select a more general library and convert it to Livewire
 (contributing the Livewire library back to the community as we go).
 
-However a first, gut, reaction is that it is likely that none of the above is goingt to meet our needs long-term,
+However a first, gut, reaction is that it is likely that none of the above is going to meet our needs long-term,
 and so perhaps we should start with using WireUI v2 (which is TailwindCSS ready) 
 and (over the course of time) (shamelessly) plagiarise any suitable component library for components we need,
 reworking them to be Livewire, themeable, translateable and accessible.
