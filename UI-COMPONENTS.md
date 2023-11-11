@@ -41,6 +41,7 @@ existing Livewire component libraries:
 but there is a vibrant plugins library which provides many more though there may be technical and visual incompatibilities when using components from
 many different sources with varying degrees of support)
 * [Wire UI v2](https://wireui.dev/): c. 28
+* [DaisyUI](https://daisyui.com/): 53
 * [Mary UI](https://mary-ui.com/): 30
 
 We should note that at the time of writing this design note,
@@ -92,9 +93,11 @@ e.g.
 * [Vuetify](https://vuetifyjs.com/): 71
 * etc.
 
-and it seems likely that React and some other technologies may have a similar breadth of compponents.
+and it seems likely that React and some other technologies may have a similar breadth of compponents e.g.
 
 * React - [Mantine](https://mantine.dev/): 100+ and a partial "port" to Svelte [SvelteUI](https://www.svelteui.org/): 40+
+* Svelte - [Attractions](https://illright.github.io/attractions/): 49
+* Svelte - [Skeleton](https://www.skeleton.dev/): ? - Interesting because it supports Tailwind and theming.
 
 However, in the future event that we need to directly support these other technologies,
 we would not want to have to port all the e.g. Vue->Livewire components over to these other frameworks
