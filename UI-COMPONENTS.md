@@ -109,10 +109,18 @@ Fortunately a number of cross-technology component libraries are already availab
 * [Material Components for Web](https://github.com/material-components/material-components-web): 51
 * [Material Design for Bootstrap](https://mdbootstrap.com): 49
 * [StencilJs](https://stenciljs.com/) (more of a cross-framework compiler than a component library)
-* Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
+
+Alternatively, according to [some Svelte documentation](https://phptuts.github.io/svelte-docs/webcomponents/)
 it is easy to use the same Svelte components in various frameworks.
 Svelte has a reputation for being the most performance JS framework,
 so perhaps some research into Svelte components libraries would be worthwhile.
+That said, Svelte gets its performance by compiling into native JS
+without use of a runtime library shadow-DOM, 
+and Livewire will still require use of AlpineJs to handle the Livewire linkage regardless,
+whilst already using native JS for any component JS code and 
+needing any links to other native Livewire components to link through Alpine,
+so I am unconvinced that there would be any benefit to this. 
+(but if at a later date it turns out to be beneficial then I guess we can switch over).
 
 Given the number and breadth of these libraries,
 a reasonably comprehensive evaluation will be quite time consuming,
@@ -120,7 +128,7 @@ especially if we need to prototype the conversion to Livewire
 in order to confirm that such a conversion is technically feasible
 and reasonably easy.
 
-So the short-term plan is to review these cross-technology libraries for breadth of components,
+One possible short-term plan is to review these cross-technology libraries for breadth of components,
 and compare it to the few existing Livewire component libraries,
 to see whether the existing libraries will meet our needs or
 whether we need to select a more general library and convert it to Livewire
@@ -129,8 +137,7 @@ whether we need to select a more general library and convert it to Livewire
 However a first, gut, reaction is that it is likely that none of the above is goingt to meet our needs long-term,
 and so perhaps we should start with using WireUI v2 (which is TailwindCSS ready) 
 and (over the course of time) (shamelessly) plagiarise any suitable component library for components we need,
-reworking them to be themeable, translateable, accessible, and (if necessary multi-technology).
-This might mean starting them as pure Livewire, and then using Svelte to make them more easily ported.
+reworking them to be Livewire, themeable, translateable and accessible.
 
 # Appendix - Existing Livewire Components
 ## Existing Livewire libraries
