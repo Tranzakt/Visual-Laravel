@@ -82,12 +82,17 @@ as allowed under Section 7 of the standard Affero GPL below:
     this license, contribution terms etc.
 
 2.  When redistributing the licensed materials, licensees are prohibited from misrepresenting
-    the origin of the material. This means that the original name and original source 
-    and original copyright information must be prominantly displayed in the code,
-    in the runtime user interface, and in any separate documentation, publicity, marketing
-    materials etc. and these must be given the same prominance (position, font size and type etc.)
-    as any new name, additional source and additional copyright information. 
+    the origin of the material. This means that:
 
+    A) if the material contains any changes from the original materials, it **MUST NOT** 
+    be redistributed representing itself as the original materials i.e. it must be 
+    renamed and reattributed; ***AND***
+
+    B) the original name and original source and original copyright information 
+    must be prominantly displayed in the code, in the runtime user interface, and in any 
+    separate documentation, publicity, marketing materials etc. and these must be given 
+    the same prominance (position, font size and type etc.) as any new name, 
+    additional source and additional copyright information. 
     The copyright owners explicitly decline to allow the use of trade names, trademarks or service
     marks for modified versions of the software, documentation, publicity, marketing materials etc.
     except as just defined.
