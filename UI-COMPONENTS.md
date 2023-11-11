@@ -155,8 +155,8 @@ whether we need to select a more general library and convert it to Livewire
 (contributing the Livewire library back to the community as we go).
 
 However a first, gut, reaction is that it is likely that none of the above is going to meet our needs long-term,
-and so perhaps we should start with using WireUI v2 (which is TailwindCSS ready) 
-and (over the course of time) (shamelessly) plagiarise any suitable component library for components we need,
+and so perhaps we should start with using WireUI v2 / DaisyUI or MaryUI (all of which are TailwindCSS ready) 
+and, (over the course of time), (shamelessly) plagiarise any suitable component library for components we need,
 reworking them to be Livewire, themeable, translateable and accessible.
 
 # Appendix - Existing Livewire libraries
