@@ -94,6 +94,8 @@ e.g.
 
 and it seems likely that React and some other technologies may have a similar breadth of compponents.
 
+* React - [Mantine](https://mantine.dev/): 100+ and a partial "port" to Svelte [SvelteUI](https://www.svelteui.org/): 40+
+
 However, in the future event that we need to directly support these other technologies,
 we would not want to have to port all the e.g. Vue->Livewire components over to these other frameworks
 if we can avoid this by thinking ahead now.
