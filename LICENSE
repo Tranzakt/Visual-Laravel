@@ -82,19 +82,25 @@ as allowed under Section 7 of the standard Affero GPL below:
     this license, contribution terms etc.
 
 2.  When redistributing the licensed materials, licensees are prohibited from misrepresenting
-    the origin of the material. This means that the original name and original source 
-    and original copyright information must be prominantly displayed in the code,
-    in the runtime user interface, and in any separate documentation, publicity, marketing
-    materials etc. and these must be given the same prominance (position, font size and type etc.)
-    as any new name, additional source and additional copyright information. 
+    the origin of the material. This means that:
+
+    A) if the material contains any changes from the original materials, it MUST NOT 
+    be redistributed representing itself as the original materials i.e. it must be 
+    renamed and reattributed; AND
+
+    B) the original name and original source and original copyright information 
+    must be prominantly displayed in the code, in the runtime user interface, and in any 
+    separate documentation, publicity, marketing materials etc. and these must be given 
+    the same prominance (position, font size and type etc.) as any new name, 
+    additional source and additional copyright information. 
 
     The copyright owners explicitly decline to allow the use of trade names, trademarks or service
     marks for modified versions of the software, documentation, publicity, marketing materials etc.
     except as just defined.
 
-    The purpose of this term is to ensure that modified versions of the software are
-    clearly distinguishable to licensees from the original versions, but also to
-    ensure that the original provinance and copyright ownership is also clear.
+    The purpose of this term is to ensure that modified versions of the software
+    are clearly distinguishable to licensees from the original versions, 
+    and also to ensure that the original provinance and copyright ownership is equally clear.
 
 3.  When redistributing the licensed materials, licensees are required to redistribute the.
     materials as a copy of the original version provided by the Tranzakt project, 
@@ -109,12 +115,12 @@ as allowed under Section 7 of the standard Affero GPL below:
        to be included into the base code, and avoid fragmentation of the community.
 
 4.  Any redistribution of the source, whether modified or not, requires the redistributor
-    to explicitly indemnify the licensors and authors of this material for any liability
+    explicitly to indemnify the licensors and authors of this material for any liability
     that these redistributions might directly impose on those licensors and authors.
 
     To avoid doubt, this applies only in the case that the licensee directly redistributes
-    the materials, and not to situations where the licensee directs others to obtain a copy
-    directly from the primary source.
+    the materials, whether changed or not, and not to situations where the licensee directs 
+    others to obtain a copy directly from the primary source.
 
     The purpose of this term is two-fold:
     
