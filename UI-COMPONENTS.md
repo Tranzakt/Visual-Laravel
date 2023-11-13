@@ -108,7 +108,19 @@ e.g.
 * [Vuetify](https://vuetifyjs.com/): 71
 * etc.
 
-and it seems likely that React and some other technologies may have a similar breadth of compponents e.g.
+Another obvious potential source for components is the Tailwind ecosystem:
+* [Flowbite](https://flowbite.com/#components): 60+ or [Flowbite Blocks](https://flowbite.com/blocks/): 330
+  (also [Flowbite Laravel](https://flowbite.com/docs/getting-started/laravel/)
+  that provides Laravel support but not Livewire which would need to be developed)
+* [TailGrids](https://tailgrids.com/components]: 500+
+* [TailwindUI](https://tailwindui.com/) from Tailwind themselves: 500+
+* [Tailwind Components](https://tailwindcomponents.com/) a community library: 1000+
+
+Tailwind components are going to be headless and reasonably themeable, 
+and with this quantity available, they probably represent a great starting point, 
+but they are **not** Livewire capable and so would need modifying.
+
+It seems likely that React and some other technologies may have a similar breadth of compponents e.g.
 
 * React - [Mantine](https://mantine.dev/): 100+ and a partial "port" to Svelte [SvelteUI](https://www.svelteui.org/): 40+
 * Svelte - [Attractions](https://illright.github.io/attractions/): 49
@@ -157,6 +169,7 @@ whether we need to select a more general library and convert it to Livewire
 However a first, gut, reaction is that it is likely that none of the above is going to meet our needs long-term,
 and so perhaps we should start with using WireUI v2 / DaisyUI or MaryUI (all of which are TailwindCSS ready) 
 and, (over the course of time), (shamelessly) plagiarise any suitable component library for components we need,
+perhaps focusing on the Tailwind Component libraries due to headlessness and native JS, 
 reworking them to be Livewire, themeable, translateable and accessible.
 
 # Appendix - Existing Livewire libraries
