@@ -2,16 +2,19 @@
 
 # The Visual-Laravel Roadmap
 
+This file provides an overview of the short-, medium-, and long-term goals for the Visual Laravel project.
+
 ### The Short-term Roadmap
 
 The Visual Laravel project is, at the time of writing, a gleam in the eye and a design that exists only in the mind of the primary developer.
 
 As an entire project, the envisaged Visual Laravel has a huge scope, 
 covering the extensive functionality of Laravel itself,
-and including support for a variety of different front-end technologies,
-covering the breadth of functionality of the Laravel ecosystem,
-and with interfaces to allow it to be included from other web technologies 
-via API calls.
+and including support (if needed) for a variety of different front-end technologies,
+covering the breadth of functionality of the Laravel Package and web component ecosystems,
+and with interfaces to allow the runtime generated HTML to be provided to other web technologies 
+(i.e. other CMS such as Joomla, Wordpress, Drupal etc.)
+via remote API calls.
 
 This scope is way too large to be delivered by a single developer, 
 and needs to be a collaborative delivery by a community of open-source enthusiasts.
@@ -36,10 +39,16 @@ and which can be used to recruit a team of contributors who can help fill out th
 The challenges for this phase of the project are perceived as follows:
 
 1. Building a flexible kernel that will (ideally) not be subject to wholesale rewrite at a later stage.
-   As can be seen from the various roadmaps, we are looking to support a wide range of target environments,
+   The kernel is intended to provide all the plumbing and coordination of a range of plugins,
+   with the plugins themselves providing the specific functionality for their limited scope i.e.
+   registering themselves with the kernel, providing the kernel with details of their options,
+   and generating the PHP code required at compile time.
+   As can be seen from the various roadmaps,
+   we are also looking to support a wide range of target environments,
    and building a kernel that can enable this degree of support may be a challenge.
-2. Keeping a tight limit on scope and not allowing it to creep or for development to digress into non-essential areas.
-3. Selecting the best core technologies to use,
+3. Keeping a tight limit on scope and not allowing it to creep or for development to digress into non-essential areas.
+   Similarly keeping a focus on delivering a basic PoC without bells and whistles is seen as essential for this first phase.
+4. Selecting the best core technologies to use,
    those which provide the greatest functionality whilst also enabling the greatest flexibility.
    In particular it is envisaged that a broad set of web / Livewire components will be needed,
    growing significantly short- to middle- to long-term.
@@ -49,7 +58,6 @@ The challenges for this phase of the project are perceived as follows:
 6. Determining and documenting the internal design principles and concepts.
 7. Building the interactive Database Schema diagram.
 8. Building in flexibility that is not yet going to be used - or at least build it in a way that this can be added without requiring rewrite.
-
 
 ### The Medium-term Roadmap
 
