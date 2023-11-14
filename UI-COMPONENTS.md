@@ -112,7 +112,7 @@ Another obvious potential source for components is the Tailwind ecosystem:
 * [Flowbite](https://flowbite.com/#components): 60+ or [Flowbite Blocks](https://flowbite.com/blocks/): 330
   (also [Flowbite Laravel](https://flowbite.com/docs/getting-started/laravel/)
   that provides Laravel support but not Livewire which would need to be developed)
-* [TailGrids](https://tailgrids.com/components]: 500+
+* [TailGrids](https://tailgrids.com/components): 500+
 * [TailwindUI](https://tailwindui.com/) from Tailwind themselves: 500+
 * [Tailwind Components](https://tailwindcomponents.com/) a community library: 1000+
 
