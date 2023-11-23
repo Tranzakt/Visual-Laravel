@@ -1,0 +1,5 @@
+CREATE USER IF NOT EXISTS 'phpmyadmin'
+    IDENTIFIED WITH mysql_native_password BY 'pma@password' PASSWORD EXPIRE NEVER;
+
+CREATE DATABASE
+    IF NOT EXISTS pma_db DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;

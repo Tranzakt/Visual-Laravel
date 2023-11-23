@@ -1,0 +1,61 @@
+{
+    "name": "visual-laravel",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "dev",
+    "workspaceFolder": "/var/www/html/Visual-Laravel",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "latest"
+        },
+        "ghcr.io/michidk/devcontainers-features/bun:1": {}
+        // "ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {}
+        // "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
+    },
+    "forwardPorts": [
+        // Apache
+        "dev:80",
+        // Vite
+        "dev:5173",
+        "postgres:5432",
+        "pgadmin:5050",
+        "mariadb:3306",
+        "mysql:3307",
+        "adminer:8282",
+        "phpmyadmin:8383",
+        "redis:6379",
+        "memcached:11211",
+        "meilisearch:7700",
+        "minio:9000",
+        "minio:8900",
+        "mailpit:1025",
+        "mailpit:8025",
+        "soketi:6001",
+        "soketi:9601",
+        "rabbitmq:5672",
+        "rabbitmq:15672",
+        "mongodb:27017",
+        "mongoexpress:8081"
+    ],
+    // List VSCode extensions to be loaded into the remote VSCode server
+    // Only list priority extensions here needed for effective use of VSCode for this project.
+    // User can always add further extensions manually
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "DEVSENSE.composer-php-vscode",
+                "walkme.PHP-extension-pack",
+                "onecentlin.laravel-extension-pack",
+                "adrolli.tallui-laravel-livewire-tailwind",
+                "entexa.tall-stack",
+                "arifbudimanar.better-laravel-extension-pack",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {}
+        }
+    }
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

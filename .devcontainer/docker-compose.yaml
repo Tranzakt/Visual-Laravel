@@ -1,0 +1,294 @@
+name: visual-laravel
+
+services:
+  # Uncomment the php version you want to use here - currently all use Apache
+  dev:
+    container_name: visual-laravel-dev
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - ..:/var/www/html/Visual-Laravel
+      - ./config/apache/sites-enabled:/etc/apache2/sites-enabled:ro
+      - ./config/php/8.1/php.ini:/etc/php/8.1/cli/conf.d/99-visual-laravel.ini:ro
+      - ./config/php/8.2/php.ini:/etc/php/8.2/cli/conf.d/99-visual-laravel.ini:ro
+      - ./config/php/8.3/php.ini:/etc/php/8.3/cli/conf.d/99-visual-laravel.ini:ro
+    stdin_open: true
+    # command: /bin/sh -c "service apache2 start && sleep infinity"
+    command: /bin/sh -c "service apache2 start && while sleep 1000; do :; done"
+    ports:
+      # Apache defined on 8080 access on localhost:80
+      - 80:8080
+      # Vite
+      - 5173:5173
+
+  postgres:
+    container_name: visual-laravel-postgres
+    image: postgres
+    restart: on-failure:5
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: visual-laravel
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - '-q'
+        - '-d'
+        - 'postgres'
+        - '-U'
+        - 'postgres'
+      retries: 3
+      timeout: 5s
+      interval: 2m
+
+  mariadb:
+    container_name: visual-laravel-mariadb
+    image: mariadb
+    restart: on-failure:5
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./config/phpmyadmin/10-initialise-pma-database-mariadb.sql:/docker-entrypoint-initdb.d/10-initialise-pma-database-mariadb.sql:ro
+      - ./config/phpmyadmin/20-initialise-pma-tables.sql:/docker-entrypoint-initdb.d/20-initialise-pma-tables.sql:ro
+    environment:
+      MARIADB_ROOT_HOST: localhost
+      MARIADB_ROOT_PASSWORD: mariadb
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+      MARIADB_DATABASE: visual-laravel
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - '-pmariadb'
+      retries: 3
+      timeout: 5s
+      interval: 2m
+
+  mysql:
+    container_name: visual-laravel-mysql
+    image: mysql
+    restart: on-failure:5
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./config/phpmyadmin/10-initialise-pma-database-mysql.sql:/docker-entrypoint-initdb.d/10-initialise-pma-database-mysql.sql:ro
+      - ./config/phpmyadmin/20-initialise-pma-tables.sql:/docker-entrypoint-initdb.d/20-initialise-pma-tables.sql:ro
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_TCP_PORT: 3307
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: visual-laravel
+    ports:
+      - "3307:3307"
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - '-pmysql'
+      retries: 3
+      timeout: 5s
+      interval: 2m
+
+  adminer:
+    container_name: visual-laravel-adminer
+    image: adminer
+    restart: on-failure:5
+    volumes:
+      - ./config/adminer/adminer-login-servers.php:/var/www/html/plugins-enabled/adminer-login-servers.php:ro
+      - ./config/adminer/plugins/AdminerLoginServers.php:/var/www/html/plugins/AdminerLoginServers.php:ro
+    environment:
+      ADMINER_DESIGN: pepa-linha
+      ADMINER_PLUGINS: 'dump-date edit-calendar edit-foreign edit-textarea enum-option enum-types json-column struct-comments tables-filter'
+    ports:
+      - "8282:8282"
+    command:
+      - 'php'
+      - '-S'
+      - '[::]:8282'
+      - '-t'
+      - '/var/www/html'
+
+  pgadmin:
+    container_name: visual-laravel-pgadmin
+    image: dpage/pgadmin4
+    restart: on-failure:5
+    volumes:
+      - pgadmin-config:/var/lib/pgadmin
+      - ./config/pgadmin/visual-laravel-servers.json:/pgadmin4/visual-laravel-servers.json:ro
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pg@pg.com
+      PGADMIN_DEFAULT_PASSWORD: pg@pg.com
+      PGADMIN_DISABLE_POSTFIX: 1
+      PGADMIN_LISTEN_PORT: 5050
+      PGADMIN_SERVER_JSON_FILE: /pgadmin4/visual-laravel-servers.json
+    ports:
+      - "5050:5050"
+
+  phpmyadmin:
+    container_name: visual-laravel-phpmyadmin
+    image: phpmyadmin
+    restart: on-failure:5
+    volumes:
+      - phpmyadmin-sessions:/sessions
+      - ./config/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:ro
+      - ./config/phpmyadmin/themes/blueberry:/var/www/html/themes/blueberry:ro
+    environment:
+      HIDE_PHP_VERSION: 1
+    ports:
+      - 8383:80
+
+  redis:
+    container_name: visual-laravel-redis
+    image: redis:7
+    restart: on-failure:5
+    volumes:
+      - 'redis-data:/data'
+    ports:
+      - "6379:6379"
+
+  memcached:
+    container_name: visual-laravel-memcached
+    image: memcached:alpine
+    restart: on-failure:5
+    ports:
+      - "11211:11211"
+
+  meilisearch:
+    container_name: visual-laravel-meilisearch
+    image: getmeili/meilisearch
+    restart: on-failure:5
+    volumes:
+      - 'meilisearch-data:/meili_data'
+    ports:
+      - "7700:7700"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--spider'
+        - 'http://localhost:7700/health'
+      retries: 3
+      timeout: 5s
+      interval: 2m
+
+  minio:
+    container_name: visual-laravel-minio
+    image: minio/minio
+    restart: on-failure:5
+    volumes:
+      - 'minio-data:/data/minio'
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - '9000:9000'
+      - '8900:8900'
+    command: 'minio server /data/minio --console-address ":8900"'
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - 'http://localhost:9000/minio/health/live'
+      retries: 3
+      timeout: 5s
+      interval: 2m
+
+  mailpit:
+    container_name: visual-laravel-mailpit
+    image: axllent/mailpit
+    restart: on-failure:5
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  selenium:
+    container_name: visual-laravel-selenium
+    image: selenium/standalone-chrome
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    restart: on-failure:5
+
+  soketi:
+    container_name: visual-laravel-soketi
+    image: quay.io/soketi/soketi:latest-16-alpine
+    restart: on-failure:5
+    environment:
+      SOKETI_METRICS_SERVER_PORT: '9601'
+      SOKETI_DEFAULT_APP_ID: app-id
+      SOKETI_DEFAULT_APP_KEY: app-key
+      SOKETI_DEFAULT_APP_SECRET: app-secret
+    ports:
+      - '6001:6001'
+      - '9601:9601'
+
+  rabbitmq:
+    container_name: visual-laravel-rabbitmq
+    image: rabbitmq:3-management-alpine
+    restart: on-failure:5
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  mongodb:
+    container_name: visual-laravel-mongodb
+    image: mongo
+    restart: on-failure:5
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb
+      MONGO_INITDB_ROOT_PASSWORD: mongodb
+      MONGO_INITDB_DATABASE: visual-laravel
+    ports:
+      - "27017:27017"
+
+  mongoexpress:
+    container_name: visual-laravel-mongoexpress
+    image: mongo-express
+    restart: on-failure:5
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: mongodb
+      ME_CONFIG_BASICAUTH_PASSWORD: mongodb
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: mongodb
+      ME_CONFIG_MONGODB_ADMINPASSWORD: mongodb
+      ME_CONFIG_OPTIONS_EDITORTHEME: abcdef
+    ports:
+      - "8081:8081"
+
+volumes:
+  postgres-data:
+  mariadb-data:
+  mysql-data:
+  pgadmin-config:
+  phpmyadmin-sessions:
+  redis-data:
+  meilisearch-data:
+  minio-data:
+  rabbitmq-data:
+  mongodb-data:
+
+
+networks:
+  default:
+    name: visual-laravel
