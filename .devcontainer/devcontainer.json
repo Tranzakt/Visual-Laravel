@@ -43,14 +43,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "DEVSENSE.composer-php-vscode",
-                "walkme.PHP-extension-pack",
-                "onecentlin.laravel-extension-pack",
-                "adrolli.tallui-laravel-livewire-tailwind",
-                "entexa.tall-stack",
-                "arifbudimanar.better-laravel-extension-pack",
-                "ms-azuretools.vscode-docker"
-            ],
+			],
             "settings": {}
         }
     }
