@@ -81,14 +81,35 @@ but they can be manually installed (in WSL??) using `apt-get`.
 
 - SqliteBrowser (an executable Sqlite database manager)
 
-Note: For performance reasons, the `src\vendor` directory is ***NOT*** mapped into the Dev container,
-but instead uses a native docker volume,
-so the contents of the vendor directory on your local environment
-and that in the docker environment are different.
+#### Dev container performance
+
+The vast majority of files in a working Laravel installation
+are files pulled in by Composer or NPM and stored in
+seperate directories (like `vendor` or `node_modules`),
+or are temporary files created by Laravel (e.g. in `storage`).
+These files are NOT developer files, and are not stored in Git.
+With the primary VL repo stored on your PC,
+when you want to run either batch jobs (like Composer or NPM Run Build)
+or (perhaps more importantly) run Apache/PHP to run the VL app,
+the overhead of fetching large numbers of these files is very significant
+and makes things substantially slower.
+
+So, for performance reasons, the Tranzakt team has taken the decision
+that the `src/vendor` and `src/node_module` directories
+are ***NOT*** mapped into the Dev container,
+and instead native docker volumes (which are 100s of times faster)
+are mapped over these directories.
+**This means that the contents of these two directories will differ between
+your local environment and the docker environment.**
 This should not be a problem in practice since
-the `vendor` directory contains only downloaded files
-that are used by the IDE, composer and apache,
-and is not stored in Git.
+these directories contain only internet sourced files
+that are used only by the IDE Intellisense, Composer/NPM and Apache,
+are not stored in Git and can be easily recreated by Composer and NPM.
+
+In theory, the `src/storage` directory (or the `src/storage/framework` subdirectory)
+is also potentially a candidate for a docker volume, however these do not have the
+same volume of reads and writes as the other two and so (for the moment at least)
+these have been left mapped back into the local environment.
 
 ### Service Containers
 
@@ -99,14 +120,19 @@ to be run in a self-contained development and test environment.
 This is **NOT** a fork of Laravel Sail,
 but rather an independently created alternative,
 however by intent it should provide a superset of Laravel Sail
-(potentially re-implementing the `Sail` command for use outside
-Visual Code).
+container services.
+We have not currently re-implemented the `Sail` command as we believe
+that most people will run such things inside VSCode and inside the Dev container,
+however in the future re-implementing the `Sail` command
+for use outside Visual Code is a possibility.
 
-It is intended that this same environment will
-be used by GitHub actions in order to support Github testing.
-In the future we can also potentially use this as the basis for
-a standalone environment for single-user VL environments
-for users to develop VL applications.
+Because these service containers are copies of already existing Docker images,
+it will be easy to use these same images in e.g. Github automated test actions,
+and we intend to ensure that local testing remains 100% compatible with Github actions.
+
+It is also possible that this same environment could potentially be
+be used as a very simple and easy way for single-person VL users
+to run VL locally to create apps for deployment to production infrastructure.
 
 | Svc/Domain   | Port(s)   | Userid=Pwd | Description                                                                                     |
 | ------------ | --------- | ---------- | ----------------------------------------------------------------------------------------------- |
