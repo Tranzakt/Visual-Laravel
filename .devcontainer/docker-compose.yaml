@@ -9,6 +9,8 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ..:/var/www/html/Visual-Laravel
+      - composer-cache:/var/www/html/Visual-Laravel/src/vendor
+      - node-cache:/var/www/html/Visual-Laravel/src/node_modules
       - ./config/apache/sites-enabled:/etc/apache2/sites-enabled:ro
       - ./config/php/8.1/php.ini:/etc/php/8.1/cli/conf.d/99-visual-laravel.ini:ro
       - ./config/php/8.2/php.ini:/etc/php/8.2/cli/conf.d/99-visual-laravel.ini:ro
@@ -286,7 +288,11 @@ volumes:
   meilisearch-data:
   minio-data:
   rabbitmq-data:
-  mongodb-data:
+  mongodb-data: # Dev container performance improvements
+
+  composer-cache:
+  node-cache:
+
 
 networks:
   default:
