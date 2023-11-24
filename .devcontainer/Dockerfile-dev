@@ -1,3 +1,4 @@
+# https://mcr.microsoft.com/en-us/product/devcontainers/php/about
 FROM mcr.microsoft.com/devcontainers/php:8.2-apache-bookworm
 
 LABEL maintainer="Visual Laravel (c) Tranzakt Project @ Github"

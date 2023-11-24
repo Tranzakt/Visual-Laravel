@@ -24,7 +24,7 @@ services:
 
   postgres:
     container_name: visual-laravel-postgres
-    image: postgres
+    image: postgres # https://hub.docker.com/_/postgres
     restart: on-failure:5
     volumes:
       - postgres-data:/var/lib/postgresql/data/pgdata
@@ -40,18 +40,18 @@ services:
       test:
         - CMD
         - pg_isready
-        - '-q'
-        - '-d'
-        - 'postgres'
-        - '-U'
-        - 'postgres'
+        - "-q"
+        - "-d"
+        - "postgres"
+        - "-U"
+        - "postgres"
       retries: 3
       timeout: 5s
       interval: 2m
 
   mariadb:
     container_name: visual-laravel-mariadb
-    image: mariadb
+    image: mariadb # https://hub.docker.com/_/mariadb
     restart: on-failure:5
     volumes:
       - mariadb-data:/var/lib/mysql
@@ -70,14 +70,14 @@ services:
         - CMD
         - mysqladmin
         - ping
-        - '-pmariadb'
+        - "-pmariadb"
       retries: 3
       timeout: 5s
       interval: 2m
 
   mysql:
     container_name: visual-laravel-mysql
-    image: mysql
+    image: mysql # https://hub.docker.com/_/mysql
     restart: on-failure:5
     volumes:
       - mysql-data:/var/lib/mysql
@@ -96,33 +96,33 @@ services:
         - CMD
         - mysqladmin
         - ping
-        - '-pmysql'
+        - "-pmysql"
       retries: 3
       timeout: 5s
       interval: 2m
 
   adminer:
     container_name: visual-laravel-adminer
-    image: adminer
+    image: adminer # https://hub.docker.com/_/adminer
     restart: on-failure:5
     volumes:
       - ./config/adminer/adminer-login-servers.php:/var/www/html/plugins-enabled/adminer-login-servers.php:ro
       - ./config/adminer/plugins/AdminerLoginServers.php:/var/www/html/plugins/AdminerLoginServers.php:ro
     environment:
       ADMINER_DESIGN: pepa-linha
-      ADMINER_PLUGINS: 'dump-date edit-calendar edit-foreign edit-textarea enum-option enum-types json-column struct-comments tables-filter'
+      ADMINER_PLUGINS: "dump-date edit-calendar edit-foreign edit-textarea enum-option enum-types json-column struct-comments tables-filter"
     ports:
       - "8282:8282"
     command:
-      - 'php'
-      - '-S'
-      - '[::]:8282'
-      - '-t'
-      - '/var/www/html'
+      - "php"
+      - "-S"
+      - "[::]:8282"
+      - "-t"
+      - "/var/www/html"
 
   pgadmin:
     container_name: visual-laravel-pgadmin
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4 # https://hub.docker.com/r/dpage/pgadmin4 https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
     restart: on-failure:5
     volumes:
       - pgadmin-config:/var/lib/pgadmin
@@ -138,7 +138,7 @@ services:
 
   phpmyadmin:
     container_name: visual-laravel-phpmyadmin
-    image: phpmyadmin
+    image: phpmyadmin # https://hub.docker.com/_/phpmyadmin
     restart: on-failure:5
     volumes:
       - phpmyadmin-sessions:/sessions
@@ -151,65 +151,65 @@ services:
 
   redis:
     container_name: visual-laravel-redis
-    image: redis:7
+    image: redis:7 # https://hub.docker.com/_/redis
     restart: on-failure:5
     volumes:
-      - 'redis-data:/data'
+      - "redis-data:/data"
     ports:
       - "6379:6379"
 
   memcached:
     container_name: visual-laravel-memcached
-    image: memcached:alpine
+    image: memcached:alpine # https://hub.docker.com/_/memcached
     restart: on-failure:5
     ports:
       - "11211:11211"
 
   meilisearch:
     container_name: visual-laravel-meilisearch
-    image: getmeili/meilisearch
+    image: getmeili/meilisearch # https://hub.docker.com/r/getmeili/meilisearch https://www.meilisearch.com/docs/learn/cookbooks/docker
     restart: on-failure:5
     volumes:
-      - 'meilisearch-data:/meili_data'
+      - "meilisearch-data:/meili_data"
     ports:
       - "7700:7700"
     healthcheck:
       test:
         - CMD
         - wget
-        - '--no-verbose'
-        - '--spider'
-        - 'http://localhost:7700/health'
+        - "--no-verbose"
+        - "--spider"
+        - "http://localhost:7700/health"
       retries: 3
       timeout: 5s
       interval: 2m
 
   minio:
     container_name: visual-laravel-minio
-    image: minio/minio
+    image: minio/minio # https://hub.docker.com/r/minio/minio
     restart: on-failure:5
     volumes:
-      - 'minio-data:/data/minio'
+      - "minio-data:/data/minio"
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
     ports:
-      - '9000:9000'
-      - '8900:8900'
+      - "9000:9000"
+      - "8900:8900"
     command: 'minio server /data/minio --console-address ":8900"'
     healthcheck:
       test:
         - CMD
         - curl
-        - '-f'
-        - 'http://localhost:9000/minio/health/live'
+        - "-f"
+        - "http://localhost:9000/minio/health/live"
       retries: 3
       timeout: 5s
       interval: 2m
 
   mailpit:
     container_name: visual-laravel-mailpit
-    image: axllent/mailpit
+    image: axllent/mailpit # https://hub.docker.com/r/axllent/mailpit
     restart: on-failure:5
     ports:
       - "1025:1025"
@@ -217,27 +217,27 @@ services:
 
   selenium:
     container_name: visual-laravel-selenium
-    image: selenium/standalone-chrome
+    image: selenium/standalone-chrome # https://hub.docker.com/r/selenium/standalone-chrome
     extra_hosts:
-      - 'host.docker.internal:host-gateway'
+      - "host.docker.internal:host-gateway"
     restart: on-failure:5
 
   soketi:
     container_name: visual-laravel-soketi
-    image: quay.io/soketi/soketi:latest-16-alpine
+    image: quay.io/soketi/soketi:latest-16-alpine # https://docs.soketi.app/getting-started/installation/docker
     restart: on-failure:5
     environment:
-      SOKETI_METRICS_SERVER_PORT: '9601'
+      SOKETI_METRICS_SERVER_PORT: "9601"
       SOKETI_DEFAULT_APP_ID: app-id
       SOKETI_DEFAULT_APP_KEY: app-key
       SOKETI_DEFAULT_APP_SECRET: app-secret
     ports:
-      - '6001:6001'
-      - '9601:9601'
+      - "6001:6001"
+      - "9601:9601"
 
   rabbitmq:
     container_name: visual-laravel-rabbitmq
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:3-management-alpine # https://hub.docker.com/_/rabbitmq
     restart: on-failure:5
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
@@ -250,7 +250,7 @@ services:
 
   mongodb:
     container_name: visual-laravel-mongodb
-    image: mongo
+    image: mongo # https://hub.docker.com/_/mongo
     restart: on-failure:5
     volumes:
       - mongodb-data:/data/db
@@ -263,7 +263,7 @@ services:
 
   mongoexpress:
     container_name: visual-laravel-mongoexpress
-    image: mongo-express
+    image: mongo-express # https://hub.docker.com/_/mongoexpress
     restart: on-failure:5
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: mongodb
@@ -287,7 +287,6 @@ volumes:
   minio-data:
   rabbitmq-data:
   mongodb-data:
-
 
 networks:
   default:
