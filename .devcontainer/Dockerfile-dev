@@ -16,6 +16,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions memcached-^3@stable && \
     install-php-extensions redis-^6@stable && \
     install-php-extensions mongodb-^1@stable && \
+    apt-get install -y sqlitebrowser && \
     apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ### TODO

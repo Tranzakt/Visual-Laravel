@@ -75,6 +75,7 @@ and they will not be generated or run.
 - Apache
 - SQLITE
 - Node/NPM/Bun
+- SqliteBrowser (an executable Sqlite database manager)
 
 ### Service Containers
 
