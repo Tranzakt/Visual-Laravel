@@ -58,7 +58,7 @@ to run against the code-base.
 The service containers hold copies of all the services
 that Laravel calls remotely
 (like SQL/NoSql/Queue databases, search engines, database administratior tools etc.).
-These microservice containers are typically  
+These microservice containers are typically
 unaltered copies of pre-generated base images,
 and so take very little time to build.
 
@@ -75,7 +75,20 @@ and they will not be generated or run.
 - Apache
 - SQLITE
 - Node/NPM/Bun
+
+We have not yet worked out how to add the following packages as part of the dev container build
+but they can be manually installed (in WSL??) using `apt-get`.
+
 - SqliteBrowser (an executable Sqlite database manager)
+
+Note: For performance reasons, the `src\vendor` directory is ***NOT*** mapped into the Dev container,
+but instead uses a native docker volume,
+so the contents of the vendor directory on your local environment
+and that in the docker environment are different.
+This should not be a problem in practice since
+the `vendor` directory contains only downloaded files
+that are used by the IDE, composer and apache,
+and is not stored in Git.
 
 ### Service Containers
 
