@@ -3,11 +3,16 @@ FROM mcr.microsoft.com/devcontainers/php:8.2-apache-bookworm
 
 LABEL maintainer="Visual Laravel (c) Tranzakt Project @ Github"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-# Install MariaDB client
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+# 1. Enable Apache mod_rewrite
+# 2. Install MariaDB and Postgres command-line clients
+# 3. Configure php extensions for Postgres, MySQL, Memcached, Redis and mongo
+RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load && \
+    chmod +x /usr/local/bin/install-php-extensions && \
+    apt-get update &&  \
     apt-get install -y mariadb-client && \
     apt-get install -y postgresql-client && \
     apt-get install -y libpq-dev && \
@@ -16,9 +21,4 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions memcached-^3@stable && \
     install-php-extensions redis-^6@stable && \
     install-php-extensions mongodb-^1@stable && \
-    apt-get install -y sqlitebrowser && \
     apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-### TODO
-# Configure Apache to point to the workspace directory and serve the public directory
-# Test everything
