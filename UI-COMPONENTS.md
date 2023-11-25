@@ -1,10 +1,11 @@
 # UI Components
 
-A critical design choice for Visual Laravel 
-is the choice of Livewire UI components 
+A critical design choice for Visual Laravel
+is the choice of Livewire UI components
 for both the development and runtime environments.
 
 At this early stage the plan is:
+
 1. For the development environment to be based on Laravel Livewire;
 2. The the initial runtime environment to be based only on Livewire.
 
@@ -12,20 +13,20 @@ Both of these environments will need a wide variety of (open-source) Livewire co
 and this web page gives the current state of research into how to provide these.
 
 At this stage it is not clear what the runtime requirements will be long-term,
-i.e. whether supporting Livewire 
+i.e. whether supporting Livewire
 (using lightweight AlpineJs under the covers)
-will be sufficient to work alongside all other front-end technologies 
+will be sufficient to work alongside all other front-end technologies
 without needing directly and separately to support those technologies
 or whether these other technologies will need VL to support them directly.
-In other words, 
+In other words,
 if other parts of an existing web site are in InertiaJs/Vue or IntertiaJs/React
 or the VL is being called using an API from e.g. Joomla which is using something else,
-then will Livewire work seamlessly with these other technologies, 
+then will Livewire work seamlessly with these other technologies,
 or will we need to support these other technologies and compile the Visual Laravel model
 to code that uses these other technologies natively.
 
 (In the research below we have not had the time to compare and contrast
-all the various component libraries, 
+all the various component libraries,
 however for a very high level comparison
 we have summarised the number of components in each library).
 
@@ -48,11 +49,11 @@ here are a few additional requirements:
 
 * Accessible - all components should be suitable for screen readers etc. for the blind,
   and (if not automatically supported by the underlying browser/operating system)
-  should support keyboard enhancements etc. 
+  should support keyboard enhancements etc.
 
 ## Using existing Livewire libraries
 
-At the time of writing we had identified the following 
+At the time of writing we had identified the following
 existing Livewire component libraries:
 
 * [Livewire](): 0?
@@ -64,6 +65,7 @@ many different sources with varying degrees of support)
 * [Wire UI v2](https://wireui.dev/): c. 28
 * [DaisyUI](https://daisyui.com/): 53
 * [Mary UI](https://mary-ui.com/): 30
+* New library from Caleb not yet announced (but given that his AlpineJS library is commercial, this is likely to be too)
 
 We should note that at the time of writing this design note,
 the existing Livewire component libraries do not use
@@ -74,7 +76,7 @@ and whatever package we choose,
 more so if we find we need to use existing Livewire components
 from more than one library.
 
-**Note to library writers:** 
+**Note to library writers:**
 Your component library needs to coexist nicely with other libraries.
 Since components with the same name are likely to have some differences anyway
 and are likely not to be plug-and-play interchangeable with each other without some code changes,
@@ -93,7 +95,7 @@ On obvious potential source for components is Vue;
 research suggests that porting Vue components to Livewire is technically possible
 (see Google, but for one (easy) example see [DevDojo](https://devdojo.com/episode/converting-vue-into-livewire),
 and Vue (for example) has a large base of component libraries
-e.g. 
+e.g.
 
 * [BootstrapVue](https://bootstrap-vue.org/): c. 50
 * [Flowbite Vue 3](https://flowbite-vue.com/): 58
@@ -102,13 +104,14 @@ e.g.
 * [NuxtUI](https://ui.nuxt.com/): 36 (requires Nuxt and so may to over complex for our needs)
 * [PrimeVue](https://primevue.org/): 123!
 * [Quasar](https://quasar.dev/): 102
-* [Vuesax](https://vuesax.com/): 17 
+* [Vuesax](https://vuesax.com/): 17
 * [VueTailwind](https://vuetailwind.com/): 45 (note no-hyphen in URL)
 * [VueTailwind](https://www.vue-tailwind.com/): 20 (note URL is hyphenated)
 * [Vuetify](https://vuetifyjs.com/): 71
 * etc.
 
 Another obvious potential source for components is the Tailwind ecosystem:
+
 * [Flowbite](https://flowbite.com/#components): 60+ or [Flowbite Blocks](https://flowbite.com/blocks/): 330
   (also [Flowbite Laravel](https://flowbite.com/docs/getting-started/laravel/)
   that provides Laravel support but not Livewire which would need to be developed)
@@ -116,8 +119,8 @@ Another obvious potential source for components is the Tailwind ecosystem:
 * [TailwindUI](https://tailwindui.com/) from Tailwind themselves: 500+
 * [Tailwind Components](https://tailwindcomponents.com/) a community library: 1000+
 
-Tailwind components are going to be headless and reasonably themeable, 
-and with this quantity available, they probably represent a great starting point, 
+Tailwind components are going to be headless and reasonably themeable,
+and with this quantity available, they probably represent a great starting point,
 but they are **not** Livewire capable and so would need modifying.
 
 It seems likely that React and some other technologies may have a similar breadth of compponents e.g.
@@ -147,12 +150,31 @@ it is easy to use the same Svelte components in various frameworks.
 Svelte has a reputation for being the most performance JS framework,
 so perhaps some research into Svelte components libraries would be worthwhile.
 That said, Svelte gets its performance by compiling into native JS
-without use of a runtime library shadow-DOM, 
+without use of a runtime library shadow-DOM,
 and Livewire will still require use of AlpineJs to handle the Livewire linkage regardless,
-whilst already using native JS for any component JS code and 
+whilst already using native JS for any component JS code and
 needing any links to other native Livewire components to link through Alpine,
-so I am unconvinced that there would be any benefit to this. 
+so I am unconvinced that there would be any benefit to this.
 (but if at a later date it turns out to be beneficial then I guess we can switch over).
+
+Another alternative is to base our approach on [Web Components](https://www.webcomponents.org/)
+which are platform independent.
+AFAIK, there are currently no major web component libraries,
+nor any web component integration with Livewire,
+both of which are major downsides -
+however the upside is that they will likely be more usable across various target environments,
+and are likely to have greater technical longevity than other technologies
+(though I would hope that the flexible architecture we are developing would easily enable
+a migration of LV developed applications at a later date).
+Native Web Components can also be supported by [frameworks](https://www.webcomponents.org/libraries)
+that can provide some orchestration and state-management across multiple components on a page,
+though of these perhaps only two are of interest:
+
+* [StencilJS](https://stenciljs.com/) designed specifically to support
+  [design systems](https://stenciljs.com/docs/design-systems) and
+  development of component libraries
+
+* [Slim.js](https://slimjs.com/#/welcome)
 
 Given the number and breadth of these libraries,
 a reasonably comprehensive evaluation will be quite time consuming,
@@ -167,9 +189,9 @@ whether we need to select a more general library and convert it to Livewire
 (contributing the Livewire library back to the community as we go).
 
 However a first, gut, reaction is that it is likely that none of the above is going to meet our needs long-term,
-and so perhaps we should start with using WireUI v2 / DaisyUI or MaryUI (all of which are TailwindCSS ready) 
+and so perhaps we should start with using WireUI v2 / DaisyUI or MaryUI (all of which are TailwindCSS ready)
 and, (over the course of time), (shamelessly) plagiarise any suitable component library for components we need,
-perhaps focusing on the Tailwind Component libraries due to headlessness and native JS, 
+perhaps focusing on the Tailwind Component libraries due to headlessness and native JS,
 reworking them to be Livewire, themeable, translateable and accessible.
 
 # Appendix - Existing Livewire libraries
@@ -189,13 +211,13 @@ reworking them to be Livewire, themeable, translateable and accessible.
 * [Radio](https://filamentphp.com/docs/3.x/forms/fields/radio)  
 * [Repeater](https://filamentphp.com/docs/3.x/forms/fields/repeater)  
 * [Rich editor](https://filamentphp.com/docs/3.x/forms/fields/rich-editor)  
-* [Select](https://filamentphp.com/docs/3.x/forms/fields/select) 
+* [Select](https://filamentphp.com/docs/3.x/forms/fields/select)
 * [Tags input](https://filamentphp.com/docs/3.x/forms/fields/tags-input)  
 * [Text input](https://filamentphp.com/docs/3.x/forms/fields/text-input)
 * [Textarea](https://filamentphp.com/docs/3.x/forms/fields/textarea)  
 * [Toggle](https://filamentphp.com/docs/3.x/forms/fields/toggle)  
 
-In addition to the above provided with Filament itself, 
+In addition to the above provided with Filament itself,
 there are one or more Filament plugins that provide similar functionality:
 
 ### [Filament Components plugin](https://filamentphp.com/plugins/ralphjsmit-components)
@@ -228,14 +250,16 @@ At the time of writing v2 is announced and documented but not available.
 * [Toggle](https://v1.wireui.dev/docs/toggle)
 
 #### UI Components
+
 * [Avatar](https://v1.wireui.dev/docs/avatar)
-* [Badges](https://v1.wireui.dev/docs/badges) 
-* [Dropdown](https://v1.wireui.dev/docs/dropdown) 
-* [Icon - Hero Icons](https://v1.wireui.dev/docs/heroicons) 
+* [Badges](https://v1.wireui.dev/docs/badges)
+* [Dropdown](https://v1.wireui.dev/docs/dropdown)
+* [Icon - Hero Icons](https://v1.wireui.dev/docs/heroicons)
 * [Modal](https://v1.wireui.dev/docs/modal)
-* [Table - Livewire-PowerGrid](https://github.com/Power-Components/livewire-powergrid) 
+* [Table - Livewire-PowerGrid](https://github.com/Power-Components/livewire-powergrid)
 
 #### Livewire components
+
 * [Currency Input](https://v1.wireui.dev/docs/currency-input)
 * [Datetime Picker](https://v1.wireui.dev/docs/datetime-picker)
 * [Maskable Inputs](https://v1.wireui.dev/docs/maskable-inputs)
@@ -244,8 +268,9 @@ At the time of writing v2 is announced and documented but not available.
 * [Usage](https://v1.wireui.dev/docs/livewire-usage)
 
 #### Actions
+
 * [Dialogs](https://v1.wireui.dev/docs/dialogs)
-* [Notifications](https://v1.wireui.dev/docs/notifications) 
+* [Notifications](https://v1.wireui.dev/docs/notifications)
 
 #### Advanced
 
@@ -253,53 +278,53 @@ At the time of writing v2 is announced and documented but not available.
 
 ## [Wire UI v2](https://wireui.dev/getting-started)
 
-This v2 list appears to be backwardly compatible with v1, 
+This v2 list appears to be backwardly compatible with v1,
 with the addition of `alert` and `link` components.
 
 #### UI Components
 
-* [Alert](https://wireui.dev/components/alert) 
-* [Avatar](https://wireui.dev/components/avatar) 
-* [Badge](https://wireui.dev/components/badge) 
-* [Button](https://wireui.dev/components/button) 
-* [Card](https://wireui.dev/components/card) 
-* [Dropdown](https://wireui.dev/components/dropdown) 
-* [Icon](https://wireui.dev/components/icon) 
-* [Link](https://wireui.dev/components/link) 
-* [Modal](https://wireui.dev/components/modal) 
-* [Table - Livewire-Powergrid](https://livewire-powergrid.com) 
+* [Alert](https://wireui.dev/components/alert)
+* [Avatar](https://wireui.dev/components/avatar)
+* [Badge](https://wireui.dev/components/badge)
+* [Button](https://wireui.dev/components/button)
+* [Card](https://wireui.dev/components/card)
+* [Dropdown](https://wireui.dev/components/dropdown)
+* [Icon](https://wireui.dev/components/icon)
+* [Link](https://wireui.dev/components/link)
+* [Modal](https://wireui.dev/components/modal)
+* [Table - Livewire-Powergrid](https://livewire-powergrid.com)
 
 #### Form Components
 
-* [Checkbox](https://wireui.dev/components/checkbox) 
-* [Color Picker](https://wireui.dev/components/color-picker) 
-* [Currency](https://wireui.dev/components/currency) 
-* [Datetime Picker](https://wireui.dev/components/datetime-picker) 
-* [Errors](https://wireui.dev/components/errors) 
-* [Input](https://wireui.dev/components/input) 
-* [Maskable](https://wireui.dev/components/maskable) 
-* [Native Select](https://wireui.dev/components/native-select) 
-* [Number](https://wireui.dev/components/number) 
-* [Password](https://wireui.dev/components/password) 
-* [Phone](https://wireui.dev/components/phone) 
-* [Radio](https://wireui.dev/components/radio) 
-* [Select](https://wireui.dev/components/select) 
-* [Textarea](https://wireui.dev/components/textarea) 
-* [Time Picker](https://wireui.dev/components/time-picker) 
-* [Toggle](https://wireui.dev/components/toggle) 
+* [Checkbox](https://wireui.dev/components/checkbox)
+* [Color Picker](https://wireui.dev/components/color-picker)
+* [Currency](https://wireui.dev/components/currency)
+* [Datetime Picker](https://wireui.dev/components/datetime-picker)
+* [Errors](https://wireui.dev/components/errors)
+* [Input](https://wireui.dev/components/input)
+* [Maskable](https://wireui.dev/components/maskable)
+* [Native Select](https://wireui.dev/components/native-select)
+* [Number](https://wireui.dev/components/number)
+* [Password](https://wireui.dev/components/password)
+* [Phone](https://wireui.dev/components/phone)
+* [Radio](https://wireui.dev/components/radio)
+* [Select](https://wireui.dev/components/select)
+* [Textarea](https://wireui.dev/components/textarea)
+* [Time Picker](https://wireui.dev/components/time-picker)
+* [Toggle](https://wireui.dev/components/toggle)
 
 #### Actions
 
-* [Dialogs](https://wireui.dev/actions/dialogs) 
-* [Notifications](https://wireui.dev/actions/notifications) 
+* [Dialogs](https://wireui.dev/actions/dialogs)
+* [Notifications](https://wireui.dev/actions/notifications)
 
 #### Advanced
 
-* [Hooks](https://wireui.dev/advanced/hooks) 
+* [Hooks](https://wireui.dev/advanced/hooks)
 
 ## [Mary UI](https://mary-ui.com/)
 
-At the time of writing Mary was still a very new library 
+At the time of writing Mary was still a very new library
 (literally only a week or so since full release).
 [We were able to persuade the author to add name-space support](https://github.com/robsontenorio/mary/issues/110)
 to avoid clashes between Mary and components with identical names
