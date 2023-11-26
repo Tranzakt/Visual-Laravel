@@ -174,7 +174,7 @@ though of these perhaps only two are of interest:
   [design systems](https://stenciljs.com/docs/design-systems) and
   development of component libraries
 
-* [Slim.js](https://slimjs.com/#/welcome)
+* [Slim.js](https://slimjs.com/#/welcome) seems small and simple and might be ideal for our needs.
 
 Given the number and breadth of these libraries,
 a reasonably comprehensive evaluation will be quite time consuming,
