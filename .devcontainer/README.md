@@ -35,11 +35,13 @@ the Service Container configurations.
 ## Service Container configurations
 
 | Container    | Configuration                                                                                                                         |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Dev - PHP    | A php.ini file is inserted                                                                                                            |
 | Dev - Apache | The repo src directory is mapped to `/var/www/Visual-Laravel` and Apache is configured to use this and serve the Public subdirectory. |
+| Dev - Caches | For performance reasons, various directories holding ephemeral data downloaded from the internet e.g. `vendors` and `node_modules` are cached into local docker volumes rather than being mapped back to the local environment. 
 | Adminer      | A non-core plugin `AdminerLoginServers` is used to configure the various database services that Adminer can login to.                 |
 | PGadmin      | A json file is used to define the postgres service                                                                                    |
 | phpMyAdmin   | A configuration file defines the MariaDB/MySQL services                                                                               |
 |              | A dark theme is added                                                                                                                 |
 |              | Several SQL files are used to configure the MariaDB and MySQL services to add the phpMyAdmin configuration database on first run.     |
+| pgAdmin | A configuration file defines the postgres services |

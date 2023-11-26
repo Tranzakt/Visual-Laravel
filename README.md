@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/src/visual-laravel/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/Tranzakt/Visual-Laravel/actions"><img src="https://github.com/Tranzakt/Visual-Laravel/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -14,13 +14,6 @@ Using a web browser you will be able to define database tables/fields, UI lists/
 all forms of Laravel and Laravel extension objects and if needed write your own Laravel code snippets.
 
 Once you have defined the model using the Web UI, VL will then generate (compile) all the Laravel PHP code needed from this model.
-
-VL was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
-but which due to its age was not able to take advantage of modern PHP functionality or existing open source functionalities 
-like ORMs or template-engines or SPA technologies,
-and which subsequently ended up with a lot of bespoke code to create these middleware layers,
-spaghetti code, with a few huge objects, that is difficult or impossible to maintain,
-and a UI that was somewhat clunky.
 
 It is expected that VL will provide three key benefits:
 
@@ -48,8 +41,11 @@ It is expected that VL will provide three key benefits:
 By using Laravel (and its ecosystem) VL can take advantage of a massive amount of functionality that is already available and mature,
 and focus on providing only the additional functionality needed on top of that.
 
-(Equally, if we create any functionality that could be useful to others, 
-like Laravel itself we can spin-off new packages to add to the Laravel ecosystem.)
+It is anticipated that we will create a lot of new functionality
+which will have general applicability beyond Visual Laravel
+e.g. Web Component / Livewire UI libraries,
+and like Laravel itself, 
+we will spin-off new packages to add to the Laravel ecosystem.
 
 ### So how will it work from the user perspective?
 
@@ -87,6 +83,25 @@ will require UI/Model/Compile functionality for the following "domains":
 * Views (Lists/Forms/Menus/Routes/Middleware/Validations/CSS compiled to Routes/Controllers/Views/Blade Templates)
 * Other (Services/Broadcasting/Events/Queues/Files/RPC/I18N/Mail/Notifications/Queues/Schedules)
 * Settings/Defaults (for e.g. Validations, formatting etc.)
+
+### Inspiration
+
+VL was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
+so a big debt of gratitude is owed to the original author of that package, 
+[Rob Clayburn](https://github.com/pollen8), 
+not only for that extension but also for his 
+inspirational thoughts given to me personally several years ago
+about how he would have developed Fabrik if he was starting again.
+
+Unfortunately, due to its age 
+(dating back to 2011 from when PHP v5 was a mess)
+Fabrik was not able to take advantage of 
+modern PHP object-oriented capabilities or 
+newer open source functionalities 
+like ORMs / template-engines /or SPA technologies,
+which consequently ended up being bespoke spaghetti code
+with a few huge objects, difficult or impossible to maintain,
+and a UI that was somewhat clunky.
 
 ### Current Status
 
