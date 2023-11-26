@@ -107,9 +107,15 @@ that are used only by the IDE Intellisense, Composer/NPM and Apache,
 are not stored in Git and can be easily recreated by Composer and NPM.
 
 In theory, the `src/storage` directory (or the `src/storage/framework` subdirectory)
-is also potentially a candidate for a docker volume, however these do not have the
-same volume of reads and writes as the other two and so (for the moment at least)
+is also potentially a performance candidate for a docker volume, 
+however these do not have the same volume of 
+reads and writes as the other two and so (for the moment at least)
 these have been left mapped back into the local environment.
+
+Finally, the vscode home directory (`~` or `/home/vscode`) 
+should probably be made into a volume in order to 
+preserve any user settings across container rebuilds, 
+and preserve files stashed there temporarily.
 
 ### Service Containers
 
@@ -135,7 +141,7 @@ be used as a very simple and easy way for single-person VL users
 to run VL locally to create apps for deployment to production infrastructure.
 
 | Svc/Domain   | Port(s)   | Userid=Pwd | Description                                                                                     |
-| ------------ | --------- | ---------- | ----------------------------------------------------------------------------------------------- |
+|--------------|-----------|------------|-------------------------------------------------------------------------------------------------|
 | postgres     | 5432      | postgres   | Postgres SQL database                                                                           |
 | pgadmin      | 5050      | pg@pg.com  | Postgres administration on [localhost:5050](http://localhost:5050)                              |
 | mariadb      | 3306      | mariadb    | MySQL forked database                                                                           |
