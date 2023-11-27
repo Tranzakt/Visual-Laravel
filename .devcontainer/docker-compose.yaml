@@ -157,12 +157,13 @@ services:
 
   redis:
     container_name: visual-laravel-redis
-    image: redis:7 # https://hub.docker.com/_/redis
+    image: redis/redis-stack # https://hub.docker.com/r/redis/redis-stack
     restart: on-failure:5
     volumes:
       - "redis-data:/data"
     ports:
       - "6379:6379"
+      - "8001:8001"
 
   memcached:
     container_name: visual-laravel-memcached

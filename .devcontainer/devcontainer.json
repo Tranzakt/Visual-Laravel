@@ -43,7 +43,9 @@
     // User can always add further extensions manually
     "customizations": {
         "vscode": {
-            "extensions": [],
+            "extensions": [
+				"ms-azuretools.vscode-docker"
+			],
             "settings": {}
         }
     }
