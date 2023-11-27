@@ -107,14 +107,14 @@ that are used only by the IDE Intellisense, Composer/NPM and Apache,
 are not stored in Git and can be easily recreated by Composer and NPM.
 
 In theory, the `src/storage` directory (or the `src/storage/framework` subdirectory)
-is also potentially a performance candidate for a docker volume, 
-however these do not have the same volume of 
+is also potentially a performance candidate for a docker volume,
+however these do not have the same volume of
 reads and writes as the other two and so (for the moment at least)
 these have been left mapped back into the local environment.
 
-Finally, the vscode home directory (`~` or `/home/vscode`) 
-should probably be made into a volume in order to 
-preserve any user settings across container rebuilds, 
+Finally, the vscode home directory (`~` or `/home/vscode`)
+should probably be made into a volume in order to
+preserve any user settings across container rebuilds,
 and preserve files stashed there temporarily.
 
 ### Service Containers
@@ -140,24 +140,24 @@ It is also possible that this same environment could potentially be
 be used as a very simple and easy way for single-person VL users
 to run VL locally to create apps for deployment to production infrastructure.
 
-| Svc/Domain   | Port(s)   | Userid=Pwd | Description                                                                                             |
-|--------------|-----------|------------|---------------------------------------------------------------------------------------------------------|
-| postgres     | 5432      | postgres   | Postgres SQL database                                                                                   |
-| pgadmin      | 5050      | pg@pg.com  | Postgres administration on [localhost:5050](http://localhost:5050)                                      |
-| mariadb      | 3306      | mariadb    | MySQL forked database                                                                                   |
-| mysql        | 3307      | mysql      | MySQL database                                                                                          |
-| adminer      | 8282      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282)                                 |
-| phpmyadmin   | 8383      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383)                                 |
-| redis        | 6379      | -          | Cache/Queue database  - RedisInsight visualiser is available on [localhost:8001](http://localhost:8001) |
-| memcached    | 11121     | -          | Cache database                                                                                          |
-| meilisearch  | 7700      | -          | Laravel Scout compatible search index                                                                   |
-| minio        | 9000      | minioadmin | Amazon S3 compatable storage engine. Console on [localhost:8900](http://localhost:8900)                 |
-| mailpit      | 1025      | -          | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025)                       |
-| selenium     |           |            | Browser-based functional testing                                                                        |
-| soketi       | 6001/9601 | soketi     | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener         |
-| rabbitmq     | 5672      | rabbitmq   | Queue manager. Console on [localhost:15672](http://localhost:15672)                                     |
-| mongodb      | 27017     | mongodb    | Document database                                                                                       |
-| mongoexpress | 8081      | -          | MongoDB administration on [localhost:8081](http://localhost:8081)                                       |
+| Svc/Domain   | Port(s)   | Userid=Pwd | Description                                                                                     |
+|--------------|-----------|------------|-------------------------------------------------------------------------------------------------|
+| postgres     | 5432      | postgres   | Postgres SQL database                                                                           |
+| pgadmin      | 5050      | pg@pg.com  | Postgres administration on [localhost:5050](http://localhost:5050)                              |
+| mariadb      | 3306      | mariadb    | MySQL forked database                                                                           |
+| mysql        | 3307      | mysql      | MySQL database                                                                                  |
+| adminer      | 8282      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282)                         |
+| phpmyadmin   | 8383      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383)                         |
+| redis        | 6379      | -          | Cache/Queue database  - RedisInsight visualiser is on [localhost:8001](http://localhost:8001)   |
+| memcached    | 11211     | -          | Cache database                                                                                  |
+| meilisearch  | 7700      | -          | Laravel Scout compatible search index                                                           |
+| minio        | 9000      | minioadmin | Amazon S3 compatible storage engine. Console on [localhost:8900](http://localhost:8900)         |
+| mailpit      | 1025      | -          | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025)               |
+| selenium     |           |            | Browser-based functional testing                                                                |
+| soketi       | 6001/9601 | soketi     | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener |
+| rabbitmq     | 5672      | rabbitmq   | Queue manager. Console on [localhost:15672](http://localhost:15672)                             |
+| mongodb      | 27017     | mongodb    | Document database                                                                               |
+| mongoexpress | 8081      | -          | MongoDB administration on [localhost:8081](http://localhost:8081)                               |
 
 #### Notes
 

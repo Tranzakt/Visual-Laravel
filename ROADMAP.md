@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/src/visual-laravel/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/Tranzakt/Visual-Laravel/" target="_blank"><img src="https://raw.githubusercontent.com/Tranzakt/Visual-Laravel/main/resources/graphics/VisualLaravel.svg" width="400" alt="Visual Laravel Logo"></a></p>
 # The Visual-Laravel Roadmap
 
 This file provides an overview of the short-, medium-, and long-term goals for the Visual Laravel project.
