@@ -5,5 +5,5 @@
     "src/node_modules": true, // set this to true to hide the "out" folder with the compiled JS files
   },
   "search.exclude": {},
-  "editor.inlineSuggest.showToolbar": "always"
+  "editor.inlineSuggest.showToolbar": "onHover"
 }

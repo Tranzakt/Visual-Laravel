@@ -25,14 +25,12 @@
         "shd101wyy.markdown-preview-enhanced",
         "takumii.markdowntable",
         "zaaack.markdown-editor",
-        "mrmlnc.vscode-apache",
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-british-english",
         "bmewburn.vscode-intelephense-client",
         "ionutvmi.path-autocomplete",
         "mansoorkhan96.php-cs-fixer",
         "porifa.laraphense",
-        "sanderronde.phpstan-vscode",
         "shreeruparel.laravel-chatgpt-unit-test-generator",
         "bradlc.vscode-tailwindcss",
         "ahinkle.laravel-model-snippets",
@@ -46,6 +44,14 @@
         "austenc.livewire-docs",
         "heybourn.headwind",
         "austenc.tailwind-docs",
-        "swordev.phpstan"
+        "hnw.vscode-auto-open-markdown-preview",
+        "temitope1909.dotenv-intellisense",
+        "antfu.vite",
+        "socheatsok78-lab.dotenv-vscode-stripped",
+        "digitalnatives.microsoft-translate-ext",
+        "aarondanielson.whitespace-translator",
+        "remes2000.auto-translator",
+        "webdevsavvy.livewire-intellisense",
+        "ddarkonen.phpstan-larastan"
     ]
 }
