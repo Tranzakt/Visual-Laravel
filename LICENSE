@@ -14,7 +14,7 @@ code and documentation, or provide support for users.
 To deter organisations from running this programme as a service to 3rd parties,
 the code as it is supplied does not include multi-tenancy/SaaS functionality, 
 and has some functionality which restricts its use as a service over the
-internet. Under the Affero GPL License, we cannot prevent a licencee from 
+internet. Under the Affero GPL License, we cannot prevent a licensee from 
 providing a service over the internet using a modified version of this software 
 which adds multi-tenancy/SaaS functionality and removes the network restriction, 
 however we hope that licensees will recognise the copyright owners wishes and 
@@ -30,7 +30,7 @@ allowed terms to the standard Affero GPL.
 The copyright for these materials is currently held by the Tranzakt Project, 
 a trading name of developer Paul Freeman a.k.a. Github user Sophist-UK.
 
-If this project is successful, it is intended that ownership will be transfered to
+If this project is successful, it is intended that ownership will be transferred to
 a formal non-profit organisation, either a new organisation specifically set-up 
 for such a role, or under the auspices and governance of an existing open-source
 umbrella organisations such as SPI Inc.
@@ -43,10 +43,10 @@ away from the genuine open-source model as intended by the original developer.
 
                               CONTRIBUTIONS
 
-Although it is not a requirement of this license to do so, we hope that licensees
-will recognise the benefits they get from using this software without having to
-pay any license fees, and request that they recognise this by making contributions
-to the project in one of the following ways:
+We hope that licensees will recognise the benefits they get from using this software 
+without having to pay any license fees, and although we stress that it is **not**  
+a requirement of this license or of using this software, we request that licensees  
+recognize this by making contributions to the project in one of the following ways:
 
 * Donating their time to providing community support to other users of the software
 * Donating their time to improving documentation or language translations
@@ -60,16 +60,16 @@ investment in this project.
 As a suggestion only, without any pressure to do so, we would suggest the following
 guidelines to help quantify the level of contributions outlined above:
 
-* Non-commercial projects - 5% of the developer time
-* Salaried development staff - 5% of the developmer time or 5% of their base salaries
-* Commercial projects by non-commercial developers - 5% of developer time or 0.5% of live revenue
+* Non-commercial projects - 5% of developer time spent using this software
+* Salaried development staff - 5% of the developer time or 5% of their base salaries
+* Commercial projects by non-commercial developers - 5% of developer time or 0.5% of post-live revenue
 
 We encourage contributors to donate their contributions back to the primary project
-in order that they can be included in the primary source rather than to create their
-own competing fork in order that all contributions can work together to improve the
-overall project. However, please note that contributions of code, documentation or 
-translations back to the primary source are strictly subject to the Contribution Terms 
-detailed in the relevant source file alongside this license.
+(rather than to create their own competing fork) in order that all contributions can 
+work together to improve the overall project. However, please note that contributions 
+of code, documentation or translations back to the primary source are strictly 
+subject to the Contribution Terms detailed in the relevant source file alongside 
+this license.
 
 
                               ADDITIONAL TERMS
@@ -85,13 +85,13 @@ as allowed under Section 7 of the standard Affero GPL below:
     the origin of the material. This means that:
 
     A) if the material contains any changes from the original materials, it MUST NOT 
-    be redistributed representing itself as the original materials i.e. it must be 
-    renamed and reattributed; AND
+    be redistributed representing itself as the original materials i.e. it MUST be 
+    renamed and re-attributed; AND
 
     B) the original name and original source and original copyright information 
-    must be prominantly displayed in the code, in the runtime user interface, and in any 
+    must be prominently displayed in the code, in the runtime user interface, and in any 
     separate documentation, publicity, marketing materials etc. and these must be given 
-    the same prominance (position, font size and type etc.) as any new name, 
+    the same prominence (position, font size and type etc.) as any new name, 
     additional source and additional copyright information. 
 
     The copyright owners explicitly decline to allow the use of trade names, trademarks or service
@@ -100,7 +100,7 @@ as allowed under Section 7 of the standard Affero GPL below:
 
     The purpose of this term is to ensure that modified versions of the software
     are clearly distinguishable to licensees from the original versions, 
-    and also to ensure that the original provinance and copyright ownership is equally clear.
+    and also to ensure that the original provenance and copyright ownership is equally clear.
 
 3.  When redistributing the licensed materials, licensees are required to redistribute the.
     materials as a copy of the original version provided by the Tranzakt project, 
@@ -142,7 +142,7 @@ more or less restrictive or which give greater or fewer rights.
                                THIS FILE
 
 The GNU AFFERO GPL V3 license stated below is provided entirely unchanged. 
-Only the text above and the application structions at the end of this file 
+Only the text above and the application instructions at the end of this file 
 are different to the standard license.
 
 The copyright owner / author / developer welcomes any feedback you may have 
@@ -407,7 +407,7 @@ in one of these ways:
 
     c) Convey individual copies of the object code with a copy of the
     written offer to provide the Corresponding Source.  This
-    alternative is allowed only occasionally and noncommercially, and
+    alternative is allowed only occasionally and non-commercially, and
     only if you received the object code with such an offer, in accord
     with subsection 6b.
 
@@ -769,7 +769,7 @@ copy of the Program in return for a fee.
 
                      END OF TERMS AND CONDITIONS
 
-            Applying These Terms to The Programs
+                Applying These Terms to The Programs
 
 It is intended to attach the following notices to the program by including
 them at the start of each source file, or at the end of each documentation file,
@@ -782,7 +782,7 @@ of warranty.
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License Version 3
     as published by the Free Software Foundation, subject to the Additional
-    Terms as stated in the License.MD file in the root directory of the
+    Terms as stated in the License file in the root directory of the
     source distribution.
 
     This program is distributed in the hope that it will be useful,
