@@ -2,8 +2,45 @@
 
 use Illuminate\Support\Str;
 
-return [
+/**
+ * Generates a URL string based on the provided parameters.
+ *
+ * @param string $drv The database driver.
+ * @param string $host The host name or IP address.
+ * @param string $port The port number.
+ * @param string $uid The user ID.
+ * @param string $pw The password.
+ * @param string $db The database name.
+ * @return string The generated URL string.
+ */
+function generateUrl(
+    string $drv,
+    string $host,
+    string $port,
+    string $uid,
+    string $pw,
+    string $db
+): string {
 
+    if (empty($drv)) {
+        return '';
+    }
+    if (empty($uid) && !empty($pw)) {
+        return '';
+    }
+    if (empty($host)) {
+        return '';
+    }
+
+    $uid .= $pw ? ':' . $pw : '';
+    $host .= $port ? ':' . $port : '';
+    $uid .= $uid ? '@' : '';
+    $db = $db ? '/' . $db : '';
+    return  $drv . '://' . $uid . $host . $db;
+}
+
+
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -35,26 +72,66 @@ return [
 
     'connections' => [
 
+        'vl-sqlite' => [
+            'driver' => 'sqlite',
+            'database' => database_path('virtual-laravel.sqlite'),
+            'prefix' => env('VL_'),
+            'foreign_key_constraints' => true,
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'database' => database_path(env('DB_SQLITE_DATABASE', 'database.sqlite')),
+            'prefix' => env('DB_SQLITE_PREFIX', env('DB_PREFIX', '')),
+            'foreign_key_constraints' => env('DB_SQLITE_FOREIGN_KEYS', true),
+        ],
+
+        'mariadb' => [
+            'driver' => 'mysql',
+            'host' => env('DB_MARIADB_HOST', '127.0.0.1'),
+            'port' => env('DB_MARIADB_PORT', '3306'),
+            'username' => env('DB_MARIADB_USERNAME', ''),
+            'password' => env('DB_MARIADB_PASSWORD', ''),
+            'database' => env('DB_MARIADB_DATABASE', ''),
+            'url' => env('DB_MARIADB_URL', '') ?: generateUrl(
+                'mysql',
+                env('DB_MARIADB_HOST', '127.0.0.1'),
+                env('DB_MARIADB_PORT', '3306'),
+                env('DB_MARIADB_USERNAME', ''),
+                env('DB_MARIADB_PASSWORD', ''),
+                env('DB_MARIADB_DATABASE', '')
+            ),
+            'unix_socket' => env('DB_MARIADB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => env('DB_MARIADB_PREFIX', env('DB_PREFIX', '')),
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
         ],
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
+            'host' => env('DB_MYSQL_HOST', '127.0.0.1'),
+            'port' => env('DB_MYSQL_PORT', '3306'),
+            'username' => env('DB_MYSQL_USERNAME', ''),
+            'password' => env('DB_MYSQL_PASSWORD', ''),
+            'database' => env('DB_MYSQL_DATABASE', ''),
+            'url' => env('DB_MYSQL_URL', '') ?: generateUrl(
+                'mysql',
+                env('DB_MYSQL_HOST', '127.0.0.1'),
+                env('DB_MYSQL_PORT', '3306'),
+                env('DB_MYSQL_USERNAME', ''),
+                env('DB_MYSQL_PASSWORD', ''),
+                env('DB_MYSQL_DATABASE', '')
+            ),
+            'unix_socket' => env('DB_MYSQL_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
+            'prefix' => env('DB_MYSQL_PREFIX', env('DB_PREFIX', '')),
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
@@ -65,33 +142,40 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_POSTGRES_HOST', '127.0.0.1'),
+            'database' => env('DB_POSTGRES_DATABASE', ''),
+            'port' => env('DB_POSTGRES_PORT', '5432'),
+            'username' => env('DB_POSTGRES_USERNAME', ''),
+            'password' => env('DB_POSTGRES_PASSWORD', ''),
+            'url' => env('DB_POSTGRES_URL', '') ?: generateUrl(
+                'pgsql',
+                env('DB_POSTGRES_HOST', '127.0.0.1'),
+                env('DB_POSTGRES_PORT', '5432'),
+                env('DB_POSTGRES_USERNAME', ''),
+                env('DB_POSTGRES_PASSWORD', ''),
+                env('DB_POSTGRES_DATABASE', '')
+            ),
             'charset' => 'utf8',
-            'prefix' => '',
+            'prefix' => env('DB_POSTGRES_PREFIX', env('DB_PREFIX', '')),
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
-        ],
+        // 'sqlsrv' => [
+        //     'driver' => 'sqlsrv',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', 'localhost'),
+        //     'port' => env('DB_PORT', '1433'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     // 'encrypt' => env('DB_ENCRYPT', 'yes'),
+        //     // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        // ],
 
     ],
 
@@ -125,7 +209,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
