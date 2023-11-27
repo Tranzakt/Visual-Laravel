@@ -1,0 +1,16 @@
+{
+    "version": "0.2",
+    "language": "en-GB",
+    "ignorePaths": [
+        "vendor/**",
+        "node_modules/**"
+    ],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "Laravel",
+        "Tranzakt"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
