@@ -52,6 +52,13 @@
         "webdevsavvy.livewire-intellisense",
         "ddarkonen.phpstan-larastan",
         "calebporzio.simple-php-cs-fixer",
-        "calebporzio.better-phpunit"
+        "calebporzio.better-phpunit",
+        "davidanson.vscode-markdownlint",
+        "raullg97.laravel-pint-linter",
+        "m4tr1ck.livewire-goto-updated-3",
+        "devsense.composer-php-vscode",
+        "henriiik.docker-linter",
+        "dunstontc.vscode-docker-syntax",
+        "satiromarra.vscode-php-test-explorer-docker"
     ]
 }

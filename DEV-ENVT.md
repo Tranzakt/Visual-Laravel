@@ -8,7 +8,7 @@ Part of this project is to provide a pre-defined development environment for Vis
 In other words, to allow developers to focus on developing Visual Laravel and NOT on creating and maintaining their development environment.
 
 **Note:** This is for people contributing to the development of
-Visual Lararvel itself,
+Visual Laravel itself,
 and **not** for those using Visual Laravel to develop their own
 Laravel applications.
 
@@ -37,12 +37,12 @@ gives details of what is included (with connection details).
 
 ## Dev Container Background
 
-By creating a directory and file `.devcontainer\devcontaner.json`
+By creating a directory and file `.devcontainer\devcontainer.json`
 in the project root directory, you indicate to VSCode that you
 want the project to use a devcontainer to provide background services.
 
 The devcontainer.json describes either a single primary container,
-or points to a Docker Componse file to describe the primary container
+or points to a Docker Compose file to describe the primary container
 plus a collection of additional service containers.
 
 The primary container contains a copy of the project directories
@@ -57,7 +57,7 @@ to run against the code-base.
 
 The service containers hold copies of all the services
 that Laravel calls remotely
-(like SQL/NoSql/Queue databases, search engines, database administratior tools etc.).
+(like SQL/NoSql/Queue databases, search engines, database administrator tools etc.).
 These microservice containers are typically
 unaltered copies of pre-generated base images,
 and so take very little time to build.
@@ -74,10 +74,14 @@ and they will not be generated or run.
 - PHP (plus necessary extensions for accessing microservices)
 - Apache
 - SQLITE
+- Various SQL Database Command Line tools (just in case you need them)
 - Node/NPM/Bun
+- Zsh enhancements
+
+Note: Bun is an alternative to NPM but is much faster.
 
 We have not yet worked out how to add the following packages as part of the dev container build
-but they can be manually installed (in WSL??) using `apt-get`.
+but they can be manually installed using `apt-get`.
 
 - SqliteBrowser (an executable Sqlite database manager)
 
@@ -85,7 +89,7 @@ but they can be manually installed (in WSL??) using `apt-get`.
 
 The vast majority of files in a working Laravel installation
 are files pulled in by Composer or NPM and stored in
-seperate directories (like `vendor` or `node_modules`),
+separate directories (like `vendor` or `node_modules`),
 or are temporary files created by Laravel (e.g. in `storage`).
 These files are NOT developer files, and are not stored in Git.
 With the primary VL repo stored on your PC,

@@ -5,10 +5,12 @@
     "src/node_modules": true, // set this to true to hide the "out" folder with the compiled JS files
   },
   "search.exclude": {},
-  "editor.inlineSuggest.showToolbar": "always",
-  // "editor.inlineSuggest.showToolbar": "onHover",
+  "editor.inlineSuggest.showToolbar": "onHover",
   "editor.laravel.pint.enabled": true,
   "simple-php-cs-fixer.save": true,
   "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "devcontainer"
+  ]
 }

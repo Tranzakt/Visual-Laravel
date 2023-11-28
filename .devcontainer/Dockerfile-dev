@@ -4,17 +4,24 @@ FROM mcr.microsoft.com/devcontainers/php:8.2-apache-bookworm
 LABEL maintainer="Visual Laravel (c) Tranzakt Project @ Github"
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV NODE_MAJOR=20
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 # 1. Enable Apache mod_rewrite
-# 2. Install bun
+# 2. Install node, npm & bun
 # 3. Install MariaDB and Postgres command-line clients
 # 4. Configure php extensions for Postgres, MySQL, Memcached, Redis and mongo
+# 5. Install zsh enhancements
 RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load && \
-    curl -fsSL https://bun.sh/install | bash && \
     chmod +x /usr/local/bin/install-php-extensions && \
     apt-get update &&  \
+    sudo apt-get install -y ca-certificates curl gnupg && sudo mkdir -p /etc/apt/keyrings && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update &&  \
+    apt-get install -y nodejs && \
+    npm install -g bun && \
     apt-get install -y mariadb-client && \
     apt-get install -y postgresql-client && \
     apt-get install -y libpq-dev && \
@@ -23,4 +30,11 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
     install-php-extensions memcached-^3@stable && \
     install-php-extensions redis-^6@stable && \
     install-php-extensions mongodb-^1@stable && \
+    git clone https://github.com/zsh-users/zsh-autosuggestions /home/vscode/.oh-my-zsh/custom/plugins/zsh-autosuggestions && \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/vscode/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && \
+    sed -i -E 's/^plugins=\(git\)/# plugins=\(git\)\nplugins=\(git bun composer dirhistory gitfast laravel mongocli npm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting\)/' /home/vscode/.zshrc && \
+    chown -R vscode:vscode /home/vscode && \
     apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+## TODO
+# Make `apt-get install -y sqlitebrowser` work

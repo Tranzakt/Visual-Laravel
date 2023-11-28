@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ..:/var/www/html/Visual-Laravel
+      - vscode-user-home:/home/vscode
       - composer-cache:/var/www/html/Visual-Laravel/src/vendor
       - node-cache:/var/www/html/Visual-Laravel/src/node_modules
       - ./config/apache/sites-enabled:/etc/apache2/sites-enabled:ro
@@ -20,8 +21,8 @@ services:
     environment:
       TMPDIR: /tmp
     stdin_open: true
-    # command: /bin/sh -c "service apache2 start && sleep infinity"
-    command: /bin/sh -c "service apache2 start && while sleep 1000; do :; done"
+    command: /bin/sh -c "service apache2 start && sleep inf"
+    # command: /bin/sh -c "service apache2 start && while sleep 3600; do :; done"
     ports:
       # Apache defined on 8080 access on localhost:80
       - 80:8080
@@ -284,6 +285,7 @@ services:
       - "8081:8081"
 
 volumes:
+  vscode-user-home:
   postgres-data:
   mariadb-data:
   mysql-data:
@@ -293,8 +295,9 @@ volumes:
   meilisearch-data:
   minio-data:
   rabbitmq-data:
-  mongodb-data: # Dev container performance improvements
+  mongodb-data:
 
+  # Dev container performance improvements
   composer-cache:
   node-cache:
 

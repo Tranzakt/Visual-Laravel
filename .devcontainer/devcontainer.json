@@ -5,14 +5,7 @@
     "workspaceFolder": "/var/www/html/Visual-Laravel",
     "postCreateCommand": "sudo chown vscode:www-data /var/www/html/Visual-Laravel/src/node_modules /var/www/html/Visual-Laravel/src/vendor",
     // Features to add to the dev container. More info: https://containers.dev/features.
-    "features": {
-        "ghcr.io/devcontainers/features/node:1": {
-            "version": "latest"
-        },
-        "ghcr.io/michidk/devcontainers-features/bun:1": {}
-        // "ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {}
-        // "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
-    },
+    "features": {},
     "forwardPorts": [
         // Apache
         "dev:80",
@@ -25,6 +18,7 @@
         "adminer:8282",
         "phpmyadmin:8383",
         "redis:6379",
+        "redis:8001",
         "memcached:11211",
         "meilisearch:7700",
         "minio:9000",
@@ -44,8 +38,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-				"ms-azuretools.vscode-docker"
-			],
+                "ms-azuretools.vscode-docker"
+            ],
             "settings": {}
         }
     }
