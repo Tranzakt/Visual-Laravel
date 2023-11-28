@@ -30,6 +30,8 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
     install-php-extensions memcached-^3@stable && \
     install-php-extensions redis-^6@stable && \
     install-php-extensions mongodb-^1@stable && \
+    # fzf appears to be missing and results in zsh completion errors
+    apt-get install -y fzf && \
     git clone https://github.com/zsh-users/zsh-autosuggestions /home/vscode/.oh-my-zsh/custom/plugins/zsh-autosuggestions && \
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/vscode/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && \
     sed -i -E 's/^plugins=\(git\)/# plugins=\(git\)\nplugins=\(git bun composer dirhistory gitfast laravel mongocli npm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting\)/' /home/vscode/.zshrc && \
