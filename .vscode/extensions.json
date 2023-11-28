@@ -29,7 +29,6 @@
         "streetsidesoftware.code-spell-checker-british-english",
         "bmewburn.vscode-intelephense-client",
         "ionutvmi.path-autocomplete",
-        "mansoorkhan96.php-cs-fixer",
         "porifa.laraphense",
         "shreeruparel.laravel-chatgpt-unit-test-generator",
         "bradlc.vscode-tailwindcss",
@@ -40,7 +39,6 @@
         "phiter.phpstorm-snippets",
         "m1guelpf.better-pest",
         "muath-ye.composer-intelephense",
-        "open-southeners.laravel-pint",
         "austenc.livewire-docs",
         "heybourn.headwind",
         "austenc.tailwind-docs",
@@ -52,6 +50,8 @@
         "aarondanielson.whitespace-translator",
         "remes2000.auto-translator",
         "webdevsavvy.livewire-intellisense",
-        "ddarkonen.phpstan-larastan"
+        "ddarkonen.phpstan-larastan",
+        "calebporzio.simple-php-cs-fixer",
+        "calebporzio.better-phpunit"
     ]
 }
