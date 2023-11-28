@@ -78,7 +78,8 @@ and they will not be generated or run.
 - Node/NPM/Bun
 - Zsh enhancements
 
-Note: Bun is an alternative to NPM but is much faster.
+**Notes:** You are encouraged to use `zsh` as the terminal shell because of its completion capabilities. 
+You are also encouraged to use `bun` as an alternative for `npm` because it is much, much faster.
 
 We have not yet worked out how to add the following packages as part of the dev container build
 but they can be manually installed using `apt-get`.

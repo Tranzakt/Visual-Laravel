@@ -10,5 +10,21 @@
   "simple-php-cs-fixer.save": true,
   "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
   "editor.formatOnSave": true,
-  "cSpell.words": []
+  "cSpell.words": [],
+  "terminal.integrated.enableBell": true,
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "icon": "terminal-linux"
+    },
+  },
+  "terminal.integrated.useWslProfiles": false,
+  "terminal.integrated.tabs.focusMode": "singleClick",
+  "terminal.integrated.hideOnStartup": "whenEmpty",
+  "terminal.integrated.defaultProfile.linux": "zsh",
 }
