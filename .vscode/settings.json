@@ -10,7 +10,9 @@
   "simple-php-cs-fixer.save": true,
   "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
   "editor.formatOnSave": true,
-  "cSpell.words": [],
+  "cSpell.words": [
+    "devcontainer"
+  ],
   "terminal.integrated.enableBell": true,
   "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
   "terminal.integrated.profiles.linux": {
@@ -27,4 +29,32 @@
   "terminal.integrated.tabs.focusMode": "singleClick",
   "terminal.integrated.hideOnStartup": "whenEmpty",
   "terminal.integrated.defaultProfile.linux": "zsh",
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!csharp",
+    "!elixir",
+    "!erlang",
+    "!go",
+    "!graphql",
+    "!handlebars",
+    "!haskell",
+    "!jade",
+    "!java",
+    "!javascriptreact",
+    "!latex",
+    "!pug",
+    "!python",
+    "!rust",
+    "!scala",
+    "!scminput",
+    "!swift",
+    "!typescriptreact",
+    "blade",
+    "shellscript",
+    "tailwindcss",
+    "xml"
+  ],
+  "cSpell.language": "en-GB",
 }
