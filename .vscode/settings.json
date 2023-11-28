@@ -10,7 +10,5 @@
   "simple-php-cs-fixer.save": true,
   "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
   "editor.formatOnSave": true,
-  "cSpell.words": [
-    "devcontainer"
-  ]
+  "cSpell.words": []
 }
