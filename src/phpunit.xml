@@ -6,7 +6,7 @@
 >
     <testsuites>
         <testsuite name="Jetstream">
-            <directory>tests/Feature</directory>
+            <directory>tests/Jetstream/Feature</directory>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
         </testsuite>
