@@ -13,15 +13,12 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 # 3. Install MariaDB and Postgres command-line clients
 # 4. Configure php extensions for Postgres, MySQL, Memcached, Redis and mongo
 # 5. Install zsh enhancements
+
+# We break this into two so that we can cache the time consuming bit.
+
 RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load && \
     chmod +x /usr/local/bin/install-php-extensions && \
     apt-get update &&  \
-    sudo apt-get install -y ca-certificates curl gnupg && sudo mkdir -p /etc/apt/keyrings && \
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list && \
-    apt-get update &&  \
-    apt-get install -y nodejs && \
-    npm install -g bun && \
     apt-get install -y mariadb-client && \
     apt-get install -y postgresql-client && \
     apt-get install -y libpq-dev && \
@@ -30,13 +27,23 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
     install-php-extensions memcached-^3@stable && \
     install-php-extensions redis-^6@stable && \
     install-php-extensions mongodb-^1@stable && \
-    # fzf appears to be missing and results in zsh completion errors
-    apt-get install -y fzf && \
+    sudo apt-get install -y ca-certificates curl gnupg && sudo mkdir -p /etc/apt/keyrings && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update &&  \
+    apt-get install -y nodejs && \
+    npm install -g bun
+
+RUN # fzf appears to be missing and results in zsh completion errors && \
+    git clone --depth 1 https://github.com/junegunn/fzf.git /tmp/fzf && /tmp/fzf/install && \
     git clone https://github.com/zsh-users/zsh-autosuggestions /home/vscode/.oh-my-zsh/custom/plugins/zsh-autosuggestions && \
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/vscode/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && \
     sed -i -E 's/^plugins=\(git\)/# plugins=\(git\)\nplugins=\(git bun composer dirhistory gitfast laravel mongocli npm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting\)/' /home/vscode/.zshrc && \
     chown -R vscode:vscode /home/vscode && \
     apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Load .env.local by default
+ENV APP_ENV=local
 
 ## TODO
 # Make `apt-get install -y sqlitebrowser` work

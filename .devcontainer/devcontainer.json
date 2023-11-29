@@ -3,7 +3,10 @@
     "dockerComposeFile": "docker-compose.yaml",
     "service": "dev",
     "workspaceFolder": "/var/www/html/Visual-Laravel",
-    "postCreateCommand": "sudo chown vscode:www-data /var/www/html/Visual-Laravel/src/node_modules /var/www/html/Visual-Laravel/src/vendor",
+    "postCreateCommand": {
+        "chown": "sudo chown -R vscode:www-data /var/www/html/Visual-Laravel/src",
+        "chmod": "sudo chmod -R 775 /var/www/html/Visual-Laravel/src/storage /var/www/html/Visual-Laravel/src/public",
+    },
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {},
     "forwardPorts": [

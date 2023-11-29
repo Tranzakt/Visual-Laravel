@@ -3,7 +3,7 @@ name: visual-laravel
 services:
   # Uncomment the php version you want to use here - currently all use Apache
   dev:
-    container_name: visual-laravel-dev
+    container_name: visual-laravel
     build:
       context: .
       dockerfile: Dockerfile-dev
@@ -21,8 +21,8 @@ services:
     environment:
       TMPDIR: /tmp
     stdin_open: true
-    command: /bin/sh -c "service apache2 start && sleep inf"
-    # command: /bin/sh -c "service apache2 start && while sleep 3600; do :; done"
+    command: /bin/sh -c "apache2ctl start && sleep inf"
+    # command: /bin/sh -c "apache2ctl start && while sleep 3600; do :; done"
     ports:
       # Apache defined on 8080 access on localhost:80
       - 80:8080
@@ -300,7 +300,6 @@ volumes:
   # Dev container performance improvements
   composer-cache:
   node-cache:
-
 
 networks:
   default:
