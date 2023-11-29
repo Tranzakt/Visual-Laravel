@@ -8,7 +8,6 @@
   "editor.inlineSuggest.showToolbar": "onHover",
   "editor.laravel.pint.enabled": true,
   "simple-php-cs-fixer.save": true,
-  "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
   "editor.formatOnSave": true,
   "cSpell.words": [
     "devcontainer"
@@ -58,4 +57,17 @@
   ],
   "cSpell.language": "en-GB",
   "terminal.integrated.cwd": "src",
+  "workbench.startupEditor": "none",
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "laravel-pint.enable": true,
+  "editor.formatOnSave": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "LaravelExtraIntellisense.basePathForCode": "src",
+  "LaravelExtraIntellisense.basePath": "src",
+  "better-phpunit.phpunitBinary": "src/vendor/phpunit/phpunit/phpunit",
+  "better-phpunit.pestBinary": "src/vendor/bin/pest",
+  "phpstan.analysedDelay": 1000,
+  "phpstan.configPath": "src/{phpstan.neon,phpstan.neon.dist}",
+  "phpstan.path": "./src/vendor/phpstan/phpstan/phpstan",
 }
