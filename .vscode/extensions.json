@@ -37,7 +37,6 @@
         "dansysanalyst.pest-snippets",
         "cierra.livewire-vscode",
         "phiter.phpstorm-snippets",
-        "m1guelpf.better-pest",
         "muath-ye.composer-intelephense",
         "austenc.livewire-docs",
         "heybourn.headwind",
@@ -59,6 +58,8 @@
         "devsense.composer-php-vscode",
         "henriiik.docker-linter",
         "dunstontc.vscode-docker-syntax",
-        "satiromarra.vscode-php-test-explorer-docker"
+        "mikestead.dotenv",
+        "usernamehw.errorlens",
+        "recca0120.vscode-phpunit"
     ]
 }

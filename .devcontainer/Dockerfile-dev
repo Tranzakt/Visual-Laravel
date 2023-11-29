@@ -40,6 +40,9 @@ RUN # fzf appears to be missing and results in zsh completion errors && \
     sed -i -E 's/^plugins=\(git\)/# plugins=\(git\)\nplugins=\(git bun composer dirhistory gitfast laravel mongocli npm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting\)/' /home/vscode/.zshrc && \
     chown -R vscode:vscode /home/vscode 
 
+# Experimental changes
+RUN apt-get install -y fswatch
+
 # Clean up (separate so that)
 RUN apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
