@@ -88,8 +88,8 @@ though there will undoubtedly be exceptions.
 | **NOT YET INSTALLED** | **NOT YET INSTALLED** |
 | [Alpine.js](https://alpinejs.dev/start-here) | Livewire is built upon Alpine.js for Javascript orchestration. |
 | [CodeMirror](https://codemirror.net/docs/) | Flexible highlighting editor for web pages |
-
-
+| [Custom Elements Polyfill](https://www.npmjs.com/package/@ungap/custom-elements) | Consistent cross-browser support for custom web components
+| [Element behaviours](https://github.com/lume/element-behaviors) | Alternative to Custom Behaviours
 
 ## Github Actions
 
@@ -100,3 +100,8 @@ though there will undoubtedly be exceptions.
 | Package splitting |
 | 
 
+## Deployments
+
+| Package (doc-link) | Description |
+|-|-|
+| [Unpkg](https://unpkg.com/) | Fast delivery of NPM packages (complement to Bun)
