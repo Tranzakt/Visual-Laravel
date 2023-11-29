@@ -9,7 +9,10 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ..:/var/www/html/Visual-Laravel
+      # Preserve user settings across rebuilds
       - vscode-user-home:/home/vscode
+      # But NOT the vscode-server itself (anonymous volumes are recreated each build)
+      - /home/vscode/.vscode-server
       - composer-cache:/var/www/html/Visual-Laravel/src/vendor
       - node-cache:/var/www/html/Visual-Laravel/src/node_modules
       - ./config/apache/sites-enabled:/etc/apache2/sites-enabled:ro
@@ -20,6 +23,7 @@ services:
       - /tmp
     environment:
       TMPDIR: /tmp
+      APP-ENV: local
     stdin_open: true
     command: /bin/sh -c "apache2ctl start && sleep inf"
     # command: /bin/sh -c "apache2ctl start && while sleep 3600; do :; done"
