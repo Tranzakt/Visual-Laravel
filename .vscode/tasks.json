@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Extensions",
+            "type": "shell",
+            "windows": {
+                "command": "foreach ($ext in (Get-Content -Raw .vscode/extensions.json | ConvertFrom-Json).recommendations) { Write-Host Installing $ext; code --install-extension $ext; }"
+            },
+            "linux": {
+                "command": "jq -r '.recommendations[]' .vscode/extensions.json | xargs -n 1 code . --install-extension"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Composer/Bun Install",
+            "type": "shell",
+            // Run composer install first in case any PHP packages require npm packages
+            "command": "composer install && bun install",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            }
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+    ]
+}
