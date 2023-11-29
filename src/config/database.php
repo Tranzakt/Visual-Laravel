@@ -5,12 +5,12 @@ use Illuminate\Support\Str;
 /**
  * Generates a URL string based on the provided parameters.
  *
- * @param string $drv The database driver.
- * @param string $host The host name or IP address.
- * @param string $port The port number.
- * @param string $uid The user ID.
- * @param string $pw The password.
- * @param string $db The database name.
+ * @param  string  $drv The database driver.
+ * @param  string  $host The host name or IP address.
+ * @param  string  $port The port number.
+ * @param  string  $uid The user ID.
+ * @param  string  $pw The password.
+ * @param  string  $db The database name.
  * @return string The generated URL string.
  */
 function generateUrl(
@@ -25,20 +25,20 @@ function generateUrl(
     if (empty($drv)) {
         return '';
     }
-    if (empty($uid) && !empty($pw)) {
+    if (empty($uid) && ! empty($pw)) {
         return '';
     }
     if (empty($host)) {
         return '';
     }
 
-    $uid .= $pw ? ':' . $pw : '';
-    $host .= $port ? ':' . $port : '';
+    $uid .= $pw ? ':'.$pw : '';
+    $host .= $port ? ':'.$port : '';
     $uid .= $uid ? '@' : '';
-    $db = $db ? '/' . $db : '';
-    return  $drv . '://' . $uid . $host . $db;
-}
+    $db = $db ? '/'.$db : '';
 
+    return $drv.'://'.$uid.$host.$db;
+}
 
 return [
     /*
@@ -209,7 +209,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
         ],
 
         'default' => [
@@ -217,7 +217,7 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'username' => env('REDIS_USERNAME'),
             'password' => env('REDIS_PASSWORD'),
-            'database' => env('REDIS_DB', '0'), # Databases identified by integers
+            'database' => env('REDIS_DB', '0'), // Databases identified by integers
             'url' => env('REDIS_URL'),
         ],
 
@@ -226,7 +226,7 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'username' => env('REDIS_USERNAME'),
             'password' => env('REDIS_PASSWORD'),
-            'database' => env('REDIS_CACHE_DB', '1'), # Databases identified by integers
+            'database' => env('REDIS_CACHE_DB', '1'), // Databases identified by integers
             'url' => env('REDIS_URL'),
         ],
     ],
