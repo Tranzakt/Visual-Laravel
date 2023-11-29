@@ -6,7 +6,7 @@ LABEL maintainer="Visual Laravel (c) Tranzakt Project @ Github"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NODE_MAJOR=20
 
-RUN mkdir -p /home/vscode/.vscode-server && chmod vscode:vscode /home/vscode/.vscode-server 
+RUN mkdir -p /home/vscode/.vscode-server && chown vscode:vscode /home/vscode/.vscode-server 
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
@@ -33,17 +33,23 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
 
 # Less stable changes
 # 1. Install zsh enhancements
-RUN # fzf appears to be missing and results in zsh completion errors && \
+RUN # fzf appears to be missing and results in zsh completion errors \
     git clone --depth 1 https://github.com/junegunn/fzf.git /tmp/fzf && /tmp/fzf/install && \
     git clone https://github.com/zsh-users/zsh-autosuggestions /home/vscode/.oh-my-zsh/custom/plugins/zsh-autosuggestions && \
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/vscode/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && \
     sed -i -E 's/^plugins=\(git\)/# plugins=\(git\)\nplugins=\(git bun composer dirhistory gitfast laravel mongocli npm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting\)/' /home/vscode/.zshrc && \
+    # fswatch is needed for the Pest watch extension \
+    apt-get install -y fswatch && \
+    # Change php memory limit from 128M to 512M for PHPstan \
+    cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
+    sed -i -E 's/memory_limit = 128M/memory_limit = 512M/' /usr/local/etc/php/php.ini && \
+    # Set ownership on home directory since we have been mucking about in there as root \
     chown -R vscode:vscode /home/vscode 
 
 # Experimental changes
-RUN apt-get install -y fswatch
+#RUN 
 
-# Clean up (separate so that)
+# Clean up (separate so that previous stuff gets cached)
 RUN apt-get -y autoremove && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ## TODO
