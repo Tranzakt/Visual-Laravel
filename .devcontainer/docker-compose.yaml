@@ -223,12 +223,12 @@ services:
       - "1025:1025"
       - "8025:8025"
 
-  selenium:
-    container_name: visual-laravel-selenium
-    image: selenium/standalone-chrome # https://hub.docker.com/r/selenium/standalone-chrome
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    restart: on-failure:5
+  # selenium:
+  #   container_name: visual-laravel-selenium
+  #   image: selenium/standalone-chrome # https://hub.docker.com/r/selenium/standalone-chrome
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+  #   restart: on-failure:5
 
   soketi:
     container_name: visual-laravel-soketi
@@ -300,6 +300,7 @@ volumes:
   # Dev container performance improvements
   composer-cache:
   node-cache:
+
 
 networks:
   default:
