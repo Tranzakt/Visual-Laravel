@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -31,7 +34,9 @@
         "pestphp/pest-plugin-livewire": "^2.1",
         "pestphp/pest-plugin-watch": "^2.0",
         "phpstan/phpstan": "*",
+        "rector/rector": "^0.18.11",
         "spatie/laravel-ignition": "^2.0",
+        "symfony/var-dumper": "^6.4",
         "tomasvotruba/bladestan": "^0.4.1"
     },
     "autoload": {
@@ -47,6 +52,18 @@
         }
     },
     "scripts": {
+        "refacto": "rector",
+        "lint": "pint",
+        "test:refacto": "rector --dry-run",
+        "test:lint": "pint --test",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:refacto",
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

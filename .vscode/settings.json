@@ -51,9 +51,10 @@
     "!swift",
     "!typescriptreact",
     "blade",
-    "shellscript",
+    "!shellscript",
     "tailwindcss",
-    "xml"
+    "!xml",
+    "!json"
   ],
   "cSpell.language": "en-GB",
   "terminal.integrated.cwd": "src",
