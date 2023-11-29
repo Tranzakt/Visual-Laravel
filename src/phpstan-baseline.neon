@@ -1,0 +1,486 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method App\\\\Actions\\\\Fortify\\\\CreateNewUser\\:\\:passwordRules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Actions/Fortify/CreateNewUser.php
+
+		-
+			message: "#^Method App\\\\Actions\\\\Fortify\\\\ResetUserPassword\\:\\:passwordRules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Actions/Fortify/ResetUserPassword.php
+
+		-
+			message: "#^Method App\\\\Actions\\\\Fortify\\\\UpdateUserPassword\\:\\:passwordRules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Actions/Fortify/UpdateUserPassword.php
+
+		-
+			message: "#^Parameter \\#1 \\$photo of method App\\\\Models\\\\User\\:\\:updateProfilePhoto\\(\\) expects Illuminate\\\\Http\\\\UploadedFile, string given\\.$#"
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
+			message: "#^Method App\\\\Actions\\\\Jetstream\\\\AddTeamMember\\:\\:rules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/AddTeamMember.php
+
+		-
+			message: "#^Method App\\\\Actions\\\\Jetstream\\\\CreateTeam\\:\\:create\\(\\) should return App\\\\Models\\\\Team but returns Illuminate\\\\Database\\\\Eloquent\\\\Model\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/CreateTeam.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\:\\:each\\(\\) expects callable\\(Illuminate\\\\Database\\\\Eloquent\\\\Model, int\\)\\: mixed, Closure\\(App\\\\Models\\\\Team\\)\\: void given\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/DeleteUser.php
+
+		-
+			message: "#^Method App\\\\Actions\\\\Jetstream\\\\InviteTeamMember\\:\\:rules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/InviteTeamMember.php
+
+		-
+			message: "#^Parameter \\#1 \\$invitation of class Laravel\\\\Jetstream\\\\Mail\\\\TeamInvitation constructor expects Laravel\\\\Jetstream\\\\TeamInvitation, Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/InviteTeamMember.php
+
+		-
+			message: "#^Cannot access property \\$id on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/RemoveTeamMember.php
+
+		-
+			message: "#^Method App\\\\Models\\\\TeamInvitation\\:\\:team\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: app/Models/TeamInvitation.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Support\\\\Str\\:\\:lower\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/FortifyServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function e expects BackedEnum\\|Illuminate\\\\Contracts\\\\Support\\\\DeferringDisplayableValue\\|Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string\\|null, mixed given\\.$#"
+			count: 1
+			path: app/View/Components/AppLayout.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function e expects BackedEnum\\|Illuminate\\\\Contracts\\\\Support\\\\DeferringDisplayableValue\\|Illuminate\\\\Contracts\\\\Support\\\\Htmlable\\|string\\|null, mixed given\\.$#"
+			count: 1
+			path: app/View/Components/GuestLayout.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: config/cache.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: config/database.example.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of function database_path expects string, mixed given\\.$#"
+			count: 1
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#2 \\$host of function generateUrl expects string, mixed given\\.$#"
+			count: 3
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#3 \\$port of function generateUrl expects string, mixed given\\.$#"
+			count: 3
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#4 \\$uid of function generateUrl expects string, mixed given\\.$#"
+			count: 3
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#5 \\$pw of function generateUrl expects string, mixed given\\.$#"
+			count: 3
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#6 \\$db of function generateUrl expects string, mixed given\\.$#"
+			count: 3
+			path: config/database.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 1
+			path: config/sanctum.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: config/session.php
+
+		-
+			message: "#^Parameter \\#1 \\$state of method Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\Factory\\<App\\\\Models\\\\Team\\>\\:\\:state\\(\\) expects array\\<string, mixed\\>\\|\\(callable\\(array\\<string, mixed\\>, Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\)\\: array\\<string, mixed\\>\\), Closure\\(array, App\\\\Models\\\\User\\)\\: array\\{name\\: non\\-falsy\\-string, user_id\\: int, personal_team\\: true\\} given\\.$#"
+			count: 1
+			path: database/factories/UserFactory.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: routes/console.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\Expectation\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\>\\:\\:can\\(\\)\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/ApiTokenPermissionsTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/ApiTokenPermissionsTest.php
+
+		-
+			message: "#^Cannot access property \\$tokens on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/ApiTokenPermissionsTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/ApiTokenPermissionsTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 5
+			path: tests/Jetbrains/Feature/AuthenticationTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Jetbrains/Feature/BrowserSessionsTest.php
+
+		-
+			message: "#^Access to an undefined property Pest\\\\Expectation\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\>\\:\\:\\$name\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateApiTokenTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateApiTokenTest.php
+
+		-
+			message: "#^Cannot access property \\$tokens on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/CreateApiTokenTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/CreateApiTokenTest.php
+
+		-
+			message: "#^Cannot access property \\$name on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateTeamTest.php
+
+		-
+			message: "#^Cannot access property \\$ownedTeams on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateTeamTest.php
+
+		-
+			message: "#^Cannot call method ownedTeams\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateTeamTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function expect$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateTeamTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Jetbrains/Feature/CreateTeamTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/DeleteAccountTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/DeleteAccountTest.php
+
+		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/DeleteApiTokenTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/DeleteApiTokenTest.php
+
+		-
+			message: "#^Cannot access property \\$tokens on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/DeleteApiTokenTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/DeleteApiTokenTest.php
+
+		-
+			message: "#^Cannot access property \\$teams on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/DeleteTeamTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/DeleteTeamTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/DeleteTeamTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/EmailVerificationTest.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/EmailVerificationTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 3
+			path: tests/Jetbrains/Feature/EmailVerificationTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Jetbrains/Feature/ExampleTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/InviteTeamMemberTest.php
+
+		-
+			message: "#^Cannot access property \\$teamInvitations on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/InviteTeamMemberTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/InviteTeamMemberTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function expect$#"
+			count: 2
+			path: tests/Jetbrains/Feature/InviteTeamMemberTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/InviteTeamMemberTest.php
+
+		-
+			message: "#^Cannot access property \\$users on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/LeaveTeamTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/LeaveTeamTest.php
+
+		-
+			message: "#^Cannot call method users\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/LeaveTeamTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function expect$#"
+			count: 1
+			path: tests/Jetbrains/Feature/LeaveTeamTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/LeaveTeamTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 3
+			path: tests/Jetbrains/Feature/PasswordConfirmationTest.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$token\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/PasswordResetTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 4
+			path: tests/Jetbrains/Feature/PasswordResetTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 6
+			path: tests/Jetbrains/Feature/PasswordResetTest.php
+
+		-
+			message: "#^Access to an undefined property Livewire\\\\Features\\\\SupportTesting\\\\Testable\\:\\:\\$state\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/ProfileInformationTest.php
+
+		-
+			message: "#^Access to an undefined property Pest\\\\Expectation\\<App\\\\Models\\\\User\\|null\\>\\:\\:\\$name\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/ProfileInformationTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/ProfileInformationTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/RegistrationTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 4
+			path: tests/Jetbrains/Feature/RegistrationTest.php
+
+		-
+			message: "#^Cannot access property \\$users on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/RemoveTeamMemberTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/RemoveTeamMemberTest.php
+
+		-
+			message: "#^Cannot call method users\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/RemoveTeamMemberTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function expect$#"
+			count: 1
+			path: tests/Jetbrains/Feature/RemoveTeamMemberTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/RemoveTeamMemberTest.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\|Pest\\\\Support\\\\HigherOrderTapProxy\\:\\:skip\\(\\)\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/TwoFactorAuthenticationSettingsTest.php
+
+		-
+			message: "#^Cannot access property \\$two_factor_secret on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/TwoFactorAuthenticationSettingsTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 5
+			path: tests/Jetbrains/Feature/TwoFactorAuthenticationSettingsTest.php
+
+		-
+			message: "#^Cannot call method recoveryCodes\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: tests/Jetbrains/Feature/TwoFactorAuthenticationSettingsTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 7
+			path: tests/Jetbrains/Feature/TwoFactorAuthenticationSettingsTest.php
+
+		-
+			message: "#^Cannot access property \\$password on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: tests/Jetbrains/Feature/UpdatePasswordTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 3
+			path: tests/Jetbrains/Feature/UpdatePasswordTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/UpdateTeamMemberRoleTest.php
+
+		-
+			message: "#^Cannot call method hasTeamRole\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/UpdateTeamMemberRoleTest.php
+
+		-
+			message: "#^Cannot call method users\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 2
+			path: tests/Jetbrains/Feature/UpdateTeamMemberRoleTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 2
+			path: tests/Jetbrains/Feature/UpdateTeamMemberRoleTest.php
+
+		-
+			message: "#^Cannot access property \\$name on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/UpdateTeamNameTest.php
+
+		-
+			message: "#^Cannot access property \\$ownedTeams on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/UpdateTeamNameTest.php
+
+		-
+			message: "#^Cannot call method fresh\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: tests/Jetbrains/Feature/UpdateTeamNameTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function expect$#"
+			count: 1
+			path: tests/Jetbrains/Feature/UpdateTeamNameTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Jetbrains/Feature/UpdateTeamNameTest.php
+
+		-
+			message: "#^Function something\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/Pest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Pest.php
