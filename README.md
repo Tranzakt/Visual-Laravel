@@ -32,7 +32,7 @@ It is expected that VL will provide three key benefits:
 3. Improved code quality - auto-generated code can be made to conform to a range of coding best practices,
    can generate code that you might not take the time to create if you were coding manually
    (like factories, seeders, functional and unit tests),
-   knows what database queries will be run and so can 
+   knows what database queries will be run and so can
    determine what indexes are needed and test the queries (EXPLAIN) to confirm that indexes are used,
    only load relations and columns that are going to actually be used and avoid n+1 situations,
    automatically cache (and invalidate) read-only database queries
@@ -44,17 +44,18 @@ and focus on providing only the additional functionality needed on top of that.
 It is anticipated that we will create a lot of new functionality
 which will have general applicability beyond Visual Laravel
 e.g. Web Component / Livewire UI libraries,
-and like Laravel itself, 
+and like Laravel itself,
 we will spin-off new packages to add to the Laravel ecosystem.
 
 ### So how will it work from the user perspective?
 
-The user will define an application, the tables and fields within the application, how these fields will be visually 
+The user will define an application, the tables and fields within the application, how these fields will be visually
 represented in lists and forms, and various other types of Laravel functionality (e.g. queues, crons, etc.).
 
-The development UI will be Livewire based, making it: 
+The development UI will be Livewire based, making it:
+
 * graphical in nature i.e. dynamic Schema diagram as you build your tables, dynamic prototype of forms as you build them;
-* flexible i.e. you can achieve the same results in various different ways such as using forms, clicking on a graphical element etc.; 
+* flexible i.e. you can achieve the same results in various different ways such as using forms, clicking on a graphical element etc.;
 * responsive i.e. fast response times, dynamic UI elements update in real-time.
 
 ![image](https://github.com/Tranzakt/Visual-Laravel/assets/3001893/3f1aa559-9237-4a2e-967d-d68cecc2da2f)
@@ -67,7 +68,7 @@ We anticipate providing as much live feedback as possible. For example:
   to make some changes (e.g. of position or tab sequence) interactively in the example.
 
 When you have defined your application, you can save a snapshot as a development, beta or final version,
-and the definitions you have made will be compiled into PHP/Laravel code and autonated tests will be run, 
+and the definitions you have made will be compiled into PHP/Laravel code and autonated tests will be run,
 and the application will then be available for you to test manually.
 Database definitions will be compiled into Laravel migrations and models,
 visual definitions will be compiled into e.g. Blade templates, etc. etc. etc.
@@ -84,65 +85,87 @@ will require UI/Model/Compile functionality for the following "domains":
 * Other (Services/Broadcasting/Events/Queues/Files/RPC/I18N/Mail/Notifications/Queues/Schedules)
 * Settings/Defaults (for e.g. Validations, formatting etc.)
 
-### Inspiration
+### Further documentation
 
-VL was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
-so a big debt of gratitude is owed to the original author of that package, 
-[Rob Clayburn](https://github.com/pollen8), 
-not only for that extension but also for his 
+* [Contributing to this project](./CONTRIBUTING.MD)
+* [Code-of-conduct for Contributors](./CODE-OF-CONDUCT.md)
+* [Development environment for code contributors](./DEV-ENVT.md)
+* [Project Governance](./GOVERNANCE.md)
+* [Choosing UI Components](./UI-COMPONENTS.md)
+* [Code License](./LICENSE.md)
+* [Acknowledgements](./ACKNOWLEDGEMENTS.md)
+
+### Code Contributor Guidance
+
+* [Development environment for code contributors](./DEV-ENVT.md)
+* [Design & Development Coding rules](./CODING-RULES.md)
+* [Dependencies - and their documentation](./DEPENDENCIES.md)
+
+### The Inspiration for this project
+
+**Visual-Laravel** was inspired by a rather ancient Joomla extension called Fabrik which provided a similar web-based development environment,
+and a huge debt of gratitude is owed to the original author of that package,
+[Rob Clayburn](https://github.com/pollen8),
+not only for that extension but also for his
 inspirational thoughts given to me personally several years ago
 about how he would have developed Fabrik if he was starting again.
 
-Unfortunately, due to its age 
+Unfortunately, due to its age
 (dating back to 2011 from when PHP v5 was a mess)
-Fabrik was not able to take advantage of 
-modern PHP object-oriented capabilities or 
-newer open source functionalities 
+Fabrik was not able to take advantage of
+modern PHP object-oriented capabilities or
+newer open source functionalities
 like ORMs / template-engines /or SPA technologies,
 which consequently ended up being bespoke spaghetti code
 with a few huge objects, difficult or impossible to maintain,
 and a UI that was somewhat clunky.
 
+When combined with the regular architectural rewrites of
+the underlying Joomla technology (v1 to v2 to v3 to v4)
+(and of course the evolution of php regularly deprecating stuff)
+this became impossible to maintain.
+
 ### Current Status
 
-Visual Laravel is currently in very early development, with an initial target to define the development kernel and some basic 
-database/list/form functionality in order to demonstrate the viability and 
+Visual Laravel is currently in very early development, with an initial target to define the development kernel and some basic
+database/list/form functionality in order to demonstrate the viability and
 try to encourage the open source community to help build out the remaining functionality.
 
-There are both [short-term](./ROADMAP.md#the-short-term-roadmap), [medium-term](./ROADMAP.md#the-medium-term-roadmap) and [long-term](./ROADMAP.md#the-long-term-roadmap) road maps - 
+There are both [short-term](./ROADMAP.md#the-short-term-roadmap), [medium-term](./ROADMAP.md#the-medium-term-roadmap) and [long-term](./ROADMAP.md#the-long-term-roadmap) road maps -
 and obviously the short-term road-map is the current focus.
 
-We envisage having Git integration, so that saved versions can be committed to Git, 
+We envisage having Git integration, so that saved versions can be committed to Git,
 and then automation can be used to deploy releases into test, staging or production environments.
 
-We envisage having a single development technology stack (current thinking that it will be a Livewire-based solution) 
-but if needed supporting multiple runtime front-end stacks 
+We envisage having a single development technology stack (current thinking that it will be a Livewire-based solution)
+but if needed supporting multiple runtime front-end stacks
 (initially just Livewire, but later vanilla Blade, Intertia/Vue, Intertia/React, Inertia/Splade),
 multiple UI/CSS libraries (initially Tailwind, but later bootstrap etc.)
 and multiple front-end environments (initially only Laravel, but later through API calls from e.g. Joomla/Wordpress etc.).
 
 Note: The purpose of supporting multiple environments is to facilitate co-existence with existing sites
 by supporting the technology base already used by these sites.
-The difficulty with supporting multiple environments is needing to either: 
+The difficulty with supporting multiple environments is needing to either:
 
 1. limit functionality to the lowest common denominator; or
 2. make the full power of each environment available where components exist and have gaps where they don't.
 
 At this early stage it remains to be determined which approach we will follow.
 
-Once the Laravel basics are in place, we can also start to take advantage of all the existing PHP/Laravel/Javascript package ecosystem, 
+Once the Laravel basics are in place, we can also start to take advantage of all the existing PHP/Laravel/Javascript package ecosystem,
 building additional Visual Laravel plugins around these existing packages.
 
 But of course a lot of this is for the future - we need to get the basics running first,
 and we need to try to get the kernel architecture as right as we possibly can from the outset,
-not only to support the basic functionality, but also to support later technology 
-without requiring a wholesale rewrite of the kernel or existing plugins 
-or (worse still) obsoleting existing application definitions (requiring a recreation from scratch) 
+not only to support the basic functionality, but also to support later technology
+without requiring a wholesale rewrite of the kernel or existing plugins
+or (worse still) obsoleting existing application definitions (requiring a recreation from scratch)
 or (not quite so bad) requiring a migration of app definitions from one version to another.
 
 ### So how will it work from a technical perspective?
 
 The core of Visual Laravel is the kernel which provides the following functionality:
+
 1. Ability for various types of plugins to register themselves.
 Externalising as much functionality to plugins allows for the greatest flexibility
 and the greatest ease for adding new functionality.
@@ -152,6 +175,7 @@ with development UI plugins providing domain-specific UI functionality within th
 and coordinating functionality between various types of plugins and between plugins themselves.
 
 At this stage of design we envisage the following types of plugins:
+
 1. Development UI - providing major development UI building blocks for
 e.g. Application options, Database tables, Visualisations (initially Lists & Forms, but could be charts or maps or whatever),
 data visual Elements (for lists, read-only forms, update forms),
@@ -159,5 +183,5 @@ and Laravel-specific functionality (ideally full coverage of the entire Laravel 
 2. Detailed plugins for each individual type of database column, visual element, etc.
 3. Compile plugins for each supported run-time environment for each of the above plugins.
 
-The choice of web component libraries is a significant one, 
+The choice of web component libraries is a significant one,
 and to assist the current research into choices has been [documented separately](./UI-COMPONENTS.md).

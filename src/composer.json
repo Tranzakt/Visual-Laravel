@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "tranzakt/visual-laravel",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "The web-based low-code/no-code application builder for Laravel.",
     "keywords": [
         "laravel",
-        "framework"
+        "visual laravel",
+        "low code",
+        "no code",
     ],
     "license": "MIT",
     "require": {
