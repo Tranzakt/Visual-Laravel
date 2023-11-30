@@ -52,8 +52,8 @@ though there will undoubtedly be exceptions.
 | * Bladestan
 | Faker
 | PHP-CS-Fixer
-| Laravel Dusk | Headless browser UI testing
-| Mockery
+| [Laravel Dusk](https://laravel.com/docs/10.x/dusk) | Headless browser automated testing
+| [Mockery](https://laravel.com/docs/10.x/mocking)
 | Collision
 | Laravel Mojito
 | Laravel Pot
@@ -76,14 +76,15 @@ though there will undoubtedly be exceptions.
 |-|-|
 | [NPM]() |
 | [Bun]() ||
-| Tailwind
+| [Tailwind](https://tailwindcss.com/docs/installation) | Fixed classes combined in HTML rather than in CSS - edit only HTML and not both HTML and CSS. Plus build-time analysis and subsetting.
+Classes for: Sizing, Colours, Typography, Shadows, Themes, Responsiveness, Grids, Transforms, Filters, Bundling
 | * Forms
 | * Typography
 | * CSS
 | * Vite
 | autoprefixer
 | axios
-| vite
+| [Vite](https://vitejs.dev/guide/)
 | Laravel Vite
 | **NOT YET INSTALLED** | **NOT YET INSTALLED** |
 | [Alpine.js](https://alpinejs.dev/start-here) | Livewire is built upon Alpine.js for Javascript orchestration. |
@@ -98,7 +99,7 @@ though there will undoubtedly be exceptions.
 | Tests |
 | Linting |
 | Package splitting |
-| 
+| [StyleCI](https://styleci.io/)
 
 ## Deployments
 

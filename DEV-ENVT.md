@@ -15,12 +15,12 @@ Laravel applications.
 This is achieved using Dev Containers and Docker.
 
 - Docker Composer provides a multi-container environment that can be
-  created easily and quickly from standardised pre-built images.
+ created easily and quickly from standardised pre-built images.
 
 - Dev Containers are simply container definitions
-  that are associated with the project
-  (with definitions in a specific project sub-directory)
-  and which are launched automatically when you open the project's root folder.
+ that are associated with the project
+ (with definitions in a specific project sub-directory)
+ and which are launched automatically when you open the project's root folder.
 
 This functionality is already provided by Laravel Sail,
 however experience suggests that the Laravel Sail build process
@@ -151,57 +151,56 @@ It is also possible that this same environment could potentially be
 be used as a very simple and easy way for single-person VL users
 to run VL locally to create apps for deployment to production infrastructure.
 
-| Svc/Domain   | Port(s)   | Userid=Pwd | Description                                                                                     |
+| Svc/Domain | Port(s) | Userid=Pwd | Description |
 |--------------|-----------|------------|-------------------------------------------------------------------------------------------------|
-| postgres     | 5432      | postgres   | Postgres SQL database                                                                           |
-| pgadmin      | 5050      | pg@pg.com  | Postgres administration on [localhost:5050](http://localhost:5050)                              |
-| mariadb      | 3306      | mariadb    | MySQL forked database                                                                           |
-| mysql        | 3307      | mysql      | MySQL database                                                                                  |
-| adminer      | 8282      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282)                         |
-| phpmyadmin   | 8383      |            | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383)                         |
-| redis        | 6379      | -          | Cache/Queue database  - RedisInsight visualiser is on [localhost:8001](http://localhost:8001)   |
-| memcached    | 11211     | -          | Cache database                                                                                  |
-| meilisearch  | 7700      | -          | Laravel Scout compatible search index                                                           |
-| minio        | 9000      | minioadmin | Amazon S3 compatible storage engine. Console on [localhost:8900](http://localhost:8900)         |
-| mailpit      | 1025      | -          | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025)               |
-| selenium     |           |            | Browser-based functional testing                                                                |
-| soketi       | 6001/9601 | soketi     | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener |
-| rabbitmq     | 5672      | rabbitmq   | Queue manager. Console on [localhost:15672](http://localhost:15672)                             |
-| mongodb      | 27017     | mongodb    | Document database                                                                               |
-| mongoexpress | 8081      | -          | MongoDB administration on [localhost:8081](http://localhost:8081)                               |
+| postgres | 5432 | postgres | Postgres SQL database |
+| pgadmin | 5050 | pg@pg.com | Postgres administration on [localhost:5050](http://localhost:5050) |
+| mariadb | 3306 | mariadb | MySQL forked database |
+| mysql | 3307 | mysql | MySQL database |
+| adminer | 8282 | | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282) |
+| phpmyadmin | 8383 | | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383) |
+| redis | 6379 | - | Cache/Queue database - RedisInsight visualiser is on [localhost:8001](http://localhost:8001) |
+| memcached | 11211 | - | Cache database |
+| meilisearch | 7700 | - | Laravel Scout compatible search index |
+| minio | 9000 | minioadmin | Amazon S3 compatible storage engine. Console on [localhost:8900](http://localhost:8900) |
+| mailpit | 1025 | - | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025) |
+| soketi | 6001/9601 | soketi | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener |
+| rabbitmq | 5672 | rabbitmq | Queue manager. Console on [localhost:15672](http://localhost:15672) |
+| mongodb | 27017 | mongodb | Document database |
+| mongoexpress | 8081 | - | MongoDB administration on [localhost:8081](http://localhost:8081) |
 
 #### Notes
 
 1. You need to install Docker on your computer
-   in order to run these containers,
-   and you need to install the Docker VSCode extension
-   in order to get Dev Container support
-   (VSCode may automatically prompt you to install this).
-   You also need to install Windows Subsystem for Linux (WSL2) to support Docker.
+ in order to run these containers,
+ and you need to install the Docker VSCode extension
+ in order to get Dev Container support
+ (VSCode may automatically prompt you to install this).
+ You also need to install Windows Subsystem for Linux (WSL2) to support Docker.
 
 2. When building/running the dev container on Windows you may get
-   errors of the form:
+ errors of the form:
 
-   ```txt
-   Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:12345 -> 0.0.0.0:0: listen tcp 0.0.0.0:12345: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
-   ```
+ ```txt
+ Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:12345 -> 0.0.0.0:0: listen tcp 0.0.0.0:12345: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
+ ```
 
-   This is caused by Hyper-V reserving ports for itself.
-   The way to verify this is to
-   open an **administrator** command line window
-   and run the following command,
-   and then look for a line where the error port
-   is between the start- and end-ports:
+ This is caused by Hyper-V reserving ports for itself.
+ The way to verify this is to
+ open an **administrator** command line window
+ and run the following command,
+ and then look for a line where the error port
+ is between the start- and end-ports:
 
-   ```cmd
-   netsh interface ipv4 show excludedportrange protocol=tcp
-   ```
+ ```cmd
+ netsh interface ipv4 show excludedportrange protocol=tcp
+ ```
 
-   The fix is to enter the following command
-   (copying the port number from the above error message):
+ The fix is to enter the following command
+ (copying the port number from the above error message):
 
-   ```cmd
-   netsh int ipv4 add excludedportrange protocol=tcp startport=12345 numberofports=1
-   ```
+ ```cmd
+ netsh int ipv4 add excludedportrange protocol=tcp startport=12345 numberofports=1
+ ```
 
-   You may need to disable and re-enable Hyper-V to get this command to work.
+ You may need to disable and re-enable Hyper-V to get this command to work.

@@ -1,8 +1,17 @@
 # Tranzakt Project's Code of Conduct
 
+## TL;DR Summary
+
+* Participants will be tolerant of opposing views.
+* Participants must ensure that their language and actions are
+free of personal attacks and disparaging personal remarks.
+* When interpreting the words and actions of others,
+participants should always assume good intentions.
+* Behaviour which can be reasonably considered harassment will not be tolerated.
+
 ## Culture
 
-The Transakt Projects wishes to foster an open and welcoming environment for contributors, 
+The Transakt Projects wishes to foster an open and welcoming environment for contributors,
 and accordingly we require all contributors to commit to the following code-of-conduct in order to make contributing to our project a happy and pleasant experience, free of harassment and discrimination against any person for any reason.
 
 To avoid any doubt, this Code of Conduct applies without exception to all contributors, from the senior coders to a community newcomer looking to make their first contribution e.g. a translation.
@@ -51,8 +60,8 @@ but please give credit where it is due.
 Whilst all contributors have the responsibility of following
 this Code-of-Conduct,
 the additional responsibility of judging and enforcing it
-falls upon the project leadership team, 
-whose decisions will be final and non-appealable. 
+falls upon the project leadership team,
+whose decisions will be final and non-appealable.
 
 In the end, no written definition is going to cover all possible nuances,
 and a common-sense, man-on-the-omnibus, sympathetic/empathetic view
@@ -69,6 +78,7 @@ issues, and any other contributions that are not aligned to this Code of Conduct
 This Code of Conduct applies both within project spaces and in spaces
 where an individual is representing the project or its community.
 Examples of representing a project or community include (but are not limited to):
+
 * Using an official project e-mail address
 * Posting via an official social media account
 * Acting as an official representative at an event
@@ -98,6 +108,8 @@ first offences,
 however the project leadership reserves the right to respond in a way that it deems appropriate.
 
 ## CoC attribution
-This Code-of-Conduct is loosely based on
-the Contributor Covenant, version 1.4, 
-available at http://contributor-covenant.org/version/1/4.
+
+This Code-of-Conduct is loosely based on a combination of
+the [Ruby Code-of-Conduct](https://www.ruby-lang.org/en/conduct/)
+(adopted by the Laravel team),
+and the [Contributor Covenant, version 1.4](http://contributor-covenant.org/version/1/4).

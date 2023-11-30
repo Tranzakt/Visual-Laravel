@@ -14,16 +14,17 @@ and debug and tweak their own development environment.
 The cost of this saving in time and effort is a lot of one-time downloading (c. 5GB-6GB)
 and a slow-ish build of the environment (for at least the first time) (c. 15min-30min).
 
-### Pre-requisites
+## Pre-requisites
 
-#### Windows
+### Windows
 
 * Visual Studio Code
 * Windows Subsystem for Linux (WSL)
 * A WSL linux distro such as Ubuntu (a good default if you have no personal preference)
 * Docker Desktop
 
-#### Linux
+### Linux
+
 * Visual Studio Code
 * Docker
 
@@ -72,8 +73,23 @@ the Service Container configurations.
 | Dev - Apache | The repo src directory is mapped to `/var/www/Visual-Laravel` and Apache is configured to use this and serve the Public subdirectory. |
 | Dev - Caches | For performance reasons, various directories holding ephemeral data downloaded from the internet e.g. `vendors` and `node_modules` are cached into local docker volumes rather than being mapped back to the local environment.
 | Adminer      | A non-core plugin `AdminerLoginServers` is used to configure the various database services that Adminer can login to.                 |
-| PGadmin      | A json file is used to define the postgres service                                                                                    |
+| pgAdmin      | A json file is used to define the postgres service                                                                                    |
 | phpMyAdmin   | A configuration file defines the MariaDB/MySQL services                                                                               |
 |              | A dark theme is added                                                                                                                 |
 |              | Several SQL files are used to configure the MariaDB and MySQL services to add the phpMyAdmin configuration database on first run.     |
-| pgAdmin | A configuration file defines the postgres services |
+
+## Future improvements
+
+This devcontainer build is inspired by
+[Laravel Sail](https://laravel.com/docs/10.x/sail)
+but independently created using the best-of-class Docker images.
+
+A number of small-ish improvements have been identified
+for future implementation:
+
+* Make the Sail command (which is included in Laravel as standard)
+work for our devcontainer environment.
+* Integrate Adminer, PhpMyAdmin, pgAdmin and MongoExpress as virtual websites into the primary devcontainer and into Apache in order to:
+  * A) Support SQLite; and
+  * B) Avoid the virtualisation overhead of having separate containers for them.
+  It is anticipated that this would save 1GB in image downloads, and 300MB of memory.

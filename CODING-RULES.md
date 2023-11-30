@@ -43,6 +43,11 @@ At the current time we envisage that this will break down into the following dom
   * Forms
   * Charts
   * Other
+* Pages
+  * Routing
+  * Blades
+  * Themes
+  * CSS
 * Security
 
 Each of the individual components need to do the following:

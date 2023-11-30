@@ -8,6 +8,7 @@
 </p>
 
 # Visual-Laravel (VL)
+
 Visual Laravel is a web-based, no-code/low-code Laravel development environment.
 
 Using a web browser you will be able to define database tables/fields, UI lists/forms/etc., menus and other graphical elements,
@@ -87,7 +88,7 @@ will require UI/Model/Compile functionality for the following "domains":
 
 ### Further documentation
 
-* [Contributing to this project](./CONTRIBUTING.MD)
+* [Contributing to this project](./CONTRIBUTING.md)
 * [Code-of-conduct for Contributors](./CODE-OF-CONDUCT.md)
 * [Development environment for code contributors](./DEV-ENVT.md)
 * [Project Governance](./GOVERNANCE.md)
