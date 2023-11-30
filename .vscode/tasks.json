@@ -28,7 +28,7 @@
             "command": "composer install && bun install",
             "options": {
                 "cwd": "${workspaceFolder}/src"
-            }
+            },
             "runOptions": {
                 "runOn": "folderOpen"
             },

@@ -92,4 +92,4 @@ work for our devcontainer environment.
 * Integrate Adminer, PhpMyAdmin, pgAdmin and MongoExpress as virtual websites into the primary devcontainer and into Apache in order to:
   * A) Support SQLite; and
   * B) Avoid the virtualisation overhead of having separate containers for them.
-  It is anticipated that this would save 1GB in image downloads, and 300MB of memory.
+  It is anticipated that this would save 1GB in image downloads, and c. 240MB of memory.

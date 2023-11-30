@@ -151,23 +151,23 @@ It is also possible that this same environment could potentially be
 be used as a very simple and easy way for single-person VL users
 to run VL locally to create apps for deployment to production infrastructure.
 
-| Svc/Domain | Port(s) | Userid=Pwd | Description |
-|--------------|-----------|------------|-------------------------------------------------------------------------------------------------|
-| postgres | 5432 | postgres | Postgres SQL database |
-| pgadmin | 5050 | pg@pg.com | Postgres administration on [localhost:5050](http://localhost:5050) |
-| mariadb | 3306 | mariadb | MySQL forked database |
-| mysql | 3307 | mysql | MySQL database |
-| adminer | 8282 | | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282) |
-| phpmyadmin | 8383 | | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383) |
-| redis | 6379 | - | Cache/Queue database - RedisInsight visualiser is on [localhost:8001](http://localhost:8001) |
-| memcached | 11211 | - | Cache database |
-| meilisearch | 7700 | - | Laravel Scout compatible search index |
-| minio | 9000 | minioadmin | Amazon S3 compatible storage engine. Console on [localhost:8900](http://localhost:8900) |
-| mailpit | 1025 | - | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025) |
-| soketi | 6001/9601 | soketi | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener |
-| rabbitmq | 5672 | rabbitmq | Queue manager. Console on [localhost:15672](http://localhost:15672) |
-| mongodb | 27017 | mongodb | Document database |
-| mongoexpress | 8081 | - | MongoDB administration on [localhost:8081](http://localhost:8081) |
+| Svc/Domain   | Port(s)   | Userid=Pwd   | Description                                                                                     |
+|--------------|-----------|--------------|-------------------------------------------------------------------------------------------------|
+| postgres     | 5432      | `postgres`   | Postgres SQL database                                                                           |
+| pgadmin      | 5050      | `pg@pg.com`  | Postgres administration on [localhost:5050](http://localhost:5050)                              |
+| mariadb      | 3306      | `mariadb`    | MySQL forked database                                                                           |
+| mysql        | 3307      | `mysql`      | MySQL database                                                                                  |
+| adminer      | 8282      |              | MariaDB/MySQL administration on [localhost:8282](http://localhost:8282)                         |
+| phpmyadmin   | 8383      |              | MariaDB/MySQL administration on [localhost:8282](http://localhost:8383)                         |
+| redis        | 6379      | -            | Cache/Queue database - RedisInsight visualiser is on [localhost:8001](http://localhost:8001)    |
+| memcached    | 11211     | -            | Cache database                                                                                  |
+| meilisearch  | 7700      | -            | Laravel Scout compatible search index                                                           |
+| minio        | 9000      | `minioadmin` | Amazon S3 compatible storage engine. Console on [localhost:8900](http://localhost:8900)         |
+| mailpit      | 1025      | -            | Fake email sending. Browse sent emails on [localhost:8025](http://localhost:8025)               |
+| soketi       | 6001/9601 | `soketi`     | WebSockets server used for Laravel Broadcast events - using Laravel Echo as the client listener |
+| rabbitmq     | 5672      | `rabbitmq`   | Queue manager. Console on [localhost:15672](http://localhost:15672)                             |
+| mongodb      | 27017     | `mongodb`    | Document database                                                                               |
+| mongoexpress | 8081      | -            | MongoDB administration on [localhost:8081](http://localhost:8081)                               |
 
 #### Notes
 
@@ -177,6 +177,9 @@ to run VL locally to create apps for deployment to production infrastructure.
  in order to get Dev Container support
  (VSCode may automatically prompt you to install this).
  You also need to install Windows Subsystem for Linux (WSL2) to support Docker.
+ WSL will typically grab a significant amount of your computers memory,
+ and you need a `.wslconfig` file in your user profile to avoid this -
+ an example `.wsconfig` file is provided with this project in `/.devcontainer`.
 
 2. When building/running the dev container on Windows you may get
  errors of the form:
