@@ -3,35 +3,35 @@
 ## LICENSE INTRODUCTION
 
 Tranzakt's Visual-Laravel programme is licensed under the GNU Affero General
-Public License as specified below. The copyright owner's intent by choosing 
-this license is to allow individuals and organisations of all types and sizes 
-to run this programme for their own use and the use of their staff, but we 
-request that this software is NOT used to provide either a paid or free service 
-to others over the internet as we would like to reserve this ability for our own 
-use in the event that we need to generate income in order to defray essential 
-operating costs and / or to pay for our own staff to help develop and maintain 
+Public License as specified below. The copyright owner's intent by choosing
+this license is to allow individuals and organisations of all types and sizes
+to run this programme for their own use and the use of their staff, but we
+request that this software is NOT used to provide either a paid or free service
+to others over the internet as we would like to reserve this ability for our own
+use in the event that we need to generate income in order to defray essential
+operating costs and / or to pay for our own staff to help develop and maintain
 code and documentation, or provide support for users.
 
 To deter organisations from running this programme as a service to 3rd parties,
-the code as it is supplied does not include multi-tenancy/SaaS functionality, 
+the code as it is supplied does not include multi-tenancy/SaaS functionality,
 and has some functionality which restricts its use as a service over the
-internet. Under the Affero GPL License, we cannot prevent a licensee from 
-providing a service over the internet using a modified version of this software 
-which adds multi-tenancy/SaaS functionality and removes the network restriction, 
-however we hope that licensees will recognise the copyright owners wishes and 
+internet. Under the Affero GPL License, we cannot prevent a licensee from
+providing a service over the internet using a modified version of this software
+which adds multi-tenancy/SaaS functionality and removes the network restriction,
+however we hope that licensees will recognise the copyright owners wishes and
 refrain from doing so. However, in the event that they do so, then under this
 license they will need to publish the source code changes they have made.
 
-Please also see the Additional Terms section of this license which add specific 
+Please also see the Additional Terms section of this license which add specific
 allowed terms to the standard Affero GPL.
 
 ### COPYRIGHT
 
-The copyright for these materials is currently held by the Tranzakt Project, 
+The copyright for these materials is currently held by the Tranzakt Project,
 a trading name of developer Paul Freeman a.k.a. Github user Sophist-UK.
 
 If this project is successful, it is intended that ownership will be transferred to
-a formal non-profit organisation, either a new organisation specifically set-up 
+a formal non-profit organisation, either a new organisation specifically set-up
 for such a role, or under the auspices and governance of an existing open-source
 umbrella organisations such as SPI Inc.
 
@@ -40,10 +40,9 @@ will be put in place in order to allow for the project to have longevity beyond
 the involvement of the original developer, and to avoid the project being diverted
 away from the genuine open-source model as intended by the original developer.
 
-
 ### CONTRIBUTIONS
 
-We hope that licensees will recognise the benefits they get from using this software 
+We hope that licensees will recognise the benefits they get from using this software
 without having to pay any license fees, and although we stress that it is **not**  
 a requirement of this license or of using this software, we request that licensees  
 recognize this by making contributions to the project in one of the following ways:
@@ -53,8 +52,8 @@ recognize this by making contributions to the project in one of the following wa
 * Donating their time to bug fixing and functional improvements to the base code
 * Making a financial donation if they so wish
 
-We believe that these contributions will result in improved learning, code, 
-documentation, translations, support and project longevity and safeguard your own 
+We believe that these contributions will result in improved learning, code,
+documentation, translations, support and project longevity and safeguard your own
 investment in this project.
 
 As a suggestion only, without any pressure to do so, we would suggest the following
@@ -65,34 +64,33 @@ guidelines to help quantify the level of contributions outlined above:
 * Commercial projects by non-commercial developers - 5% of developer time or 0.5% of post-live revenue
 
 We encourage contributors to donate their contributions back to the primary project
-(rather than to create their own competing fork) in order that all contributions can 
-work together to improve the overall project. However, please note that contributions 
-of code, documentation or translations back to the primary source are strictly 
-subject to the Contribution Terms detailed in the relevant source file alongside 
+(rather than to create their own competing fork) in order that all contributions can
+work together to improve the overall project. However, please note that contributions
+of code, documentation or translations back to the primary source are strictly
+subject to the Contribution Terms detailed in the relevant source file alongside
 this license.
-
 
 ## ADDITIONAL TERMS
 
 The following additional terms are formally added to the AFFERO GENERAL PUBLIC LICENSE
 as allowed under Section 7 of the standard Affero GPL below:
 
-1.  When redistributing the licensed materials, licensees are required to preserve
+1. When redistributing the licensed materials, licensees are required to preserve
     and redistribute all legal notices and author attributions such as
     this license, contribution terms etc.
 
-2.  When redistributing the licensed materials, licensees are prohibited from misrepresenting
+2. When redistributing the licensed materials, licensees are prohibited from misrepresenting
     the origin of the material. This means that:
 
-    A) if the material contains any changes from the original materials, it **MUST NOT** 
-    be redistributed representing itself as the original materials i.e. it must be 
+    A) if the material contains any changes from the original materials, it **MUST NOT**
+    be redistributed representing itself as the original materials i.e. it must be
     renamed and re-attributed; ***AND***
 
-    B) the original name and original source and original copyright information 
-    must be prominently displayed in the code, in the runtime user interface, and in any 
-    separate documentation, publicity, marketing materials etc. and these must be given 
-    the same prominence (position, font size and type etc.) as any new name, 
-    additional source and additional copyright information. 
+    B) the original name and original source and original copyright information
+    must be prominently displayed in the code, in the runtime user interface, and in any
+    separate documentation, publicity, marketing materials etc. and these must be given
+    the same prominence (position, font size and type etc.) as any new name,
+    additional source and additional copyright information.
     The copyright owners explicitly decline to allow the use of trade names, trademarks or service
     marks for modified versions of the software, documentation, publicity, marketing materials etc.
     except as just defined.
@@ -101,8 +99,8 @@ as allowed under Section 7 of the standard Affero GPL below:
     clearly distinguishable to licensees from the original versions, but also to
     ensure that the original provenance and copyright ownership is also clear.
 
-3.  When redistributing the licensed materials, licensees are required to redistribute the.
-    materials as a copy of the original version provided by the Tranzakt project, 
+3. When redistributing the licensed materials, licensees are required to redistribute the.
+    materials as a copy of the original version provided by the Tranzakt project,
     separately from any modifications made by 3rd parties and redistributed to this licensee,
     and separately from any modifications made by this licensee.
 
@@ -110,11 +108,11 @@ as allowed under Section 7 of the standard Affero GPL below:
 
     a. To make it clear to any downstream licensees what code is provided by the original
        source, and what code has been additionally provided by each 3rd party; and
-    
+
     b. To encourage people to contribute their changes back to the original project
        to be included into the base code, and avoid fragmentation of the community.
 
-5.  Any redistribution of the source, whether modified or not, requires the redistributor
+4. Any redistribution of the source, whether modified or not, requires the redistributor
     to explicitly indemnify the licensors and authors of this material for any liability
     that these redistributions might directly impose on those licensors and authors.
 
@@ -123,40 +121,39 @@ as allowed under Section 7 of the standard Affero GPL below:
     directly from the primary source.
 
     The purpose of this term is two-fold:
-    
-    a. To ensure that redistribution does not result in additional liabilities for the 
+
+    a. To ensure that redistribution does not result in additional liabilities for the
        licensors and copyright owners; and
-    
+
     b. To encourage licensees to direct people to the original source and avoid fragmentation
        of the community.
 
 Please note that these are **Additional Terms** under the Affero GPL and **not** Additional Permissions.
-As such, (unlike Additional Permissions) these Additional Terms cannot and must not be removed 
+As such, (unlike Additional Permissions) these Additional Terms cannot and must not be removed
 in the event that this software is redistributed.
 
 It is an explicit requirement of redistribution that these Additional Terms and the
-original Affero GPL are retained and included in the redistribution, 
-and that they cannot be replaced by any alternative license or terms which are either 
+original Affero GPL are retained and included in the redistribution,
+and that they cannot be replaced by any alternative license or terms which are either
 more or less restrictive or which give greater or fewer rights.
-
 
 ### THIS FILE
 
-This file is a MarkDown reformatted version of the primary license file, 
-provided purely to make it more readable. 
+This file is a MarkDown reformatted version of the primary license file,
+provided purely to make it more readable.
 In the event of any discrepancies between this MarkDown version and the original version,
 the original version shall take precedence.
 
-Aside from this, the GNU AFFERO GPL V3 license stated below is provided entirely unchanged. 
-Only the text above and the application instructions at the end of this file 
+Aside from this, the GNU AFFERO GPL V3 license stated below is provided entirely unchanged.
+Only the text above and the application instructions at the end of this file
 are different to the standard license.
 
-The copyright owner / author / developer welcomes any feedback you may have 
-regarding this license: please email laravel.tranzakt@gmail.com.
-
+The copyright owner / author / developer welcomes any feedback you may have
+regarding this license: please email <laravel.tranzakt@gmail.com>.
 
 ## GNU AFFERO GENERAL PUBLIC LICENSE
-#### Version 3, 19 November 2007
+
+### Version 3, 19 November 2007
 
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
 
@@ -216,7 +213,7 @@ modification follow.
 
 ### TERMS AND CONDITIONS
 
-#### 0. Definitions.
+#### 0. Definitions
 
 "This License" refers to version 3 of the GNU Affero General Public License.
 
@@ -255,7 +252,7 @@ work under this License, and how to view a copy of this License.  If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
 
-#### 1. Source Code.
+#### 1. Source Code
 
 The "source code" for a work means the preferred form of the work
 for making modifications to it.  "Object code" means any non-source
@@ -297,7 +294,7 @@ Source.
 The Corresponding Source for a work in source code form is that
 same work.
 
-#### 2. Basic Permissions.
+#### 2. Basic Permissions
 
 All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
@@ -322,7 +319,7 @@ Conveying under any other circumstances is permitted solely under
 the conditions stated below.  Sublicensing is not allowed; section 10
 makes it unnecessary.
 
-#### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+#### 3. Protecting Users' Legal Rights From Anti-Circumvention Law
 
 No covered work shall be deemed part of an effective technological
 measure under any applicable law fulfilling obligations under article
@@ -338,7 +335,7 @@ modification of the work as a means of enforcing, against the work's
 users, your or third parties' legal rights to forbid circumvention of
 technological measures.
 
-#### 4. Conveying Verbatim Copies.
+#### 4. Conveying Verbatim Copies
 
 You may convey verbatim copies of the Program's source code as you
 receive it, in any medium, provided that you conspicuously and
@@ -351,7 +348,7 @@ recipients a copy of this License along with the Program.
 You may charge any price or no price for each copy that you convey,
 and you may offer support or warranty protection for a fee.
 
-#### 5. Conveying Modified Source Versions.
+#### 5. Conveying Modified Source Versions
 
 You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
@@ -388,7 +385,7 @@ beyond what the individual works permit.  Inclusion of a covered work
 in an aggregate does not cause this License to apply to the other
 parts of the aggregate.
 
-#### 6. Conveying Non-Source Forms.
+#### 6. Conveying Non-Source Forms
 
 You may convey a covered work in object code form under the terms
 of sections 4 and 5, provided that you also convey the
@@ -486,7 +483,7 @@ documented (and with an implementation available to the public in
 source code form), and must require no special password or key for
 unpacking, reading or copying.
 
-#### 7. Additional Terms.
+#### 7. Additional Terms
 
 "Additional permissions" are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
@@ -550,7 +547,7 @@ Additional terms, permissive or non-permissive, may be stated in the
 form of a separately written license, or stated as exceptions;
 the above requirements apply either way.
 
-#### 8. Termination.
+#### 8. Termination
 
 You may not propagate or modify a covered work except as expressly
 provided under this License.  Any attempt otherwise to propagate or
@@ -578,7 +575,7 @@ this License.  If your rights have been terminated and not permanently
 reinstated, you do not qualify to receive new licenses for the same
 material under section 10.
 
-#### 9. Acceptance Not Required for Having Copies.
+#### 9. Acceptance Not Required for Having Copies
 
 You are not required to accept this License in order to receive or
 run a copy of the Program.  Ancillary propagation of a covered work
@@ -589,7 +586,7 @@ modify any covered work.  These actions infringe copyright if you do
 not accept this License.  Therefore, by modifying or propagating a
 covered work, you indicate your acceptance of this License to do so.
 
-#### 10. Automatic Licensing of Downstream Recipients.
+#### 10. Automatic Licensing of Downstream Recipients
 
 Each time you convey a covered work, the recipient automatically
 receives a license from the original licensors, to run, modify and
@@ -614,7 +611,7 @@ rights granted under this License, and you may not initiate litigation
 any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.
 
-#### 11. Patents.
+#### 11. Patents
 
 A "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based.  The
@@ -683,7 +680,7 @@ Nothing in this License shall be construed as excluding or limiting
 any implied license or other defenses to infringement that may
 otherwise be available to you under applicable patent law.
 
-#### 12. No Surrender of Others' Freedom.
+#### 12. No Surrender of Others' Freedom
 
 If conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
@@ -695,7 +692,7 @@ to collect a royalty for further conveying from those to whom you convey
 the Program, the only way you could satisfy both those terms and this
 License would be to refrain entirely from conveying the Program.
 
-#### 13. Remote Network Interaction; Use with the GNU General Public License.
+#### 13. Remote Network Interaction; Use with the GNU General Public License
 
 Notwithstanding any other provision of this License, if you modify the
 Program, your modified version must prominently offer all users
@@ -716,7 +713,7 @@ License will continue to apply to the part which is the covered work,
 but the work with which it is combined will remain governed by version
 3 of the GNU General Public License.
 
-#### 14. Revised Versions of this License.
+#### 14. Revised Versions of this License
 
 The Free Software Foundation may publish revised and/or new versions of
 the GNU Affero General Public License from time to time.  Such new versions
@@ -742,7 +739,7 @@ permissions.  However, no additional obligations are imposed on any
 author or copyright holder as a result of your choosing to follow a
 later version.
 
-#### 15. Disclaimer of Warranty.
+#### 15. Disclaimer of Warranty
 
 THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
@@ -753,7 +750,7 @@ PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
 IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
 ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
-#### 16. Limitation of Liability.
+#### 16. Limitation of Liability
 
 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
@@ -765,7 +762,7 @@ PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
 EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
 
-#### 17. Interpretation of Sections 15 and 16.
+#### 17. Interpretation of Sections 15 and 16
 
 If the disclaimer of warranty and limitation of liability provided
 above cannot be given local legal effect according to their terms,
@@ -780,7 +777,7 @@ copy of the Program in return for a fee.
 
 It is intended to attach the following notices to the program by including
 them at the start of each source file, or at the end of each documentation file,
-in order to most effectively claim copyright ownership and state the exclusion 
+in order to most effectively claim copyright ownership and state the exclusion
 of warranty.
 
     Tranzakt Visual Laravel - low-code/no-code development of Laravel applications

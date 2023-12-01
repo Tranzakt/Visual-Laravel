@@ -93,3 +93,8 @@ work for our devcontainer environment.
   * A) Support SQLite; and
   * B) Avoid the virtualisation overhead of having separate containers for them.
   It is anticipated that this would save 1GB in image downloads, and c. 240MB of memory.
+* Make all service containers optional,
+and write code to read the `APP_ENV` environment variable and the
+relevant `.env` file and automatically start any relevant service
+containers needed by this configuration.
+This should make VScode startup faster and reduce the container memory usage.

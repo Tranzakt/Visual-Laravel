@@ -2,6 +2,8 @@
 
 ## TL;DR Summary
 
+**TL;DR TL;DR:** Wheaton's Law: "Don't be a dick!"
+
 * Participants will be tolerant of opposing views.
 * Participants must ensure that their language and actions are
 free of personal attacks and disparaging personal remarks.
@@ -94,7 +96,7 @@ suggests otherwise.
 
 If you have been the target of behaviour which violates this Code-of-Conduct,
 or have been witness to it,
-please reported it to the project leadership by email or direct message.
+please report it to the project leadership by email or direct message.
 
 Such reports are made in confidence,
 and the project leadership is obligated to maintain confidentiality
@@ -105,11 +107,15 @@ recognising that viewpoints and memories of the incident may differ.
 If appropriate, reconciliation will generally be a first objective,
 and warnings and timeouts will normally be considered for
 first offences,
-however the project leadership reserves the right to respond in a way that it deems appropriate.
+however the project leadership reserves the right to respond in any way that it deems appropriate,
+including (but not limited to) private or public warnings, a required private or public apology,
+a temporary or permanent ban on private or direct communication with other specific individuals,
+a temporary or permanent ban on all involvement with the project etc.
 
 ## CoC attribution
 
 This Code-of-Conduct is loosely based on a combination of
+[Wheaton's Law](http://www.wheatonslaw.com/dontbeadick.html),
 the [Ruby Code-of-Conduct](https://www.ruby-lang.org/en/conduct/)
 (adopted by the Laravel team),
 and the [Contributor Covenant, version 1.4](http://contributor-covenant.org/version/1/4).

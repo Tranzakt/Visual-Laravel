@@ -78,16 +78,14 @@ and they will not be generated or run.
 - Node/NPM/Bun
 - Zsh enhancements
 
-**Notes:** 
+**Notes:**
 
 1. You are encouraged to use `zsh` as the terminal shell because of its completion capabilities.
 You are also encouraged to use `bun` as an alternative for `npm` because it is much, much faster.
 
 2. When you open this workspace in vscode, the recommended vscode extensions will be automatically loaded, and `composer install` and `bun install` will be run in sequence to load packages so that you are good to go.
 
-3. Whilst we have added `bun` as an alternative to `npm`, we have not installed `yarn` because we have not thought it necessary to have a 3rd means of installing node packages - but if there is a need, this can be added.
-
-4. We have not yet worked out how to add the following packages as part of the dev container build
+3. We have not yet worked out how to add the following packages as part of the dev container build
 but they can be manually installed using `apt-get`.
 
 - SqliteBrowser (an executable Sqlite database manager)
