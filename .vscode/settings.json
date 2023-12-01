@@ -83,4 +83,9 @@
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
   "markdown-preview-enhanced.HTML5EmbedIsAllowedHttp": true,
   "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": true,
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": [
+      "ui"
+    ],
+  }
 }

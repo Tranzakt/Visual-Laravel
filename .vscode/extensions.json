@@ -58,8 +58,19 @@
         "devsense.composer-php-vscode",
         "henriiik.docker-linter",
         "dunstontc.vscode-docker-syntax",
-        "mikestead.dotenv",
         "usernamehw.errorlens",
-        "recca0120.vscode-phpunit"
+        "recca0120.vscode-phpunit",
+        "kamikillerto.vscode-colorize",
+        "ikappas.composer",
+        "kainiklas.composer-intellisense",
+        "wmaurer.change-case",
+        "patbenatar.advanced-new-file",
+        "github.vscode-github-actions",
+        "me-dutour-mathieu.vscode-github-actions",
+        "robertostermann.inline-parameters-extended",
+        "bebo925.livewire-switcher",
+        "junstyle.php-cs-fixer",
+        "kakumei.php-xdebug",
+        "swordev.phpstan"
     ]
 }
