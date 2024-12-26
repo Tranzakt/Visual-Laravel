@@ -14,6 +14,8 @@ Visual Laravel is a web-based, no-code/low-code Laravel development environment.
 Using a web browser you will be able to define database tables/fields, UI lists/forms/etc., menus and other graphical elements,
 all forms of Laravel and Laravel extension objects and if needed write your own Laravel code snippets.
 
+Visual Laravel was inspired by a Joomla CMS extension called Fabrik that did something similar (but in a clunky way).
+
 Once you have defined the model using the Web UI, VL will then generate (compile) all the Laravel PHP code needed from this model.
 
 It is expected that VL will provide three key benefits:
@@ -25,10 +27,10 @@ It is expected that VL will provide three key benefits:
    but my own attempts failed due to frequent bugs and a very-low productivity UX.)
 
 2. Greater productivity for experienced developers - even with the level of utility functionality provided by Laravel, Eloquent etc.,
-   coding a Laravel project still requires using the same definitions to code multiple coordinated sets of code
+   coding a Laravel project still requires writing coordinated pieces of code in several places as part of the same functionality
    (e.g. migrations/factories/seeds/models/tests or routes/views/controllers/tests etc.).
    Using a single application model to generate all these files should deliver significant efficiencies.
-   This will depend on having an excellent, performant UX, which makes creating the model easy.
+   This will depend on having an excellent, highly performant UX, which makes creating the application easy.
 
 3. Improved code quality - auto-generated code can be made to conform to a range of coding best practices,
    can generate code that you might not take the time to create if you were coding manually
@@ -38,8 +40,12 @@ It is expected that VL will provide three key benefits:
    only load relations and columns that are going to actually be used and avoid n+1 situations,
    automatically cache (and invalidate) read-only database queries
    etc. etc. etc.
+   In addition, the UI can lead the developer to use techniques like Domain Driven Design (DDD) and
+   Test Driven Development (TDD), and can provide both UI and PDF documentation like
+   UML diagrams, class diagrams and Entity Relationship Diagrams.
 
-By using Laravel (and its ecosystem) VL can take advantage of a massive amount of functionality that is already available and mature,
+By using Laravel (and its ecosystem) VL can take advantage of
+a massive amount of functionality that is already available and mature,
 and focus on providing only the additional functionality needed on top of that.
 
 It is anticipated that we will create a lot of new functionality
@@ -53,7 +59,7 @@ we will spin-off new packages to add to the Laravel ecosystem.
 The user will define an application, the tables and fields within the application, how these fields will be visually
 represented in lists and forms, and various other types of Laravel functionality (e.g. queues, crons, etc.).
 
-The development UI will be Livewire based, making it:
+The development UI will be Livewire / Filament based, making it:
 
 * graphical in nature i.e. dynamic Schema diagram as you build your tables, dynamic prototype of forms as you build them;
 * flexible i.e. you can achieve the same results in various different ways such as using forms, clicking on a graphical element etc.;
@@ -89,6 +95,7 @@ will require UI/Model/Compile functionality for the following "domains":
 ### Further documentation
 
 * [Contributing to this project](./CONTRIBUTING.md)
+* [Code-of-conduct for Contributors](./CODE-OF-CONDUCT.md)
 * [Code-of-conduct for Contributors](./CODE-OF-CONDUCT.md)
 * [Development environment for code contributors](./DEV-ENVT.md)
 * [Project Governance](./GOVERNANCE.md)
@@ -172,7 +179,7 @@ Externalising as much functionality to plugins allows for the greatest flexibili
 and the greatest ease for adding new functionality.
 2. Providing basic UI framework functionality,
 with development UI plugins providing domain-specific UI functionality within the UI framework.
-3. Providing generic helper functions for plugins to use,  
+3. Providing generic helper functions for plugins to use,
 and coordinating functionality between various types of plugins and between plugins themselves.
 
 At this stage of design we envisage the following types of plugins:
