@@ -1,42 +1,59 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "tranzakt/visual-laravel",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
-    "license": "MIT",
+    "description": "A no-code/low-code UI-driven code generator.",
+    "keywords": [
+        "laravel",
+        "livewire",
+        "filament"
+    ],
+    "license": "AGPL",
     "require": {
         "php": "^8.2",
+        "fakerphp/faker": "^1.23",
         "filament/filament": "^3.2",
         "laravel/framework": "^11.31",
         "laravel/jetstream": "^4.2|^5.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "mockery/mockery": "^1.6",
+        "spatie/laravel-markdown": "^2.7",
         "stephenjude/filament-jetstream": "^0.0.15"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
-        "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.1",
+        "orchestra/testbench": "^9.9",
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "App\\": "VisualLaravel/Base/App",
+            "Database\\Factories\\": "VisualLaravel/Base/database/factories/",
+            "Database\\Seeders\\": "VisualLaravel/Base/database/seeders/",
+            "VisualLaravel\\Core\\": "VisualLaravel/Core/"
+        },
+        "DUMMY": {
+            "VisualLaravel\\": "VisualLaravel"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "VisualLaravel/tests/",
+            "Workbench\\App\\": "VisualLaravel/workbench/app/",
+            "Workbench\\Database\\Factories\\": "VisualLaravel/workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "VisualLaravel/workbench/database/seeders/"
+        },
+        "DUMMY": {
         }
     },
     "scripts": {
         "post-autoload-dump": [
+            "@clear",
+            "@prepare",
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
             "@php artisan filament:upgrade"
@@ -55,6 +72,25 @@
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names=server,queue,logs,vite"
+        ],
+        "bun": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"bun --watch run dev\" --names=server,queue,logs,vite"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "lint": [
+            "@php vendor/bin/pint --ansi"
+        ],
+        "test": [
+            "@clear",
+            "@php vendor/bin/phpunit"
         ]
     },
     "extra": {

@@ -5,10 +5,10 @@ export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './app/Filament/**/*.php',
-        './resources/views/filament/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
+        './VisualLaravel/Core/Filament/**/*.php',
+        './storage/framework/views/*.php',
+        './VisualLaravel/Core/resources/views/**/*.blade.php',
+        './VisualLaravel/Core/resources/views/filament/**/*.blade.php',
     ],
 };

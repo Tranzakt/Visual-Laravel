@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="48mm"
+   height="33mm"
+   viewBox="0 0 181.41732 124.72441"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="VisualLaravel.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="VisualLaravel.png"
+   inkscape:export-xdpi="1000"
+   inkscape:export-ydpi="1000"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="black"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="5.2971787"
+     inkscape:cx="90.708663"
+     inkscape:cy="62.297313"
+     inkscape:window-width="1757"
+     inkscape:window-height="1057"
+     inkscape:window-x="155"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1"
+     inkscape:clip-to-page="false" />
+  <defs
+     id="defs1" />
+  <title
+     id="title1">Logomark</title>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Logomark</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     id="path134"
+     style="fill:white;stroke:#ff2d20;stroke-width:3.23423;stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.98879343,0,0,0.99785159,-135.04769,-154.81428)"
+     d="m 260.80437,233.65539 -0.0957,22.14205 m -19.17119,-76.88364 -0.0503,43.87973 m 38.45278,-44.06498 19.25388,11.02664 m -19.26388,10.89521 19.25212,11.05485 m -38.37771,21.95019 -19.31721,-10.86186 m -19.18205,-54.95732 19.2324,11.07735 m 57.6446,32.79164 0.0118,-21.9503 m -4e-5,-1e-5 19.15604,-11.07158 m -57.54551,54.97189 38.37771,-21.95 m -57.69492,11.08813 19.22146,-11.07163 m -19.17115,-32.80809 19.15605,-11.07159 m -38.38838,-0.006 19.15599,-11.07159 19.23239,11.07745 0.0151,43.87961 19.22142,-11.07157 0.01,-21.92185 19.23472,-11.07149 19.17519,11.02661 0.0846,21.96674 -19.25238,11.05506 -0.0118,21.94984 -38.46169,22.14231 -38.42134,-22.10884 z"
+     inkscape:label="Laravel" />
+  <path
+     id="path108"
+     style="fill:white;stroke:#ff2d20;stroke-width:3.21388;stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(1.0009656,0,0,0.9982436,-185.96387,-89.781391)"
+     d="m 232.10967,173.4785 9.42784,5.43512 m -7.05969,4.07735 7.05968,-4.07736 m -16.12085,-31.6734 9.06118,35.75076 m 10.01847,-46.59399 -2.95879,42.51663 m -16.09161,-53.58654 19.0504,11.06991 m 0,0 18.97476,-11.06396 m -76.07964,21.90129 19.05042,11.07041 m 0,0 18.97481,-11.06446 m 0,0 -1.1909,-0.76016 m -17.78391,11.82462 13.69113,54.97132 m -19.23239,-11.0773 -13.50916,-54.96443 18.97481,-11.06451 17.85952,10.3103 1.22015,-21.15303 18.97477,-11.06397 19.05039,11.06994 -4.87644,65.80067 -38.46164,22.14226 z"
+     inkscape:label="Visual" />
+  <path
+     id="path2"
+     style="fill:white;stroke:#ff2d20;stroke-width:3.21388;stroke-linecap:round;stroke-linejoin:round"
+     inkscape:label="Visual Laravel"
+     transform="matrix(1.0009656,0,0,0.9982436,-185.96387,-89.781391)"
+     d="M 232.11 173.478 L 241.538 178.914 M 234.478 182.991 L 241.538 178.914 M 225.417 147.24 L 234.478 182.991 M 244.496 136.397 L 241.538 178.914 M 225.446 125.327 L 244.496 136.397 M 244.496 136.397 L 263.471 125.333 M 187.391 147.234 L 206.442 158.305 M 206.442 158.305 L 225.417 147.24 M 225.417 147.24 L 224.226 146.48 M 206.442 158.305 L 220.133 213.276 M 200.901 202.199 L 187.391 147.234 L 206.366 136.17 L 224.226 146.48 L 225.446 125.327 L 244.421 114.263 L 263.471 125.333 L 258.595 191.134 L 220.133 213.276 Z M 308.5 168.416 L 308.405 190.55 M 289.467 113.696 L 289.418 157.559 M 327.403 113.511 L 346.423 124.533 M 327.393 135.424 L 346.411 146.475 M 308.5 168.416 L 289.418 157.559 M 270.469 102.623 L 289.467 113.696 M 346.411 146.475 L 346.423 124.533 M 346.423 124.533 L 365.346 113.466 M 308.5 168.416 L 346.411 146.475 M 289.418 157.559 L 308.405 146.491 M 289.467 113.696 L 308.391 102.629 M 270.469 102.623 L 289.392 91.5556 L 308.391 102.629 L 308.405 146.491 L 327.393 135.424 L 327.403 113.511 L 346.404 102.443 L 365.346 113.466 L 365.43 135.424 L 346.411 146.475 L 346.4 168.416 L 308.406 190.549 L 270.451 168.449 Z" />
+</svg>

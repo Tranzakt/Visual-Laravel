@@ -4,11 +4,11 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
-return Application::configure(basePath: dirname(__DIR__))
+return Application::configure(basePath: realpath(__DIR__.'/../'))
     ->withRouting(
-        web: __DIR__.'/../routes/web.php',
-        api: __DIR__.'/../routes/api.php',
-        commands: __DIR__.'/../routes/console.php',
+        web: realpath(__DIR__.'/../VisualLaravel/Core/routes/web.php'),
+        api: realpath(__DIR__.'/../VisualLaravel/Core/routes/api.php'),
+        commands: realpath(__DIR__.'/../VisualLaravel/Core/routes/console.php'),
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
@@ -16,4 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
+    })
+    ->create()
+    ->useAppPath(realpath(__DIR__.'/../VisualLaravel/Core/'))
+    ->useConfigPath(realpath(__DIR__.'/../VisualLaravel/Core/config/'))
+    ->useDatabasePath(realpath(__DIR__.'/../VisualLaravel/Core/database/'))
+    ->useLangPath(realpath(__DIR__.'/../VisualLaravel/Core/lang/'))
+    ->useStoragePath(realpath(__DIR__.'/../Storage/VisualLaravel/Core/'));
