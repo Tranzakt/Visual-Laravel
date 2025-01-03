@@ -25,6 +25,7 @@ jobs:
     strategy:
       matrix:
         php-version: [8.3]
+        node-version: [current]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     name: Code coverage with PHP ${{ matrix.php-version }} on ${{ matrix.os }}
@@ -42,7 +43,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ env.php-extensions }}
-          key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
+          key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-node${{ matrix.node-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -61,11 +62,19 @@ jobs:
           key: ${{ steps.extcache.outputs.key }}
           restore-keys: vl-${{ matrix.os }}-php${{ matrix.php-version }}-
 
-      - uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401
+      - name: Setup PHP
+        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401
         with:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.php-extensions }}
           coverage: ${{ env.php-coverage }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'src'
 
       - name: Install Dependencies
         run: |
