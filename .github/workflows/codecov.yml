@@ -27,7 +27,7 @@ jobs:
         php-version: [8.3]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    name: Code coverage with PHP ${{ matrix.php-versions }} on ${{ matrix.os }}
+    name: Code coverage with PHP ${{ matrix.php-version }} on ${{ matrix.os }}
     env:
       php-extensions: intl, pcov
       php-coverage: pcov
@@ -67,6 +67,11 @@ jobs:
           extensions: ${{ env.php-extensions }}
           coverage: ${{ env.php-coverage }}
 
+      - name: Install Dependencies
+        run: |
+          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
+          npm run build
+
       - name: Prepare Env.
         run: |
           # Copy .env, Generate key, Set directory permissions, Create empty SQLite DB
@@ -76,11 +81,6 @@ jobs:
           mkdir -p storage/database
           rm -f storage/database/visual-laravel.sqlite
           touch storage/database/visual-laravel.sqlite
-
-      - name: Install Dependencies
-        run: |
-          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
-          npm run build
 
       - name: Run coverage tests
         env:
