@@ -17,7 +17,7 @@ defaults:
     working-directory: src
 
 concurrency:
-  group: "${{ github.workflow_ref }}-${{ github.ref }}"
+  group: "${{ github.workflow_ref }}-${{ github.ref }}-${{ matrix.php-version }}-${{ matrix.node-version }}-${{ matrix.os }}"
   cancel-in-progress: true
 
 jobs:
