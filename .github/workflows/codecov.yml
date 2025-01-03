@@ -76,10 +76,11 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'src'
 
-      - name: Install Dependencies
+      - name: Install Node/PHP dependencies
         run: |
-          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
+          npm ci
           npm run build
+          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
 
       - name: Prepare Env.
         run: |

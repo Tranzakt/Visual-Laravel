@@ -76,8 +76,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'src'
 
-      - name: Install PHP and Node dependencies
+      - name: Install Node/PHP dependencies
         run: |
+          npm ci
           npm run build
           composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
 
