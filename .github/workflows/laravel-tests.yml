@@ -41,7 +41,7 @@ jobs:
         uses: shivammathur/cache-extensions@v1
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: ${{ env.extensions }}
+          extensions: ${{ env.php-extensions }}
           key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
 
       - name: Get Composer cache directory
