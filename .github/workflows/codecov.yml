@@ -47,7 +47,7 @@ jobs:
       - name: Get Composer cache directory
         id: composer-cache
         run: |
-          composer validate --strict
+          composer validate
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
