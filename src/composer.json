@@ -12,7 +12,7 @@
         "low-code",
         "lowcode"
     ],
-    "license": "AGPL",
+    "license": "AGPL-3.0-only",
     "require": {
         "php": "^8.2",
         "fakerphp/faker": "^1.23",
