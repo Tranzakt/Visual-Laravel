@@ -26,7 +26,7 @@ jobs:
       matrix:
         php-version: [8.3]
         os: [ubuntu-latest]
-    runs-on: {{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     name: Code coverage with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
     env:
       php-extensions: intl, pcov
