@@ -78,9 +78,10 @@ jobs:
 
       - name: Install Node/PHP dependencies
         run: |
+          composer self-update && composer install --no-interaction --no-progress --no-scripts --prefer-dist -vv
+          composer dump-autoload
           npm install
           npm run build
-          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
 
       - name: Prepare Env.
         run: |
