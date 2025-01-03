@@ -13,8 +13,8 @@ on:
       - '.github/workflows/codecov.yml'
 
 defaults:
- run:
-  working-directory: src
+  run:
+    working-directory: src
 
 concurrency:
   group: "${{ github.workflow_ref }}-${{ github.ref }}"
@@ -27,14 +27,22 @@ jobs:
         php-version: [8.3]
         os: [ubuntu-latest]
     runs-on: {{ matrix.os }}
+    name: Code coverage with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+    env:
+      php-extensions: intl, pcov
+      php-coverage: pcov
 
     steps:
-      - uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401
-        with:
-          php-version: ${{ matrix.php-version }}
-
       - name: Checkout
       - uses: actions/checkout@v4
+
+      - name: PHP extensions cache
+        id: extcache
+        uses: shivammathur/cache-extensions@v1
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: ${{ env.extensions }}
+          key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -46,10 +54,18 @@ jobs:
         uses: actions/cache@v4.2.0
         with:
           path: |
+            ${{ steps.extcache.outputs.dir }}
             ${{ steps.composer-cache.outputs.dir }}
             src/vendor
             src/node_modules
-          key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
+          key: ${{ steps.extcache.outputs.key }}
+          restore-keys: vl-${{ matrix.os }}-php${{ matrix.php-version }}-
+
+      - uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: ${{ env.php-extensions }}
+          coverage: ${{ env.php-coverage }}
 
       - name: Prepare Env.
         run: |
@@ -63,7 +79,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          composer self-update && composer install --no-interaction --no-progress --prefer-dist
+          composer self-update && composer install --no-interaction --no-progress --prefer-dist -vv
           npm run build
 
       - name: Run coverage tests
