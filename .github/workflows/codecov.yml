@@ -1,16 +1,16 @@
-name: Run Tests
+name: Codecov
 
 on:
   push:
     branches: [ "main" ]
     paths:
       - 'src/**.php'
-      - '.github/workflows/laravel-tests.yml'
+      - '.github/workflows/codecov.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'src/**.php'
-      - '.github/workflows/laravel-tests.yml'
+      - '.github/workflows/codecov.yml'
 
 defaults:
  run:
@@ -21,10 +21,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tests:
+  codecov:
     strategy:
       matrix:
-        php-version: [8.2, 8.3, 8.4]
+        php-version: [8.3]
         os: [ubuntu-latest]
     runs-on: {{ matrix.os }}
 
@@ -66,7 +66,12 @@ jobs:
           composer self-update && composer install --no-interaction --no-progress --prefer-dist
           npm run build
 
-      - name: Run PHPUnit/Pest tests
+      - name: Run coverage tests
         env:
           DB_CONNECTION: sqlite
-        run: php artisan test
+        run: vendor/bin/phpunit --coverage-clover coverage.xml .
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}

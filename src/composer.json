@@ -6,7 +6,11 @@
     "keywords": [
         "laravel",
         "livewire",
-        "filament"
+        "filament",
+        "nocode",
+        "no-code",
+        "low-code",
+        "lowcode"
     ],
     "license": "AGPL",
     "require": {
@@ -66,7 +70,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php -r \"file_exists('storage/database/laravel.sqlite') || touch('storage/database/laravel.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
         "dev": [
@@ -75,7 +79,7 @@
         ],
         "bun": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"bun --watch run dev\" --names=server,queue,logs,vite"
+            "bun concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"bun --watch run dev\" --names=server,queue,logs,vite"
         ],
         "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
