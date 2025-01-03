@@ -39,9 +39,6 @@
             "Database\\Factories\\": "VisualLaravel/Base/database/factories/",
             "Database\\Seeders\\": "VisualLaravel/Base/database/seeders/",
             "VisualLaravel\\Core\\": "VisualLaravel/Core/"
-        },
-        "DUMMY": {
-            "VisualLaravel\\": "VisualLaravel"
         }
     },
     "autoload-dev": {
@@ -50,8 +47,6 @@
             "Workbench\\App\\": "VisualLaravel/workbench/app/",
             "Workbench\\Database\\Factories\\": "VisualLaravel/workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "VisualLaravel/workbench/database/seeders/"
-        },
-        "DUMMY": {
         }
     },
     "scripts": {

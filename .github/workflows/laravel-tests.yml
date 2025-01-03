@@ -27,7 +27,7 @@ jobs:
         php-version: [8.2, 8.3, 8.4]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    name: Tests with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+    name: PHPUnit tests with PHP ${{ matrix.php-versions }} on ${{ matrix.os }}
     env:
       php-extensions: intl, pcov
       php-coverage: pcov
