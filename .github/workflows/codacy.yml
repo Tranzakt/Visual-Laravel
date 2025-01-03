@@ -3,36 +3,94 @@ name: Codacy Security Scan
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'src/**.php'
+      - '.github/workflows/codacy.yml'
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ "main" ]
-  schedule:
-    - cron: '45 15 * * 1'
-
-permissions:
-  contents: read
+    paths:
+      - 'src/**.php'
+      - '.github/workflows/codacy.yml'
+  # schedule:
+  #  - cron: '45 15 * * 1'
 
 jobs:
   codacy-security-scan:
     permissions:
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-    name: Codacy Security Scan
-    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [8.3]
+        node-version: [current]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    name: Codacy Security Scan with PHP ${{ matrix.php-version }} on ${{ matrix.os }}
+    env:
+      php-extensions: intl, pcov
+      php-coverage: pcov
+
     steps:
-      # Checkout the repository to the GitHub Actions runner
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache composer and npm
+      - name: PHP extensions cache
+        id: extcache
+        uses: shivammathur/cache-extensions@v1
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: ${{ env.php-extensions }}
+          key: vl-${{ matrix.os }}-php${{ matrix.php-version }}-node${{ matrix.node-version }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: |
+          composer validate
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache dependencies
         uses: actions/cache@v4.2.0
         with:
           path: |
-            vendor
-            node_modules
-          key: vl-${{ runner.os }}-${{ hashFiles('composer.json', 'composer.lock', 'package.json', 'package.lock') }}
-          
+            ${{ steps.extcache.outputs.dir }}
+            ${{ steps.composer-cache.outputs.dir }}
+            src/vendor
+            src/node_modules
+          key: ${{ steps.extcache.outputs.key }}
+          restore-keys: vl-${{ matrix.os }}-php${{ matrix.php-version }}-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: ${{ env.php-extensions }}
+          coverage: ${{ env.php-coverage }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'src'
+
+      - name: Install Node/PHP dependencies
+        run: |
+          composer self-update && composer install --no-interaction --no-progress --no-scripts --prefer-dist -vv
+          composer dump-autoload
+          npm install
+          npm run build
+
+      - name: Prepare Env.
+        run: |
+          # Copy .env, Generate key, Set directory permissions, Create empty SQLite DB
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
+          php artisan key:generate
+          chmod -R 777 storage storage/database bootstrap/cache
+          mkdir -p storage/database
+          rm -f storage/database/visual-laravel.sqlite
+          touch storage/database/visual-laravel.sqlite
+
       # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
@@ -54,4 +112,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results.sarif
-    
+
